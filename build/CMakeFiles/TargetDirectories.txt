@@ -1,0 +1,3 @@
+/home/lev/Documents/CPP-Projects/OpenGL-2D-Render/build/CMakeFiles/build.dir
+/home/lev/Documents/CPP-Projects/OpenGL-2D-Render/build/CMakeFiles/edit_cache.dir
+/home/lev/Documents/CPP-Projects/OpenGL-2D-Render/build/CMakeFiles/rebuild_cache.dir
