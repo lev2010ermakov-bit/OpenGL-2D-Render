@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/lev/Documents/CPP-Projects/OpenGL-2D-Render
+CMAKE_SOURCE_DIR = /home/linuser/Documents/CPP-Projects/OpenGL-2D-Render
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/lev/Documents/CPP-Projects/OpenGL-2D-Render/build
+CMAKE_BINARY_DIR = /home/linuser/Documents/CPP-Projects/OpenGL-2D-Render/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,9 +87,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/lev/Documents/CPP-Projects/OpenGL-2D-Render/build/CMakeFiles /home/lev/Documents/CPP-Projects/OpenGL-2D-Render/build//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/linuser/Documents/CPP-Projects/OpenGL-2D-Render/build/CMakeFiles /home/linuser/Documents/CPP-Projects/OpenGL-2D-Render/build//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/lev/Documents/CPP-Projects/OpenGL-2D-Render/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/linuser/Documents/CPP-Projects/OpenGL-2D-Render/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -201,6 +201,30 @@ main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/build.dir/build.make CMakeFiles/build.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+stb_image.o: stb_image.c.o
+.PHONY : stb_image.o
+
+# target to build an object file
+stb_image.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/build.dir/build.make CMakeFiles/build.dir/stb_image.c.o
+.PHONY : stb_image.c.o
+
+stb_image.i: stb_image.c.i
+.PHONY : stb_image.i
+
+# target to preprocess a source file
+stb_image.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/build.dir/build.make CMakeFiles/build.dir/stb_image.c.i
+.PHONY : stb_image.c.i
+
+stb_image.s: stb_image.c.s
+.PHONY : stb_image.s
+
+# target to generate assembly for a file
+stb_image.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/build.dir/build.make CMakeFiles/build.dir/stb_image.c.s
+.PHONY : stb_image.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -219,6 +243,9 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... stb_image.o"
+	@echo "... stb_image.i"
+	@echo "... stb_image.s"
 .PHONY : help
 
 

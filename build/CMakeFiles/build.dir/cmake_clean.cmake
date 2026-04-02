@@ -6,6 +6,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/build.dir/glad/src/glad.c.o.d"
   "CMakeFiles/build.dir/main.cpp.o"
   "CMakeFiles/build.dir/main.cpp.o.d"
+  "CMakeFiles/build.dir/stb_image.c.o"
+  "CMakeFiles/build.dir/stb_image.c.o.d"
   "build"
   "build.pdb"
 )

@@ -5,13 +5,13 @@
 # compile CXX with /usr/bin/c++
 C_DEFINES = 
 
-C_INCLUDES = -I/home/lev/Documents/CPP-Projects/OpenGL-2D-Render/glad/include
+C_INCLUDES = -I/home/linuser/Documents/CPP-Projects/OpenGL-2D-Render/glad/include
 
 C_FLAGS = 
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/lev/Documents/CPP-Projects/OpenGL-2D-Render/glad/include
+CXX_INCLUDES = -I/home/linuser/Documents/CPP-Projects/OpenGL-2D-Render/glad/include
 
 CXX_FLAGS = 
 

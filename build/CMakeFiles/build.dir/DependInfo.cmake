@@ -8,9 +8,10 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/lev/Documents/CPP-Projects/OpenGL-2D-Render/glad/src/glad.c" "CMakeFiles/build.dir/glad/src/glad.c.o" "gcc" "CMakeFiles/build.dir/glad/src/glad.c.o.d"
-  "/home/lev/Documents/CPP-Projects/OpenGL-2D-Render/Shader/Shader.cpp" "CMakeFiles/build.dir/Shader/Shader.cpp.o" "gcc" "CMakeFiles/build.dir/Shader/Shader.cpp.o.d"
-  "/home/lev/Documents/CPP-Projects/OpenGL-2D-Render/main.cpp" "CMakeFiles/build.dir/main.cpp.o" "gcc" "CMakeFiles/build.dir/main.cpp.o.d"
+  "/home/linuser/Documents/CPP-Projects/OpenGL-2D-Render/glad/src/glad.c" "CMakeFiles/build.dir/glad/src/glad.c.o" "gcc" "CMakeFiles/build.dir/glad/src/glad.c.o.d"
+  "/home/linuser/Documents/CPP-Projects/OpenGL-2D-Render/stb_image.c" "CMakeFiles/build.dir/stb_image.c.o" "gcc" "CMakeFiles/build.dir/stb_image.c.o.d"
+  "/home/linuser/Documents/CPP-Projects/OpenGL-2D-Render/Shader/Shader.cpp" "CMakeFiles/build.dir/Shader/Shader.cpp.o" "gcc" "CMakeFiles/build.dir/Shader/Shader.cpp.o.d"
+  "/home/linuser/Documents/CPP-Projects/OpenGL-2D-Render/main.cpp" "CMakeFiles/build.dir/main.cpp.o" "gcc" "CMakeFiles/build.dir/main.cpp.o.d"
   "" "build" "gcc" "CMakeFiles/build.dir/link.d"
   )
 

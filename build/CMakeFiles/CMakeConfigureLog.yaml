@@ -20,32 +20,27 @@ events:
     names:
       - "uname"
     candidate_directories:
-      - "/home/lev/emsdk/"
-      - "/home/lev/emsdk/upstream/emscripten/"
+      - "/home/linuser/.vscode/extensions/vadimcn.vscode-lldb-1.12.1/bin/"
       - "/usr/local/sbin/"
       - "/usr/local/bin/"
       - "/usr/bin/"
       - "/usr/lib/emscripten/"
-      - "/usr/lib/jvm/default/bin/"
       - "/usr/bin/site_perl/"
       - "/usr/bin/vendor_perl/"
       - "/usr/bin/core_perl/"
       - "/bin/"
     searched_directories:
-      - "/home/lev/emsdk/uname"
-      - "/home/lev/emsdk/upstream/emscripten/uname"
+      - "/home/linuser/.vscode/extensions/vadimcn.vscode-lldb-1.12.1/bin/uname"
       - "/usr/local/sbin/uname"
       - "/usr/local/bin/uname"
     found: "/usr/bin/uname"
     search_context:
       ENV{PATH}:
-        - "/home/lev/emsdk"
-        - "/home/lev/emsdk/upstream/emscripten"
+        - "/home/linuser/.vscode/extensions/vadimcn.vscode-lldb-1.12.1/bin"
         - "/usr/local/sbin"
         - "/usr/local/bin"
         - "/usr/bin"
         - "/usr/lib/emscripten"
-        - "/usr/lib/jvm/default/bin"
         - "/usr/bin/site_perl"
         - "/usr/bin/vendor_perl"
         - "/usr/bin/core_perl"
@@ -77,41 +72,34 @@ events:
       - "make"
       - "smake"
     candidate_directories:
-      - "/home/lev/emsdk/"
-      - "/home/lev/emsdk/upstream/emscripten/"
+      - "/home/linuser/.vscode/extensions/vadimcn.vscode-lldb-1.12.1/bin/"
       - "/usr/local/sbin/"
       - "/usr/local/bin/"
       - "/usr/bin/"
       - "/usr/lib/emscripten/"
-      - "/usr/lib/jvm/default/bin/"
       - "/usr/bin/site_perl/"
       - "/usr/bin/vendor_perl/"
       - "/usr/bin/core_perl/"
     searched_directories:
-      - "/home/lev/emsdk/gmake"
-      - "/home/lev/emsdk/upstream/emscripten/gmake"
+      - "/home/linuser/.vscode/extensions/vadimcn.vscode-lldb-1.12.1/bin/gmake"
       - "/usr/local/sbin/gmake"
       - "/usr/local/bin/gmake"
       - "/usr/bin/gmake"
       - "/usr/lib/emscripten/gmake"
-      - "/usr/lib/jvm/default/bin/gmake"
       - "/usr/bin/site_perl/gmake"
       - "/usr/bin/vendor_perl/gmake"
       - "/usr/bin/core_perl/gmake"
-      - "/home/lev/emsdk/make"
-      - "/home/lev/emsdk/upstream/emscripten/make"
+      - "/home/linuser/.vscode/extensions/vadimcn.vscode-lldb-1.12.1/bin/make"
       - "/usr/local/sbin/make"
       - "/usr/local/bin/make"
     found: "/usr/bin/make"
     search_context:
       ENV{PATH}:
-        - "/home/lev/emsdk"
-        - "/home/lev/emsdk/upstream/emscripten"
+        - "/home/linuser/.vscode/extensions/vadimcn.vscode-lldb-1.12.1/bin"
         - "/usr/local/sbin"
         - "/usr/local/bin"
         - "/usr/bin"
         - "/usr/lib/emscripten"
-        - "/usr/lib/jvm/default/bin"
         - "/usr/bin/site_perl"
         - "/usr/bin/vendor_perl"
         - "/usr/bin/core_perl"
@@ -141,31 +129,26 @@ events:
       - "icx"
       - "clang"
     candidate_directories:
-      - "/home/lev/emsdk/"
-      - "/home/lev/emsdk/upstream/emscripten/"
+      - "/home/linuser/.vscode/extensions/vadimcn.vscode-lldb-1.12.1/bin/"
       - "/usr/local/sbin/"
       - "/usr/local/bin/"
       - "/usr/bin/"
       - "/usr/lib/emscripten/"
-      - "/usr/lib/jvm/default/bin/"
       - "/usr/bin/site_perl/"
       - "/usr/bin/vendor_perl/"
       - "/usr/bin/core_perl/"
     searched_directories:
-      - "/home/lev/emsdk/cc"
-      - "/home/lev/emsdk/upstream/emscripten/cc"
+      - "/home/linuser/.vscode/extensions/vadimcn.vscode-lldb-1.12.1/bin/cc"
       - "/usr/local/sbin/cc"
       - "/usr/local/bin/cc"
     found: "/usr/bin/cc"
     search_context:
       ENV{PATH}:
-        - "/home/lev/emsdk"
-        - "/home/lev/emsdk/upstream/emscripten"
+        - "/home/linuser/.vscode/extensions/vadimcn.vscode-lldb-1.12.1/bin"
         - "/usr/local/sbin"
         - "/usr/local/bin"
         - "/usr/bin"
         - "/usr/lib/emscripten"
-        - "/usr/lib/jvm/default/bin"
         - "/usr/bin/site_perl"
         - "/usr/bin/vendor_perl"
         - "/usr/bin/core_perl"
@@ -196,13 +179,11 @@ events:
     found: "/usr/share/cmake/Modules/CMakeCCompilerId.c.in"
     search_context:
       ENV{PATH}:
-        - "/home/lev/emsdk"
-        - "/home/lev/emsdk/upstream/emscripten"
+        - "/home/linuser/.vscode/extensions/vadimcn.vscode-lldb-1.12.1/bin"
         - "/usr/local/sbin"
         - "/usr/local/bin"
         - "/usr/bin"
         - "/usr/lib/emscripten"
-        - "/usr/lib/jvm/default/bin"
         - "/usr/bin/site_perl"
         - "/usr/bin/vendor_perl"
         - "/usr/bin/core_perl"
@@ -226,7 +207,7 @@ events:
       Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
       
       The C compiler identification is GNU, found in:
-        /home/lev/Documents/CPP-Projects/OpenGL-2D-Render/build/CMakeFiles/4.3.0/CompilerIdC/a.out
+        /home/linuser/Documents/CPP-Projects/OpenGL-2D-Render/build/CMakeFiles/4.3.0/CompilerIdC/a.out
       
   -
     kind: "find-v1"
@@ -249,25 +230,21 @@ events:
       - "ar"
     candidate_directories:
       - "/usr/bin/"
-      - "/home/lev/emsdk/"
-      - "/home/lev/emsdk/upstream/emscripten/"
+      - "/home/linuser/.vscode/extensions/vadimcn.vscode-lldb-1.12.1/bin/"
       - "/usr/local/sbin/"
       - "/usr/local/bin/"
       - "/usr/lib/emscripten/"
-      - "/usr/lib/jvm/default/bin/"
       - "/usr/bin/site_perl/"
       - "/usr/bin/vendor_perl/"
       - "/usr/bin/core_perl/"
     found: "/usr/bin/ar"
     search_context:
       ENV{PATH}:
-        - "/home/lev/emsdk"
-        - "/home/lev/emsdk/upstream/emscripten"
+        - "/home/linuser/.vscode/extensions/vadimcn.vscode-lldb-1.12.1/bin"
         - "/usr/local/sbin"
         - "/usr/local/bin"
         - "/usr/bin"
         - "/usr/lib/emscripten"
-        - "/usr/lib/jvm/default/bin"
         - "/usr/bin/site_perl"
         - "/usr/bin/vendor_perl"
         - "/usr/bin/core_perl"
@@ -292,25 +269,21 @@ events:
       - "ranlib"
     candidate_directories:
       - "/usr/bin/"
-      - "/home/lev/emsdk/"
-      - "/home/lev/emsdk/upstream/emscripten/"
+      - "/home/linuser/.vscode/extensions/vadimcn.vscode-lldb-1.12.1/bin/"
       - "/usr/local/sbin/"
       - "/usr/local/bin/"
       - "/usr/lib/emscripten/"
-      - "/usr/lib/jvm/default/bin/"
       - "/usr/bin/site_perl/"
       - "/usr/bin/vendor_perl/"
       - "/usr/bin/core_perl/"
     found: "/usr/bin/ranlib"
     search_context:
       ENV{PATH}:
-        - "/home/lev/emsdk"
-        - "/home/lev/emsdk/upstream/emscripten"
+        - "/home/linuser/.vscode/extensions/vadimcn.vscode-lldb-1.12.1/bin"
         - "/usr/local/sbin"
         - "/usr/local/bin"
         - "/usr/bin"
         - "/usr/lib/emscripten"
-        - "/usr/lib/jvm/default/bin"
         - "/usr/bin/site_perl"
         - "/usr/bin/vendor_perl"
         - "/usr/bin/core_perl"
@@ -335,25 +308,21 @@ events:
       - "strip"
     candidate_directories:
       - "/usr/bin/"
-      - "/home/lev/emsdk/"
-      - "/home/lev/emsdk/upstream/emscripten/"
+      - "/home/linuser/.vscode/extensions/vadimcn.vscode-lldb-1.12.1/bin/"
       - "/usr/local/sbin/"
       - "/usr/local/bin/"
       - "/usr/lib/emscripten/"
-      - "/usr/lib/jvm/default/bin/"
       - "/usr/bin/site_perl/"
       - "/usr/bin/vendor_perl/"
       - "/usr/bin/core_perl/"
     found: "/usr/bin/strip"
     search_context:
       ENV{PATH}:
-        - "/home/lev/emsdk"
-        - "/home/lev/emsdk/upstream/emscripten"
+        - "/home/linuser/.vscode/extensions/vadimcn.vscode-lldb-1.12.1/bin"
         - "/usr/local/sbin"
         - "/usr/local/bin"
         - "/usr/bin"
         - "/usr/lib/emscripten"
-        - "/usr/lib/jvm/default/bin"
         - "/usr/bin/site_perl"
         - "/usr/bin/vendor_perl"
         - "/usr/bin/core_perl"
@@ -378,25 +347,21 @@ events:
       - "ld"
     candidate_directories:
       - "/usr/bin/"
-      - "/home/lev/emsdk/"
-      - "/home/lev/emsdk/upstream/emscripten/"
+      - "/home/linuser/.vscode/extensions/vadimcn.vscode-lldb-1.12.1/bin/"
       - "/usr/local/sbin/"
       - "/usr/local/bin/"
       - "/usr/lib/emscripten/"
-      - "/usr/lib/jvm/default/bin/"
       - "/usr/bin/site_perl/"
       - "/usr/bin/vendor_perl/"
       - "/usr/bin/core_perl/"
     found: "/usr/bin/ld"
     search_context:
       ENV{PATH}:
-        - "/home/lev/emsdk"
-        - "/home/lev/emsdk/upstream/emscripten"
+        - "/home/linuser/.vscode/extensions/vadimcn.vscode-lldb-1.12.1/bin"
         - "/usr/local/sbin"
         - "/usr/local/bin"
         - "/usr/bin"
         - "/usr/lib/emscripten"
-        - "/usr/lib/jvm/default/bin"
         - "/usr/bin/site_perl"
         - "/usr/bin/vendor_perl"
         - "/usr/bin/core_perl"
@@ -421,25 +386,21 @@ events:
       - "nm"
     candidate_directories:
       - "/usr/bin/"
-      - "/home/lev/emsdk/"
-      - "/home/lev/emsdk/upstream/emscripten/"
+      - "/home/linuser/.vscode/extensions/vadimcn.vscode-lldb-1.12.1/bin/"
       - "/usr/local/sbin/"
       - "/usr/local/bin/"
       - "/usr/lib/emscripten/"
-      - "/usr/lib/jvm/default/bin/"
       - "/usr/bin/site_perl/"
       - "/usr/bin/vendor_perl/"
       - "/usr/bin/core_perl/"
     found: "/usr/bin/nm"
     search_context:
       ENV{PATH}:
-        - "/home/lev/emsdk"
-        - "/home/lev/emsdk/upstream/emscripten"
+        - "/home/linuser/.vscode/extensions/vadimcn.vscode-lldb-1.12.1/bin"
         - "/usr/local/sbin"
         - "/usr/local/bin"
         - "/usr/bin"
         - "/usr/lib/emscripten"
-        - "/usr/lib/jvm/default/bin"
         - "/usr/bin/site_perl"
         - "/usr/bin/vendor_perl"
         - "/usr/bin/core_perl"
@@ -464,25 +425,21 @@ events:
       - "objdump"
     candidate_directories:
       - "/usr/bin/"
-      - "/home/lev/emsdk/"
-      - "/home/lev/emsdk/upstream/emscripten/"
+      - "/home/linuser/.vscode/extensions/vadimcn.vscode-lldb-1.12.1/bin/"
       - "/usr/local/sbin/"
       - "/usr/local/bin/"
       - "/usr/lib/emscripten/"
-      - "/usr/lib/jvm/default/bin/"
       - "/usr/bin/site_perl/"
       - "/usr/bin/vendor_perl/"
       - "/usr/bin/core_perl/"
     found: "/usr/bin/objdump"
     search_context:
       ENV{PATH}:
-        - "/home/lev/emsdk"
-        - "/home/lev/emsdk/upstream/emscripten"
+        - "/home/linuser/.vscode/extensions/vadimcn.vscode-lldb-1.12.1/bin"
         - "/usr/local/sbin"
         - "/usr/local/bin"
         - "/usr/bin"
         - "/usr/lib/emscripten"
-        - "/usr/lib/jvm/default/bin"
         - "/usr/bin/site_perl"
         - "/usr/bin/vendor_perl"
         - "/usr/bin/core_perl"
@@ -507,25 +464,21 @@ events:
       - "objcopy"
     candidate_directories:
       - "/usr/bin/"
-      - "/home/lev/emsdk/"
-      - "/home/lev/emsdk/upstream/emscripten/"
+      - "/home/linuser/.vscode/extensions/vadimcn.vscode-lldb-1.12.1/bin/"
       - "/usr/local/sbin/"
       - "/usr/local/bin/"
       - "/usr/lib/emscripten/"
-      - "/usr/lib/jvm/default/bin/"
       - "/usr/bin/site_perl/"
       - "/usr/bin/vendor_perl/"
       - "/usr/bin/core_perl/"
     found: "/usr/bin/objcopy"
     search_context:
       ENV{PATH}:
-        - "/home/lev/emsdk"
-        - "/home/lev/emsdk/upstream/emscripten"
+        - "/home/linuser/.vscode/extensions/vadimcn.vscode-lldb-1.12.1/bin"
         - "/usr/local/sbin"
         - "/usr/local/bin"
         - "/usr/bin"
         - "/usr/lib/emscripten"
-        - "/usr/lib/jvm/default/bin"
         - "/usr/bin/site_perl"
         - "/usr/bin/vendor_perl"
         - "/usr/bin/core_perl"
@@ -550,25 +503,21 @@ events:
       - "readelf"
     candidate_directories:
       - "/usr/bin/"
-      - "/home/lev/emsdk/"
-      - "/home/lev/emsdk/upstream/emscripten/"
+      - "/home/linuser/.vscode/extensions/vadimcn.vscode-lldb-1.12.1/bin/"
       - "/usr/local/sbin/"
       - "/usr/local/bin/"
       - "/usr/lib/emscripten/"
-      - "/usr/lib/jvm/default/bin/"
       - "/usr/bin/site_perl/"
       - "/usr/bin/vendor_perl/"
       - "/usr/bin/core_perl/"
     found: "/usr/bin/readelf"
     search_context:
       ENV{PATH}:
-        - "/home/lev/emsdk"
-        - "/home/lev/emsdk/upstream/emscripten"
+        - "/home/linuser/.vscode/extensions/vadimcn.vscode-lldb-1.12.1/bin"
         - "/usr/local/sbin"
         - "/usr/local/bin"
         - "/usr/bin"
         - "/usr/lib/emscripten"
-        - "/usr/lib/jvm/default/bin"
         - "/usr/bin/site_perl"
         - "/usr/bin/vendor_perl"
         - "/usr/bin/core_perl"
@@ -593,36 +542,30 @@ events:
       - "dlltool"
     candidate_directories:
       - "/usr/bin/"
-      - "/home/lev/emsdk/"
-      - "/home/lev/emsdk/upstream/emscripten/"
+      - "/home/linuser/.vscode/extensions/vadimcn.vscode-lldb-1.12.1/bin/"
       - "/usr/local/sbin/"
       - "/usr/local/bin/"
       - "/usr/lib/emscripten/"
-      - "/usr/lib/jvm/default/bin/"
       - "/usr/bin/site_perl/"
       - "/usr/bin/vendor_perl/"
       - "/usr/bin/core_perl/"
     searched_directories:
       - "/usr/bin/dlltool"
-      - "/home/lev/emsdk/dlltool"
-      - "/home/lev/emsdk/upstream/emscripten/dlltool"
+      - "/home/linuser/.vscode/extensions/vadimcn.vscode-lldb-1.12.1/bin/dlltool"
       - "/usr/local/sbin/dlltool"
       - "/usr/local/bin/dlltool"
       - "/usr/lib/emscripten/dlltool"
-      - "/usr/lib/jvm/default/bin/dlltool"
       - "/usr/bin/site_perl/dlltool"
       - "/usr/bin/vendor_perl/dlltool"
       - "/usr/bin/core_perl/dlltool"
     found: false
     search_context:
       ENV{PATH}:
-        - "/home/lev/emsdk"
-        - "/home/lev/emsdk/upstream/emscripten"
+        - "/home/linuser/.vscode/extensions/vadimcn.vscode-lldb-1.12.1/bin"
         - "/usr/local/sbin"
         - "/usr/local/bin"
         - "/usr/bin"
         - "/usr/lib/emscripten"
-        - "/usr/lib/jvm/default/bin"
         - "/usr/bin/site_perl"
         - "/usr/bin/vendor_perl"
         - "/usr/bin/core_perl"
@@ -647,25 +590,21 @@ events:
       - "addr2line"
     candidate_directories:
       - "/usr/bin/"
-      - "/home/lev/emsdk/"
-      - "/home/lev/emsdk/upstream/emscripten/"
+      - "/home/linuser/.vscode/extensions/vadimcn.vscode-lldb-1.12.1/bin/"
       - "/usr/local/sbin/"
       - "/usr/local/bin/"
       - "/usr/lib/emscripten/"
-      - "/usr/lib/jvm/default/bin/"
       - "/usr/bin/site_perl/"
       - "/usr/bin/vendor_perl/"
       - "/usr/bin/core_perl/"
     found: "/usr/bin/addr2line"
     search_context:
       ENV{PATH}:
-        - "/home/lev/emsdk"
-        - "/home/lev/emsdk/upstream/emscripten"
+        - "/home/linuser/.vscode/extensions/vadimcn.vscode-lldb-1.12.1/bin"
         - "/usr/local/sbin"
         - "/usr/local/bin"
         - "/usr/bin"
         - "/usr/lib/emscripten"
-        - "/usr/lib/jvm/default/bin"
         - "/usr/bin/site_perl"
         - "/usr/bin/vendor_perl"
         - "/usr/bin/core_perl"
@@ -690,36 +629,30 @@ events:
       - "tapi"
     candidate_directories:
       - "/usr/bin/"
-      - "/home/lev/emsdk/"
-      - "/home/lev/emsdk/upstream/emscripten/"
+      - "/home/linuser/.vscode/extensions/vadimcn.vscode-lldb-1.12.1/bin/"
       - "/usr/local/sbin/"
       - "/usr/local/bin/"
       - "/usr/lib/emscripten/"
-      - "/usr/lib/jvm/default/bin/"
       - "/usr/bin/site_perl/"
       - "/usr/bin/vendor_perl/"
       - "/usr/bin/core_perl/"
     searched_directories:
       - "/usr/bin/tapi"
-      - "/home/lev/emsdk/tapi"
-      - "/home/lev/emsdk/upstream/emscripten/tapi"
+      - "/home/linuser/.vscode/extensions/vadimcn.vscode-lldb-1.12.1/bin/tapi"
       - "/usr/local/sbin/tapi"
       - "/usr/local/bin/tapi"
       - "/usr/lib/emscripten/tapi"
-      - "/usr/lib/jvm/default/bin/tapi"
       - "/usr/bin/site_perl/tapi"
       - "/usr/bin/vendor_perl/tapi"
       - "/usr/bin/core_perl/tapi"
     found: false
     search_context:
       ENV{PATH}:
-        - "/home/lev/emsdk"
-        - "/home/lev/emsdk/upstream/emscripten"
+        - "/home/linuser/.vscode/extensions/vadimcn.vscode-lldb-1.12.1/bin"
         - "/usr/local/sbin"
         - "/usr/local/bin"
         - "/usr/bin"
         - "/usr/lib/emscripten"
-        - "/usr/lib/jvm/default/bin"
         - "/usr/bin/site_perl"
         - "/usr/bin/vendor_perl"
         - "/usr/bin/core_perl"
@@ -747,56 +680,46 @@ events:
       - "gcc-ar"
     candidate_directories:
       - "/usr/bin/"
-      - "/home/lev/emsdk/"
-      - "/home/lev/emsdk/upstream/emscripten/"
+      - "/home/linuser/.vscode/extensions/vadimcn.vscode-lldb-1.12.1/bin/"
       - "/usr/local/sbin/"
       - "/usr/local/bin/"
       - "/usr/lib/emscripten/"
-      - "/usr/lib/jvm/default/bin/"
       - "/usr/bin/site_perl/"
       - "/usr/bin/vendor_perl/"
       - "/usr/bin/core_perl/"
     searched_directories:
       - "/usr/bin/gcc-ar-15.2"
-      - "/home/lev/emsdk/gcc-ar-15.2"
-      - "/home/lev/emsdk/upstream/emscripten/gcc-ar-15.2"
+      - "/home/linuser/.vscode/extensions/vadimcn.vscode-lldb-1.12.1/bin/gcc-ar-15.2"
       - "/usr/local/sbin/gcc-ar-15.2"
       - "/usr/local/bin/gcc-ar-15.2"
       - "/usr/lib/emscripten/gcc-ar-15.2"
-      - "/usr/lib/jvm/default/bin/gcc-ar-15.2"
       - "/usr/bin/site_perl/gcc-ar-15.2"
       - "/usr/bin/vendor_perl/gcc-ar-15.2"
       - "/usr/bin/core_perl/gcc-ar-15.2"
       - "/usr/bin/gcc-ar-15"
-      - "/home/lev/emsdk/gcc-ar-15"
-      - "/home/lev/emsdk/upstream/emscripten/gcc-ar-15"
+      - "/home/linuser/.vscode/extensions/vadimcn.vscode-lldb-1.12.1/bin/gcc-ar-15"
       - "/usr/local/sbin/gcc-ar-15"
       - "/usr/local/bin/gcc-ar-15"
       - "/usr/lib/emscripten/gcc-ar-15"
-      - "/usr/lib/jvm/default/bin/gcc-ar-15"
       - "/usr/bin/site_perl/gcc-ar-15"
       - "/usr/bin/vendor_perl/gcc-ar-15"
       - "/usr/bin/core_perl/gcc-ar-15"
       - "/usr/bin/gcc-ar15"
-      - "/home/lev/emsdk/gcc-ar15"
-      - "/home/lev/emsdk/upstream/emscripten/gcc-ar15"
+      - "/home/linuser/.vscode/extensions/vadimcn.vscode-lldb-1.12.1/bin/gcc-ar15"
       - "/usr/local/sbin/gcc-ar15"
       - "/usr/local/bin/gcc-ar15"
       - "/usr/lib/emscripten/gcc-ar15"
-      - "/usr/lib/jvm/default/bin/gcc-ar15"
       - "/usr/bin/site_perl/gcc-ar15"
       - "/usr/bin/vendor_perl/gcc-ar15"
       - "/usr/bin/core_perl/gcc-ar15"
     found: "/usr/bin/gcc-ar"
     search_context:
       ENV{PATH}:
-        - "/home/lev/emsdk"
-        - "/home/lev/emsdk/upstream/emscripten"
+        - "/home/linuser/.vscode/extensions/vadimcn.vscode-lldb-1.12.1/bin"
         - "/usr/local/sbin"
         - "/usr/local/bin"
         - "/usr/bin"
         - "/usr/lib/emscripten"
-        - "/usr/lib/jvm/default/bin"
         - "/usr/bin/site_perl"
         - "/usr/bin/vendor_perl"
         - "/usr/bin/core_perl"
@@ -824,56 +747,46 @@ events:
       - "gcc-ranlib"
     candidate_directories:
       - "/usr/bin/"
-      - "/home/lev/emsdk/"
-      - "/home/lev/emsdk/upstream/emscripten/"
+      - "/home/linuser/.vscode/extensions/vadimcn.vscode-lldb-1.12.1/bin/"
       - "/usr/local/sbin/"
       - "/usr/local/bin/"
       - "/usr/lib/emscripten/"
-      - "/usr/lib/jvm/default/bin/"
       - "/usr/bin/site_perl/"
       - "/usr/bin/vendor_perl/"
       - "/usr/bin/core_perl/"
     searched_directories:
       - "/usr/bin/gcc-ranlib-15.2"
-      - "/home/lev/emsdk/gcc-ranlib-15.2"
-      - "/home/lev/emsdk/upstream/emscripten/gcc-ranlib-15.2"
+      - "/home/linuser/.vscode/extensions/vadimcn.vscode-lldb-1.12.1/bin/gcc-ranlib-15.2"
       - "/usr/local/sbin/gcc-ranlib-15.2"
       - "/usr/local/bin/gcc-ranlib-15.2"
       - "/usr/lib/emscripten/gcc-ranlib-15.2"
-      - "/usr/lib/jvm/default/bin/gcc-ranlib-15.2"
       - "/usr/bin/site_perl/gcc-ranlib-15.2"
       - "/usr/bin/vendor_perl/gcc-ranlib-15.2"
       - "/usr/bin/core_perl/gcc-ranlib-15.2"
       - "/usr/bin/gcc-ranlib-15"
-      - "/home/lev/emsdk/gcc-ranlib-15"
-      - "/home/lev/emsdk/upstream/emscripten/gcc-ranlib-15"
+      - "/home/linuser/.vscode/extensions/vadimcn.vscode-lldb-1.12.1/bin/gcc-ranlib-15"
       - "/usr/local/sbin/gcc-ranlib-15"
       - "/usr/local/bin/gcc-ranlib-15"
       - "/usr/lib/emscripten/gcc-ranlib-15"
-      - "/usr/lib/jvm/default/bin/gcc-ranlib-15"
       - "/usr/bin/site_perl/gcc-ranlib-15"
       - "/usr/bin/vendor_perl/gcc-ranlib-15"
       - "/usr/bin/core_perl/gcc-ranlib-15"
       - "/usr/bin/gcc-ranlib15"
-      - "/home/lev/emsdk/gcc-ranlib15"
-      - "/home/lev/emsdk/upstream/emscripten/gcc-ranlib15"
+      - "/home/linuser/.vscode/extensions/vadimcn.vscode-lldb-1.12.1/bin/gcc-ranlib15"
       - "/usr/local/sbin/gcc-ranlib15"
       - "/usr/local/bin/gcc-ranlib15"
       - "/usr/lib/emscripten/gcc-ranlib15"
-      - "/usr/lib/jvm/default/bin/gcc-ranlib15"
       - "/usr/bin/site_perl/gcc-ranlib15"
       - "/usr/bin/vendor_perl/gcc-ranlib15"
       - "/usr/bin/core_perl/gcc-ranlib15"
     found: "/usr/bin/gcc-ranlib"
     search_context:
       ENV{PATH}:
-        - "/home/lev/emsdk"
-        - "/home/lev/emsdk/upstream/emscripten"
+        - "/home/linuser/.vscode/extensions/vadimcn.vscode-lldb-1.12.1/bin"
         - "/usr/local/sbin"
         - "/usr/local/bin"
         - "/usr/bin"
         - "/usr/lib/emscripten"
-        - "/usr/lib/jvm/default/bin"
         - "/usr/bin/site_perl"
         - "/usr/bin/vendor_perl"
         - "/usr/bin/core_perl"
@@ -910,13 +823,11 @@ events:
     found: "/usr/bin/c++"
     search_context:
       ENV{PATH}:
-        - "/home/lev/emsdk"
-        - "/home/lev/emsdk/upstream/emscripten"
+        - "/home/linuser/.vscode/extensions/vadimcn.vscode-lldb-1.12.1/bin"
         - "/usr/local/sbin"
         - "/usr/local/bin"
         - "/usr/bin"
         - "/usr/lib/emscripten"
-        - "/usr/lib/jvm/default/bin"
         - "/usr/bin/site_perl"
         - "/usr/bin/vendor_perl"
         - "/usr/bin/core_perl"
@@ -947,13 +858,11 @@ events:
     found: "/usr/share/cmake/Modules/CMakeCXXCompilerId.cpp.in"
     search_context:
       ENV{PATH}:
-        - "/home/lev/emsdk"
-        - "/home/lev/emsdk/upstream/emscripten"
+        - "/home/linuser/.vscode/extensions/vadimcn.vscode-lldb-1.12.1/bin"
         - "/usr/local/sbin"
         - "/usr/local/bin"
         - "/usr/bin"
         - "/usr/lib/emscripten"
-        - "/usr/lib/jvm/default/bin"
         - "/usr/bin/site_perl"
         - "/usr/bin/vendor_perl"
         - "/usr/bin/core_perl"
@@ -977,7 +886,7 @@ events:
       Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
       
       The CXX compiler identification is GNU, found in:
-        /home/lev/Documents/CPP-Projects/OpenGL-2D-Render/build/CMakeFiles/4.3.0/CompilerIdCXX/a.out
+        /home/linuser/Documents/CPP-Projects/OpenGL-2D-Render/build/CMakeFiles/4.3.0/CompilerIdCXX/a.out
       
   -
     kind: "find-v1"
@@ -1003,56 +912,46 @@ events:
       - "gcc-ar"
     candidate_directories:
       - "/usr/bin/"
-      - "/home/lev/emsdk/"
-      - "/home/lev/emsdk/upstream/emscripten/"
+      - "/home/linuser/.vscode/extensions/vadimcn.vscode-lldb-1.12.1/bin/"
       - "/usr/local/sbin/"
       - "/usr/local/bin/"
       - "/usr/lib/emscripten/"
-      - "/usr/lib/jvm/default/bin/"
       - "/usr/bin/site_perl/"
       - "/usr/bin/vendor_perl/"
       - "/usr/bin/core_perl/"
     searched_directories:
       - "/usr/bin/gcc-ar-15.2"
-      - "/home/lev/emsdk/gcc-ar-15.2"
-      - "/home/lev/emsdk/upstream/emscripten/gcc-ar-15.2"
+      - "/home/linuser/.vscode/extensions/vadimcn.vscode-lldb-1.12.1/bin/gcc-ar-15.2"
       - "/usr/local/sbin/gcc-ar-15.2"
       - "/usr/local/bin/gcc-ar-15.2"
       - "/usr/lib/emscripten/gcc-ar-15.2"
-      - "/usr/lib/jvm/default/bin/gcc-ar-15.2"
       - "/usr/bin/site_perl/gcc-ar-15.2"
       - "/usr/bin/vendor_perl/gcc-ar-15.2"
       - "/usr/bin/core_perl/gcc-ar-15.2"
       - "/usr/bin/gcc-ar-15"
-      - "/home/lev/emsdk/gcc-ar-15"
-      - "/home/lev/emsdk/upstream/emscripten/gcc-ar-15"
+      - "/home/linuser/.vscode/extensions/vadimcn.vscode-lldb-1.12.1/bin/gcc-ar-15"
       - "/usr/local/sbin/gcc-ar-15"
       - "/usr/local/bin/gcc-ar-15"
       - "/usr/lib/emscripten/gcc-ar-15"
-      - "/usr/lib/jvm/default/bin/gcc-ar-15"
       - "/usr/bin/site_perl/gcc-ar-15"
       - "/usr/bin/vendor_perl/gcc-ar-15"
       - "/usr/bin/core_perl/gcc-ar-15"
       - "/usr/bin/gcc-ar15"
-      - "/home/lev/emsdk/gcc-ar15"
-      - "/home/lev/emsdk/upstream/emscripten/gcc-ar15"
+      - "/home/linuser/.vscode/extensions/vadimcn.vscode-lldb-1.12.1/bin/gcc-ar15"
       - "/usr/local/sbin/gcc-ar15"
       - "/usr/local/bin/gcc-ar15"
       - "/usr/lib/emscripten/gcc-ar15"
-      - "/usr/lib/jvm/default/bin/gcc-ar15"
       - "/usr/bin/site_perl/gcc-ar15"
       - "/usr/bin/vendor_perl/gcc-ar15"
       - "/usr/bin/core_perl/gcc-ar15"
     found: "/usr/bin/gcc-ar"
     search_context:
       ENV{PATH}:
-        - "/home/lev/emsdk"
-        - "/home/lev/emsdk/upstream/emscripten"
+        - "/home/linuser/.vscode/extensions/vadimcn.vscode-lldb-1.12.1/bin"
         - "/usr/local/sbin"
         - "/usr/local/bin"
         - "/usr/bin"
         - "/usr/lib/emscripten"
-        - "/usr/lib/jvm/default/bin"
         - "/usr/bin/site_perl"
         - "/usr/bin/vendor_perl"
         - "/usr/bin/core_perl"
@@ -1080,56 +979,46 @@ events:
       - "gcc-ranlib"
     candidate_directories:
       - "/usr/bin/"
-      - "/home/lev/emsdk/"
-      - "/home/lev/emsdk/upstream/emscripten/"
+      - "/home/linuser/.vscode/extensions/vadimcn.vscode-lldb-1.12.1/bin/"
       - "/usr/local/sbin/"
       - "/usr/local/bin/"
       - "/usr/lib/emscripten/"
-      - "/usr/lib/jvm/default/bin/"
       - "/usr/bin/site_perl/"
       - "/usr/bin/vendor_perl/"
       - "/usr/bin/core_perl/"
     searched_directories:
       - "/usr/bin/gcc-ranlib-15.2"
-      - "/home/lev/emsdk/gcc-ranlib-15.2"
-      - "/home/lev/emsdk/upstream/emscripten/gcc-ranlib-15.2"
+      - "/home/linuser/.vscode/extensions/vadimcn.vscode-lldb-1.12.1/bin/gcc-ranlib-15.2"
       - "/usr/local/sbin/gcc-ranlib-15.2"
       - "/usr/local/bin/gcc-ranlib-15.2"
       - "/usr/lib/emscripten/gcc-ranlib-15.2"
-      - "/usr/lib/jvm/default/bin/gcc-ranlib-15.2"
       - "/usr/bin/site_perl/gcc-ranlib-15.2"
       - "/usr/bin/vendor_perl/gcc-ranlib-15.2"
       - "/usr/bin/core_perl/gcc-ranlib-15.2"
       - "/usr/bin/gcc-ranlib-15"
-      - "/home/lev/emsdk/gcc-ranlib-15"
-      - "/home/lev/emsdk/upstream/emscripten/gcc-ranlib-15"
+      - "/home/linuser/.vscode/extensions/vadimcn.vscode-lldb-1.12.1/bin/gcc-ranlib-15"
       - "/usr/local/sbin/gcc-ranlib-15"
       - "/usr/local/bin/gcc-ranlib-15"
       - "/usr/lib/emscripten/gcc-ranlib-15"
-      - "/usr/lib/jvm/default/bin/gcc-ranlib-15"
       - "/usr/bin/site_perl/gcc-ranlib-15"
       - "/usr/bin/vendor_perl/gcc-ranlib-15"
       - "/usr/bin/core_perl/gcc-ranlib-15"
       - "/usr/bin/gcc-ranlib15"
-      - "/home/lev/emsdk/gcc-ranlib15"
-      - "/home/lev/emsdk/upstream/emscripten/gcc-ranlib15"
+      - "/home/linuser/.vscode/extensions/vadimcn.vscode-lldb-1.12.1/bin/gcc-ranlib15"
       - "/usr/local/sbin/gcc-ranlib15"
       - "/usr/local/bin/gcc-ranlib15"
       - "/usr/lib/emscripten/gcc-ranlib15"
-      - "/usr/lib/jvm/default/bin/gcc-ranlib15"
       - "/usr/bin/site_perl/gcc-ranlib15"
       - "/usr/bin/vendor_perl/gcc-ranlib15"
       - "/usr/bin/core_perl/gcc-ranlib15"
     found: "/usr/bin/gcc-ranlib"
     search_context:
       ENV{PATH}:
-        - "/home/lev/emsdk"
-        - "/home/lev/emsdk/upstream/emscripten"
+        - "/home/linuser/.vscode/extensions/vadimcn.vscode-lldb-1.12.1/bin"
         - "/usr/local/sbin"
         - "/usr/local/bin"
         - "/usr/bin"
         - "/usr/lib/emscripten"
-        - "/usr/lib/jvm/default/bin"
         - "/usr/bin/site_perl"
         - "/usr/bin/vendor_perl"
         - "/usr/bin/core_perl"
@@ -1142,8 +1031,8 @@ events:
     checks:
       - "Detecting C compiler ABI info"
     directories:
-      source: "/home/lev/Documents/CPP-Projects/OpenGL-2D-Render/build/CMakeFiles/CMakeScratch/TryCompile-KQqC5L"
-      binary: "/home/lev/Documents/CPP-Projects/OpenGL-2D-Render/build/CMakeFiles/CMakeScratch/TryCompile-KQqC5L"
+      source: "/home/linuser/Documents/CPP-Projects/OpenGL-2D-Render/build/CMakeFiles/CMakeScratch/TryCompile-FFP3hJ"
+      binary: "/home/linuser/Documents/CPP-Projects/OpenGL-2D-Render/build/CMakeFiles/CMakeScratch/TryCompile-FFP3hJ"
     cmakeVariables:
       CMAKE_CXX_STDLIB_MODULES_JSON: ""
       CMAKE_C_FLAGS: ""
@@ -1153,13 +1042,13 @@ events:
       variable: "CMAKE_C_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: '/home/lev/Documents/CPP-Projects/OpenGL-2D-Render/build/CMakeFiles/CMakeScratch/TryCompile-KQqC5L'
+        Change Dir: '/home/linuser/Documents/CPP-Projects/OpenGL-2D-Render/build/CMakeFiles/CMakeScratch/TryCompile-FFP3hJ'
         
-        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_71bf6/fast
-        /usr/bin/make  -f CMakeFiles/cmTC_71bf6.dir/build.make CMakeFiles/cmTC_71bf6.dir/build
-        make[1]: Entering directory '/home/lev/Documents/CPP-Projects/OpenGL-2D-Render/build/CMakeFiles/CMakeScratch/TryCompile-KQqC5L'
-        Building C object CMakeFiles/cmTC_71bf6.dir/CMakeCCompilerABI.c.o
-        /usr/bin/cc   -v -o CMakeFiles/cmTC_71bf6.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake/Modules/CMakeCCompilerABI.c
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_4c00e/fast
+        /usr/bin/make  -f CMakeFiles/cmTC_4c00e.dir/build.make CMakeFiles/cmTC_4c00e.dir/build
+        make[1]: Entering directory '/home/linuser/Documents/CPP-Projects/OpenGL-2D-Render/build/CMakeFiles/CMakeScratch/TryCompile-FFP3hJ'
+        Building C object CMakeFiles/cmTC_4c00e.dir/CMakeCCompilerABI.c.o
+        /usr/bin/cc   -v -o CMakeFiles/cmTC_4c00e.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake/Modules/CMakeCCompilerABI.c
         Using built-in specs.
         COLLECT_GCC=/usr/bin/cc
         Target: x86_64-pc-linux-gnu
@@ -1167,8 +1056,8 @@ events:
         Thread model: posix
         Supported LTO compression algorithms: zlib zstd
         gcc version 15.2.1 20260209 (GCC) 
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_71bf6.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_71bf6.dir/'
-         /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/cc1 -quiet -v /usr/share/cmake/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_71bf6.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=x86-64 -version -o /tmp/cc5G2bFm.s
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_4c00e.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_4c00e.dir/'
+         /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/cc1 -quiet -v /usr/share/cmake/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_4c00e.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=x86-64 -version -o /tmp/cc4gCd25.s
         GNU C23 (GCC) version 15.2.1 20260209 (x86_64-pc-linux-gnu)
         	compiled by GNU C version 15.2.1 20260209, GMP version 6.3.0, MPFR version 4.2.2, MPC version 1.3.1, isl version isl-0.27-GMP
         
@@ -1182,14 +1071,14 @@ events:
          /usr/include
         End of search list.
         Compiler executable checksum: 4a3176b8a5098bb872007d0a1d5e5fb3
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_71bf6.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_71bf6.dir/'
-         as -v --64 -o CMakeFiles/cmTC_71bf6.dir/CMakeCCompilerABI.c.o /tmp/cc5G2bFm.s
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_4c00e.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_4c00e.dir/'
+         as -v --64 -o CMakeFiles/cmTC_4c00e.dir/CMakeCCompilerABI.c.o /tmp/cc4gCd25.s
         GNU assembler version 2.46 (x86_64-pc-linux-gnu) using BFD version (GNU Binutils) 2.46
         COMPILER_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/
         LIBRARY_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../:/lib/:/usr/lib/
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_71bf6.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_71bf6.dir/CMakeCCompilerABI.c.'
-        Linking C executable cmTC_71bf6
-        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_71bf6.dir/link.txt --verbose=1
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_4c00e.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_4c00e.dir/CMakeCCompilerABI.c.'
+        Linking C executable cmTC_4c00e
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_4c00e.dir/link.txt --verbose=1
         Using built-in specs.
         COLLECT_GCC=/usr/bin/cc
         COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/lto-wrapper
@@ -1200,14 +1089,14 @@ events:
         gcc version 15.2.1 20260209 (GCC) 
         COMPILER_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/
         LIBRARY_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../:/lib/:/usr/lib/
-        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_71bf6' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_71bf6.'
-         /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/collect2 -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/lto-wrapper -plugin-opt=-fresolution=/tmp/cc8iNEg8.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_71bf6 /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1 -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_71bf6.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crtn.o
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_4c00e' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_4c00e.'
+         /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/collect2 -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/lto-wrapper -plugin-opt=-fresolution=/tmp/cc6E0FVg.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_4c00e /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1 -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_4c00e.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crtn.o
         collect2 version 15.2.1 20260209
-        /usr/bin/ld -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/lto-wrapper -plugin-opt=-fresolution=/tmp/cc8iNEg8.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_71bf6 /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1 -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_71bf6.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crtn.o
+        /usr/bin/ld -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/lto-wrapper -plugin-opt=-fresolution=/tmp/cc6E0FVg.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_4c00e /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1 -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_4c00e.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crtn.o
         GNU ld (GNU Binutils) 2.46
-        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_71bf6' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_71bf6.'
-        /usr/bin/cc  -v -Wl,-v CMakeFiles/cmTC_71bf6.dir/CMakeCCompilerABI.c.o -o cmTC_71bf6
-        make[1]: Leaving directory '/home/lev/Documents/CPP-Projects/OpenGL-2D-Render/build/CMakeFiles/CMakeScratch/TryCompile-KQqC5L'
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_4c00e' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_4c00e.'
+        /usr/bin/cc  -v -Wl,-v CMakeFiles/cmTC_4c00e.dir/CMakeCCompilerABI.c.o -o cmTC_4c00e
+        make[1]: Leaving directory '/home/linuser/Documents/CPP-Projects/OpenGL-2D-Render/build/CMakeFiles/CMakeScratch/TryCompile-FFP3hJ'
         
       exitCode: 0
   -
@@ -1242,13 +1131,13 @@ events:
       Parsed C implicit link information:
         link line regex: [^( *|.*[/\\])(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
         linker tool regex: [^[ 	]*(->|"|[0-9]+>[ 	-]*Build:[ 	0-9]+ ms[ 	]*)?[ 	]*(([^"]*[/\\])?(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)))("|,| |$)]
-        ignore line: [Change Dir: '/home/lev/Documents/CPP-Projects/OpenGL-2D-Render/build/CMakeFiles/CMakeScratch/TryCompile-KQqC5L']
+        ignore line: [Change Dir: '/home/linuser/Documents/CPP-Projects/OpenGL-2D-Render/build/CMakeFiles/CMakeScratch/TryCompile-FFP3hJ']
         ignore line: []
-        ignore line: [Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_71bf6/fast]
-        ignore line: [/usr/bin/make  -f CMakeFiles/cmTC_71bf6.dir/build.make CMakeFiles/cmTC_71bf6.dir/build]
-        ignore line: [make[1]: Entering directory '/home/lev/Documents/CPP-Projects/OpenGL-2D-Render/build/CMakeFiles/CMakeScratch/TryCompile-KQqC5L']
-        ignore line: [Building C object CMakeFiles/cmTC_71bf6.dir/CMakeCCompilerABI.c.o]
-        ignore line: [/usr/bin/cc   -v -o CMakeFiles/cmTC_71bf6.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake/Modules/CMakeCCompilerABI.c]
+        ignore line: [Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_4c00e/fast]
+        ignore line: [/usr/bin/make  -f CMakeFiles/cmTC_4c00e.dir/build.make CMakeFiles/cmTC_4c00e.dir/build]
+        ignore line: [make[1]: Entering directory '/home/linuser/Documents/CPP-Projects/OpenGL-2D-Render/build/CMakeFiles/CMakeScratch/TryCompile-FFP3hJ']
+        ignore line: [Building C object CMakeFiles/cmTC_4c00e.dir/CMakeCCompilerABI.c.o]
+        ignore line: [/usr/bin/cc   -v -o CMakeFiles/cmTC_4c00e.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake/Modules/CMakeCCompilerABI.c]
         ignore line: [Using built-in specs.]
         ignore line: [COLLECT_GCC=/usr/bin/cc]
         ignore line: [Target: x86_64-pc-linux-gnu]
@@ -1256,8 +1145,8 @@ events:
         ignore line: [Thread model: posix]
         ignore line: [Supported LTO compression algorithms: zlib zstd]
         ignore line: [gcc version 15.2.1 20260209 (GCC) ]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_71bf6.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_71bf6.dir/']
-        ignore line: [ /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/cc1 -quiet -v /usr/share/cmake/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_71bf6.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=x86-64 -version -o /tmp/cc5G2bFm.s]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_4c00e.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_4c00e.dir/']
+        ignore line: [ /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/cc1 -quiet -v /usr/share/cmake/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_4c00e.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=x86-64 -version -o /tmp/cc4gCd25.s]
         ignore line: [GNU C23 (GCC) version 15.2.1 20260209 (x86_64-pc-linux-gnu)]
         ignore line: [	compiled by GNU C version 15.2.1 20260209  GMP version 6.3.0  MPFR version 4.2.2  MPC version 1.3.1  isl version isl-0.27-GMP]
         ignore line: []
@@ -1271,14 +1160,14 @@ events:
         ignore line: [ /usr/include]
         ignore line: [End of search list.]
         ignore line: [Compiler executable checksum: 4a3176b8a5098bb872007d0a1d5e5fb3]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_71bf6.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_71bf6.dir/']
-        ignore line: [ as -v --64 -o CMakeFiles/cmTC_71bf6.dir/CMakeCCompilerABI.c.o /tmp/cc5G2bFm.s]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_4c00e.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_4c00e.dir/']
+        ignore line: [ as -v --64 -o CMakeFiles/cmTC_4c00e.dir/CMakeCCompilerABI.c.o /tmp/cc4gCd25.s]
         ignore line: [GNU assembler version 2.46 (x86_64-pc-linux-gnu) using BFD version (GNU Binutils) 2.46]
         ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/]
         ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../:/lib/:/usr/lib/]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_71bf6.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_71bf6.dir/CMakeCCompilerABI.c.']
-        ignore line: [Linking C executable cmTC_71bf6]
-        ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_71bf6.dir/link.txt --verbose=1]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_4c00e.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_4c00e.dir/CMakeCCompilerABI.c.']
+        ignore line: [Linking C executable cmTC_4c00e]
+        ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_4c00e.dir/link.txt --verbose=1]
         ignore line: [Using built-in specs.]
         ignore line: [COLLECT_GCC=/usr/bin/cc]
         ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/lto-wrapper]
@@ -1289,13 +1178,13 @@ events:
         ignore line: [gcc version 15.2.1 20260209 (GCC) ]
         ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/]
         ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../:/lib/:/usr/lib/]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_71bf6' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_71bf6.']
-        link line: [ /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/collect2 -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/lto-wrapper -plugin-opt=-fresolution=/tmp/cc8iNEg8.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_71bf6 /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1 -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_71bf6.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crtn.o]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_4c00e' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_4c00e.']
+        link line: [ /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/collect2 -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/lto-wrapper -plugin-opt=-fresolution=/tmp/cc6E0FVg.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_4c00e /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1 -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_4c00e.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crtn.o]
           arg [/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/collect2] ==> ignore
           arg [-plugin] ==> ignore
           arg [/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/liblto_plugin.so] ==> ignore
           arg [-plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/lto-wrapper] ==> ignore
-          arg [-plugin-opt=-fresolution=/tmp/cc8iNEg8.res] ==> ignore
+          arg [-plugin-opt=-fresolution=/tmp/cc6E0FVg.res] ==> ignore
           arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
           arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
           arg [-plugin-opt=-pass-through=-lc] ==> ignore
@@ -1310,7 +1199,7 @@ events:
           arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
           arg [-pie] ==> ignore
           arg [-o] ==> ignore
-          arg [cmTC_71bf6] ==> ignore
+          arg [cmTC_4c00e] ==> ignore
           arg [/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/Scrt1.o] ==> obj [/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/Scrt1.o]
           arg [/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crti.o] ==> obj [/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crti.o]
           arg [/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtbeginS.o] ==> obj [/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtbeginS.o]
@@ -1322,7 +1211,7 @@ events:
           arg [-L/lib] ==> dir [/lib]
           arg [-L/usr/lib] ==> dir [/usr/lib]
           arg [-v] ==> ignore
-          arg [CMakeFiles/cmTC_71bf6.dir/CMakeCCompilerABI.c.o] ==> ignore
+          arg [CMakeFiles/cmTC_4c00e.dir/CMakeCCompilerABI.c.o] ==> ignore
           arg [-lgcc] ==> lib [gcc]
           arg [--push-state] ==> ignore
           arg [--as-needed] ==> ignore
@@ -1337,7 +1226,7 @@ events:
           arg [/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtendS.o] ==> obj [/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtendS.o]
           arg [/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crtn.o] ==> obj [/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crtn.o]
         ignore line: [collect2 version 15.2.1 20260209]
-        ignore line: [/usr/bin/ld -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/lto-wrapper -plugin-opt=-fresolution=/tmp/cc8iNEg8.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_71bf6 /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1 -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_71bf6.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crtn.o]
+        ignore line: [/usr/bin/ld -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/lto-wrapper -plugin-opt=-fresolution=/tmp/cc6E0FVg.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_4c00e /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1 -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_4c00e.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crtn.o]
         linker tool for 'C': /usr/bin/ld
         collapse obj [/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/Scrt1.o] ==> [/usr/lib/Scrt1.o]
         collapse obj [/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crti.o] ==> [/usr/lib/crti.o]
@@ -1374,8 +1263,8 @@ events:
     checks:
       - "Detecting CXX compiler ABI info"
     directories:
-      source: "/home/lev/Documents/CPP-Projects/OpenGL-2D-Render/build/CMakeFiles/CMakeScratch/TryCompile-OUOgvR"
-      binary: "/home/lev/Documents/CPP-Projects/OpenGL-2D-Render/build/CMakeFiles/CMakeScratch/TryCompile-OUOgvR"
+      source: "/home/linuser/Documents/CPP-Projects/OpenGL-2D-Render/build/CMakeFiles/CMakeScratch/TryCompile-8zIUNc"
+      binary: "/home/linuser/Documents/CPP-Projects/OpenGL-2D-Render/build/CMakeFiles/CMakeScratch/TryCompile-8zIUNc"
     cmakeVariables:
       CMAKE_CXX_FLAGS: ""
       CMAKE_CXX_FLAGS_DEBUG: "-g"
@@ -1386,13 +1275,13 @@ events:
       variable: "CMAKE_CXX_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: '/home/lev/Documents/CPP-Projects/OpenGL-2D-Render/build/CMakeFiles/CMakeScratch/TryCompile-OUOgvR'
+        Change Dir: '/home/linuser/Documents/CPP-Projects/OpenGL-2D-Render/build/CMakeFiles/CMakeScratch/TryCompile-8zIUNc'
         
-        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_5221b/fast
-        /usr/bin/make  -f CMakeFiles/cmTC_5221b.dir/build.make CMakeFiles/cmTC_5221b.dir/build
-        make[1]: Entering directory '/home/lev/Documents/CPP-Projects/OpenGL-2D-Render/build/CMakeFiles/CMakeScratch/TryCompile-OUOgvR'
-        Building CXX object CMakeFiles/cmTC_5221b.dir/CMakeCXXCompilerABI.cpp.o
-        /usr/bin/c++   -v -o CMakeFiles/cmTC_5221b.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_53c4e/fast
+        /usr/bin/make  -f CMakeFiles/cmTC_53c4e.dir/build.make CMakeFiles/cmTC_53c4e.dir/build
+        make[1]: Entering directory '/home/linuser/Documents/CPP-Projects/OpenGL-2D-Render/build/CMakeFiles/CMakeScratch/TryCompile-8zIUNc'
+        Building CXX object CMakeFiles/cmTC_53c4e.dir/CMakeCXXCompilerABI.cpp.o
+        /usr/bin/c++   -v -o CMakeFiles/cmTC_53c4e.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp
         Using built-in specs.
         COLLECT_GCC=/usr/bin/c++
         Target: x86_64-pc-linux-gnu
@@ -1400,8 +1289,8 @@ events:
         Thread model: posix
         Supported LTO compression algorithms: zlib zstd
         gcc version 15.2.1 20260209 (GCC) 
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_5221b.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_5221b.dir/'
-         /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/cc1plus -quiet -v -D_GNU_SOURCE /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_5221b.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -o /tmp/cc4dD6MP.s
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_53c4e.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_53c4e.dir/'
+         /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/cc1plus -quiet -v -D_GNU_SOURCE /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_53c4e.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -o /tmp/ccND8l0O.s
         GNU C++17 (GCC) version 15.2.1 20260209 (x86_64-pc-linux-gnu)
         	compiled by GNU C version 15.2.1 20260209, GMP version 6.3.0, MPFR version 4.2.2, MPC version 1.3.1, isl version isl-0.27-GMP
         
@@ -1418,14 +1307,14 @@ events:
          /usr/include
         End of search list.
         Compiler executable checksum: 5e3969de92aa3c12a625237f01b15b2f
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_5221b.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_5221b.dir/'
-         as -v --64 -o CMakeFiles/cmTC_5221b.dir/CMakeCXXCompilerABI.cpp.o /tmp/cc4dD6MP.s
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_53c4e.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_53c4e.dir/'
+         as -v --64 -o CMakeFiles/cmTC_53c4e.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccND8l0O.s
         GNU assembler version 2.46 (x86_64-pc-linux-gnu) using BFD version (GNU Binutils) 2.46
         COMPILER_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/
         LIBRARY_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../:/lib/:/usr/lib/
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_5221b.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_5221b.dir/CMakeCXXCompilerABI.cpp.'
-        Linking CXX executable cmTC_5221b
-        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5221b.dir/link.txt --verbose=1
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_53c4e.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_53c4e.dir/CMakeCXXCompilerABI.cpp.'
+        Linking CXX executable cmTC_53c4e
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_53c4e.dir/link.txt --verbose=1
         Using built-in specs.
         COLLECT_GCC=/usr/bin/c++
         COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/lto-wrapper
@@ -1436,14 +1325,14 @@ events:
         gcc version 15.2.1 20260209 (GCC) 
         COMPILER_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/
         LIBRARY_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../:/lib/:/usr/lib/
-        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_5221b' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_5221b.'
-         /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/collect2 -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/lto-wrapper -plugin-opt=-fresolution=/tmp/ccJ5LxE3.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_5221b /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1 -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_5221b.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crtn.o
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_53c4e' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_53c4e.'
+         /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/collect2 -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/lto-wrapper -plugin-opt=-fresolution=/tmp/ccxIGBZy.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_53c4e /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1 -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_53c4e.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crtn.o
         collect2 version 15.2.1 20260209
-        /usr/bin/ld -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/lto-wrapper -plugin-opt=-fresolution=/tmp/ccJ5LxE3.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_5221b /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1 -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_5221b.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crtn.o
+        /usr/bin/ld -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/lto-wrapper -plugin-opt=-fresolution=/tmp/ccxIGBZy.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_53c4e /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1 -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_53c4e.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crtn.o
         GNU ld (GNU Binutils) 2.46
-        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_5221b' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_5221b.'
-        /usr/bin/c++  -v -Wl,-v CMakeFiles/cmTC_5221b.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_5221b
-        make[1]: Leaving directory '/home/lev/Documents/CPP-Projects/OpenGL-2D-Render/build/CMakeFiles/CMakeScratch/TryCompile-OUOgvR'
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_53c4e' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_53c4e.'
+        /usr/bin/c++  -v -Wl,-v CMakeFiles/cmTC_53c4e.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_53c4e
+        make[1]: Leaving directory '/home/linuser/Documents/CPP-Projects/OpenGL-2D-Render/build/CMakeFiles/CMakeScratch/TryCompile-8zIUNc'
         
       exitCode: 0
   -
@@ -1484,13 +1373,13 @@ events:
       Parsed CXX implicit link information:
         link line regex: [^( *|.*[/\\])(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
         linker tool regex: [^[ 	]*(->|"|[0-9]+>[ 	-]*Build:[ 	0-9]+ ms[ 	]*)?[ 	]*(([^"]*[/\\])?(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)))("|,| |$)]
-        ignore line: [Change Dir: '/home/lev/Documents/CPP-Projects/OpenGL-2D-Render/build/CMakeFiles/CMakeScratch/TryCompile-OUOgvR']
+        ignore line: [Change Dir: '/home/linuser/Documents/CPP-Projects/OpenGL-2D-Render/build/CMakeFiles/CMakeScratch/TryCompile-8zIUNc']
         ignore line: []
-        ignore line: [Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_5221b/fast]
-        ignore line: [/usr/bin/make  -f CMakeFiles/cmTC_5221b.dir/build.make CMakeFiles/cmTC_5221b.dir/build]
-        ignore line: [make[1]: Entering directory '/home/lev/Documents/CPP-Projects/OpenGL-2D-Render/build/CMakeFiles/CMakeScratch/TryCompile-OUOgvR']
-        ignore line: [Building CXX object CMakeFiles/cmTC_5221b.dir/CMakeCXXCompilerABI.cpp.o]
-        ignore line: [/usr/bin/c++   -v -o CMakeFiles/cmTC_5221b.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp]
+        ignore line: [Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_53c4e/fast]
+        ignore line: [/usr/bin/make  -f CMakeFiles/cmTC_53c4e.dir/build.make CMakeFiles/cmTC_53c4e.dir/build]
+        ignore line: [make[1]: Entering directory '/home/linuser/Documents/CPP-Projects/OpenGL-2D-Render/build/CMakeFiles/CMakeScratch/TryCompile-8zIUNc']
+        ignore line: [Building CXX object CMakeFiles/cmTC_53c4e.dir/CMakeCXXCompilerABI.cpp.o]
+        ignore line: [/usr/bin/c++   -v -o CMakeFiles/cmTC_53c4e.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp]
         ignore line: [Using built-in specs.]
         ignore line: [COLLECT_GCC=/usr/bin/c++]
         ignore line: [Target: x86_64-pc-linux-gnu]
@@ -1498,8 +1387,8 @@ events:
         ignore line: [Thread model: posix]
         ignore line: [Supported LTO compression algorithms: zlib zstd]
         ignore line: [gcc version 15.2.1 20260209 (GCC) ]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_5221b.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_5221b.dir/']
-        ignore line: [ /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/cc1plus -quiet -v -D_GNU_SOURCE /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_5221b.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -o /tmp/cc4dD6MP.s]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_53c4e.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_53c4e.dir/']
+        ignore line: [ /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/cc1plus -quiet -v -D_GNU_SOURCE /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_53c4e.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -o /tmp/ccND8l0O.s]
         ignore line: [GNU C++17 (GCC) version 15.2.1 20260209 (x86_64-pc-linux-gnu)]
         ignore line: [	compiled by GNU C version 15.2.1 20260209  GMP version 6.3.0  MPFR version 4.2.2  MPC version 1.3.1  isl version isl-0.27-GMP]
         ignore line: []
@@ -1516,14 +1405,14 @@ events:
         ignore line: [ /usr/include]
         ignore line: [End of search list.]
         ignore line: [Compiler executable checksum: 5e3969de92aa3c12a625237f01b15b2f]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_5221b.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_5221b.dir/']
-        ignore line: [ as -v --64 -o CMakeFiles/cmTC_5221b.dir/CMakeCXXCompilerABI.cpp.o /tmp/cc4dD6MP.s]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_53c4e.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_53c4e.dir/']
+        ignore line: [ as -v --64 -o CMakeFiles/cmTC_53c4e.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccND8l0O.s]
         ignore line: [GNU assembler version 2.46 (x86_64-pc-linux-gnu) using BFD version (GNU Binutils) 2.46]
         ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/]
         ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../:/lib/:/usr/lib/]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_5221b.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_5221b.dir/CMakeCXXCompilerABI.cpp.']
-        ignore line: [Linking CXX executable cmTC_5221b]
-        ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5221b.dir/link.txt --verbose=1]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_53c4e.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_53c4e.dir/CMakeCXXCompilerABI.cpp.']
+        ignore line: [Linking CXX executable cmTC_53c4e]
+        ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_53c4e.dir/link.txt --verbose=1]
         ignore line: [Using built-in specs.]
         ignore line: [COLLECT_GCC=/usr/bin/c++]
         ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/lto-wrapper]
@@ -1534,13 +1423,13 @@ events:
         ignore line: [gcc version 15.2.1 20260209 (GCC) ]
         ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/]
         ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../:/lib/:/usr/lib/]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_5221b' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_5221b.']
-        link line: [ /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/collect2 -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/lto-wrapper -plugin-opt=-fresolution=/tmp/ccJ5LxE3.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_5221b /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1 -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_5221b.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crtn.o]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_53c4e' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_53c4e.']
+        link line: [ /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/collect2 -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/lto-wrapper -plugin-opt=-fresolution=/tmp/ccxIGBZy.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_53c4e /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1 -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_53c4e.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crtn.o]
           arg [/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/collect2] ==> ignore
           arg [-plugin] ==> ignore
           arg [/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/liblto_plugin.so] ==> ignore
           arg [-plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/lto-wrapper] ==> ignore
-          arg [-plugin-opt=-fresolution=/tmp/ccJ5LxE3.res] ==> ignore
+          arg [-plugin-opt=-fresolution=/tmp/ccxIGBZy.res] ==> ignore
           arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
           arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
           arg [-plugin-opt=-pass-through=-lc] ==> ignore
@@ -1555,7 +1444,7 @@ events:
           arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
           arg [-pie] ==> ignore
           arg [-o] ==> ignore
-          arg [cmTC_5221b] ==> ignore
+          arg [cmTC_53c4e] ==> ignore
           arg [/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/Scrt1.o] ==> obj [/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/Scrt1.o]
           arg [/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crti.o] ==> obj [/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crti.o]
           arg [/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtbeginS.o] ==> obj [/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtbeginS.o]
@@ -1567,7 +1456,7 @@ events:
           arg [-L/lib] ==> dir [/lib]
           arg [-L/usr/lib] ==> dir [/usr/lib]
           arg [-v] ==> ignore
-          arg [CMakeFiles/cmTC_5221b.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+          arg [CMakeFiles/cmTC_53c4e.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
           arg [-lstdc++] ==> lib [stdc++]
           arg [-lm] ==> lib [m]
           arg [-lgcc_s] ==> lib [gcc_s]
@@ -1578,7 +1467,7 @@ events:
           arg [/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtendS.o] ==> obj [/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtendS.o]
           arg [/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crtn.o] ==> obj [/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crtn.o]
         ignore line: [collect2 version 15.2.1 20260209]
-        ignore line: [/usr/bin/ld -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/lto-wrapper -plugin-opt=-fresolution=/tmp/ccJ5LxE3.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_5221b /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1 -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_5221b.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crtn.o]
+        ignore line: [/usr/bin/ld -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/lto-wrapper -plugin-opt=-fresolution=/tmp/ccxIGBZy.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_53c4e /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1 -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_53c4e.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crtn.o]
         linker tool for 'CXX': /usr/bin/ld
         collapse obj [/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/Scrt1.o] ==> [/usr/lib/Scrt1.o]
         collapse obj [/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crti.o] ==> [/usr/lib/crti.o]
@@ -1620,8 +1509,8 @@ events:
     checks:
       - "Performing Test CMAKE_HAVE_LIBC_PTHREAD"
     directories:
-      source: "/home/lev/Documents/CPP-Projects/OpenGL-2D-Render/build/CMakeFiles/CMakeScratch/TryCompile-Oxjyvg"
-      binary: "/home/lev/Documents/CPP-Projects/OpenGL-2D-Render/build/CMakeFiles/CMakeScratch/TryCompile-Oxjyvg"
+      source: "/home/linuser/Documents/CPP-Projects/OpenGL-2D-Render/build/CMakeFiles/CMakeScratch/TryCompile-zB5cIr"
+      binary: "/home/linuser/Documents/CPP-Projects/OpenGL-2D-Render/build/CMakeFiles/CMakeScratch/TryCompile-zB5cIr"
     cmakeVariables:
       CMAKE_CXX_STDLIB_MODULES_JSON: ""
       CMAKE_C_FLAGS: ""
@@ -1631,17 +1520,17 @@ events:
       variable: "CMAKE_HAVE_LIBC_PTHREAD"
       cached: true
       stdout: |
-        Change Dir: '/home/lev/Documents/CPP-Projects/OpenGL-2D-Render/build/CMakeFiles/CMakeScratch/TryCompile-Oxjyvg'
+        Change Dir: '/home/linuser/Documents/CPP-Projects/OpenGL-2D-Render/build/CMakeFiles/CMakeScratch/TryCompile-zB5cIr'
         
-        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_9440c/fast
-        /usr/bin/make  -f CMakeFiles/cmTC_9440c.dir/build.make CMakeFiles/cmTC_9440c.dir/build
-        make[1]: Entering directory '/home/lev/Documents/CPP-Projects/OpenGL-2D-Render/build/CMakeFiles/CMakeScratch/TryCompile-Oxjyvg'
-        Building C object CMakeFiles/cmTC_9440c.dir/src.c.o
-        /usr/bin/cc -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_9440c.dir/src.c.o -c /home/lev/Documents/CPP-Projects/OpenGL-2D-Render/build/CMakeFiles/CMakeScratch/TryCompile-Oxjyvg/src.c
-        Linking C executable cmTC_9440c
-        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_9440c.dir/link.txt --verbose=1
-        /usr/bin/cc CMakeFiles/cmTC_9440c.dir/src.c.o -o cmTC_9440c
-        make[1]: Leaving directory '/home/lev/Documents/CPP-Projects/OpenGL-2D-Render/build/CMakeFiles/CMakeScratch/TryCompile-Oxjyvg'
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_5b46f/fast
+        /usr/bin/make  -f CMakeFiles/cmTC_5b46f.dir/build.make CMakeFiles/cmTC_5b46f.dir/build
+        make[1]: Entering directory '/home/linuser/Documents/CPP-Projects/OpenGL-2D-Render/build/CMakeFiles/CMakeScratch/TryCompile-zB5cIr'
+        Building C object CMakeFiles/cmTC_5b46f.dir/src.c.o
+        /usr/bin/cc -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_5b46f.dir/src.c.o -c /home/linuser/Documents/CPP-Projects/OpenGL-2D-Render/build/CMakeFiles/CMakeScratch/TryCompile-zB5cIr/src.c
+        Linking C executable cmTC_5b46f
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5b46f.dir/link.txt --verbose=1
+        /usr/bin/cc CMakeFiles/cmTC_5b46f.dir/src.c.o -o cmTC_5b46f
+        make[1]: Leaving directory '/home/linuser/Documents/CPP-Projects/OpenGL-2D-Render/build/CMakeFiles/CMakeScratch/TryCompile-zB5cIr'
         
       exitCode: 0
   -
@@ -1683,59 +1572,35 @@ events:
         CMAKE_FIND_ROOT_PATH_MODE: "BOTH"
     candidates:
       -
-        path: "/home/lev/Documents/CPP-Projects/OpenGL-2D-Render/build/CMakeFiles/pkgRedirects/glfw3Config.cmake"
+        path: "/home/linuser/Documents/CPP-Projects/OpenGL-2D-Render/build/CMakeFiles/pkgRedirects/glfw3Config.cmake"
         mode: "config"
         reason: "no_exist"
       -
-        path: "/home/lev/Documents/CPP-Projects/OpenGL-2D-Render/build/CMakeFiles/pkgRedirects/glfw3-config.cmake"
+        path: "/home/linuser/Documents/CPP-Projects/OpenGL-2D-Render/build/CMakeFiles/pkgRedirects/glfw3-config.cmake"
         mode: "config"
         reason: "no_exist"
       -
-        path: "/home/lev/Documents/CPP-Projects/OpenGL-2D-Render/build/CMakeFiles/pkgRedirects/lib/cps/glfw3.cps"
+        path: "/home/linuser/Documents/CPP-Projects/OpenGL-2D-Render/build/CMakeFiles/pkgRedirects/lib/cps/glfw3.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/lev/Documents/CPP-Projects/OpenGL-2D-Render/build/CMakeFiles/pkgRedirects/share/cps/glfw3.cps"
+        path: "/home/linuser/Documents/CPP-Projects/OpenGL-2D-Render/build/CMakeFiles/pkgRedirects/share/cps/glfw3.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/lev/emsdk/glfw3Config.cmake"
+        path: "/home/linuser/.vscode/extensions/vadimcn.vscode-lldb-1.12.1/glfw3Config.cmake"
         mode: "config"
         reason: "no_exist"
       -
-        path: "/home/lev/emsdk/glfw3-config.cmake"
+        path: "/home/linuser/.vscode/extensions/vadimcn.vscode-lldb-1.12.1/glfw3-config.cmake"
         mode: "config"
         reason: "no_exist"
       -
-        path: "/home/lev/emsdk/lib/cps/glfw3.cps"
+        path: "/home/linuser/.vscode/extensions/vadimcn.vscode-lldb-1.12.1/lib/cps/glfw3.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/lev/emsdk/share/cps/glfw3.cps"
-        mode: "cps"
-        reason: "no_exist"
-      -
-        path: "/home/lev/emsdk/upstream/emscripten/glfw3Config.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/home/lev/emsdk/upstream/emscripten/glfw3-config.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/home/lev/emsdk/upstream/emscripten/cmake/glfw3Config.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/home/lev/emsdk/upstream/emscripten/cmake/glfw3-config.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/home/lev/emsdk/upstream/emscripten/lib/cps/glfw3.cps"
-        mode: "cps"
-        reason: "no_exist"
-      -
-        path: "/home/lev/emsdk/upstream/emscripten/share/cps/glfw3.cps"
+        path: "/home/linuser/.vscode/extensions/vadimcn.vscode-lldb-1.12.1/share/cps/glfw3.cps"
         mode: "cps"
         reason: "no_exist"
       -
@@ -1776,13 +1641,11 @@ events:
       version: "3.4.0"
     search_context:
       ENV{PATH}:
-        - "/home/lev/emsdk"
-        - "/home/lev/emsdk/upstream/emscripten"
+        - "/home/linuser/.vscode/extensions/vadimcn.vscode-lldb-1.12.1/bin"
         - "/usr/local/sbin"
         - "/usr/local/bin"
         - "/usr/bin"
         - "/usr/lib/emscripten"
-        - "/usr/lib/jvm/default/bin"
         - "/usr/bin/site_perl"
         - "/usr/bin/vendor_perl"
         - "/usr/bin/core_perl"
@@ -1815,13 +1678,11 @@ events:
     names:
       - "GL/gl.h"
     candidate_directories:
-      - "/home/lev/emsdk/"
-      - "/home/lev/emsdk/upstream/emscripten/"
+      - "/home/linuser/.vscode/extensions/vadimcn.vscode-lldb-1.12.1/bin/"
       - "/usr/local/sbin/"
       - "/usr/local/bin/"
       - "/usr/bin/"
       - "/usr/lib/emscripten/"
-      - "/usr/lib/jvm/default/bin/"
       - "/usr/bin/site_perl/"
       - "/usr/bin/vendor_perl/"
       - "/usr/bin/core_perl/"
@@ -1841,13 +1702,11 @@ events:
       - "/usr/openwin/share/include/"
       - "/opt/graphics/OpenGL/include/"
     searched_directories:
-      - "/home/lev/emsdk/GL/gl.h"
-      - "/home/lev/emsdk/upstream/emscripten/GL/gl.h"
+      - "/home/linuser/.vscode/extensions/vadimcn.vscode-lldb-1.12.1/bin/GL/gl.h"
       - "/usr/local/sbin/GL/gl.h"
       - "/usr/local/bin/GL/gl.h"
       - "/usr/bin/GL/gl.h"
       - "/usr/lib/emscripten/GL/gl.h"
-      - "/usr/lib/jvm/default/bin/GL/gl.h"
       - "/usr/bin/site_perl/GL/gl.h"
       - "/usr/bin/vendor_perl/GL/gl.h"
       - "/usr/bin/core_perl/GL/gl.h"
@@ -1856,13 +1715,11 @@ events:
     found: "/usr/include/"
     search_context:
       ENV{PATH}:
-        - "/home/lev/emsdk"
-        - "/home/lev/emsdk/upstream/emscripten"
+        - "/home/linuser/.vscode/extensions/vadimcn.vscode-lldb-1.12.1/bin"
         - "/usr/local/sbin"
         - "/usr/local/bin"
         - "/usr/bin"
         - "/usr/lib/emscripten"
-        - "/usr/lib/jvm/default/bin"
         - "/usr/bin/site_perl"
         - "/usr/bin/vendor_perl"
         - "/usr/bin/core_perl"
@@ -1897,13 +1754,11 @@ events:
     names:
       - "GL/glx.h"
     candidate_directories:
-      - "/home/lev/emsdk/"
-      - "/home/lev/emsdk/upstream/emscripten/"
+      - "/home/linuser/.vscode/extensions/vadimcn.vscode-lldb-1.12.1/bin/"
       - "/usr/local/sbin/"
       - "/usr/local/bin/"
       - "/usr/bin/"
       - "/usr/lib/emscripten/"
-      - "/usr/lib/jvm/default/bin/"
       - "/usr/bin/site_perl/"
       - "/usr/bin/vendor_perl/"
       - "/usr/bin/core_perl/"
@@ -1920,13 +1775,11 @@ events:
       - "/opt/"
       - "/usr/include/X11/"
     searched_directories:
-      - "/home/lev/emsdk/GL/glx.h"
-      - "/home/lev/emsdk/upstream/emscripten/GL/glx.h"
+      - "/home/linuser/.vscode/extensions/vadimcn.vscode-lldb-1.12.1/bin/GL/glx.h"
       - "/usr/local/sbin/GL/glx.h"
       - "/usr/local/bin/GL/glx.h"
       - "/usr/bin/GL/glx.h"
       - "/usr/lib/emscripten/GL/glx.h"
-      - "/usr/lib/jvm/default/bin/GL/glx.h"
       - "/usr/bin/site_perl/GL/glx.h"
       - "/usr/bin/vendor_perl/GL/glx.h"
       - "/usr/bin/core_perl/GL/glx.h"
@@ -1935,13 +1788,11 @@ events:
     found: "/usr/include/"
     search_context:
       ENV{PATH}:
-        - "/home/lev/emsdk"
-        - "/home/lev/emsdk/upstream/emscripten"
+        - "/home/linuser/.vscode/extensions/vadimcn.vscode-lldb-1.12.1/bin"
         - "/usr/local/sbin"
         - "/usr/local/bin"
         - "/usr/bin"
         - "/usr/lib/emscripten"
-        - "/usr/lib/jvm/default/bin"
         - "/usr/bin/site_perl"
         - "/usr/bin/vendor_perl"
         - "/usr/bin/core_perl"
@@ -1976,13 +1827,11 @@ events:
     names:
       - "EGL/egl.h"
     candidate_directories:
-      - "/home/lev/emsdk/"
-      - "/home/lev/emsdk/upstream/emscripten/"
+      - "/home/linuser/.vscode/extensions/vadimcn.vscode-lldb-1.12.1/bin/"
       - "/usr/local/sbin/"
       - "/usr/local/bin/"
       - "/usr/bin/"
       - "/usr/lib/emscripten/"
-      - "/usr/lib/jvm/default/bin/"
       - "/usr/bin/site_perl/"
       - "/usr/bin/vendor_perl/"
       - "/usr/bin/core_perl/"
@@ -1999,13 +1848,11 @@ events:
       - "/opt/"
       - "/usr/include/X11/"
     searched_directories:
-      - "/home/lev/emsdk/EGL/egl.h"
-      - "/home/lev/emsdk/upstream/emscripten/EGL/egl.h"
+      - "/home/linuser/.vscode/extensions/vadimcn.vscode-lldb-1.12.1/bin/EGL/egl.h"
       - "/usr/local/sbin/EGL/egl.h"
       - "/usr/local/bin/EGL/egl.h"
       - "/usr/bin/EGL/egl.h"
       - "/usr/lib/emscripten/EGL/egl.h"
-      - "/usr/lib/jvm/default/bin/EGL/egl.h"
       - "/usr/bin/site_perl/EGL/egl.h"
       - "/usr/bin/vendor_perl/EGL/egl.h"
       - "/usr/bin/core_perl/EGL/egl.h"
@@ -2014,13 +1861,11 @@ events:
     found: "/usr/include/"
     search_context:
       ENV{PATH}:
-        - "/home/lev/emsdk"
-        - "/home/lev/emsdk/upstream/emscripten"
+        - "/home/linuser/.vscode/extensions/vadimcn.vscode-lldb-1.12.1/bin"
         - "/usr/local/sbin"
         - "/usr/local/bin"
         - "/usr/bin"
         - "/usr/lib/emscripten"
-        - "/usr/lib/jvm/default/bin"
         - "/usr/bin/site_perl"
         - "/usr/bin/vendor_perl"
         - "/usr/bin/core_perl"
@@ -2055,13 +1900,11 @@ events:
     names:
       - "GLES2/gl2.h"
     candidate_directories:
-      - "/home/lev/emsdk/"
-      - "/home/lev/emsdk/upstream/emscripten/"
+      - "/home/linuser/.vscode/extensions/vadimcn.vscode-lldb-1.12.1/bin/"
       - "/usr/local/sbin/"
       - "/usr/local/bin/"
       - "/usr/bin/"
       - "/usr/lib/emscripten/"
-      - "/usr/lib/jvm/default/bin/"
       - "/usr/bin/site_perl/"
       - "/usr/bin/vendor_perl/"
       - "/usr/bin/core_perl/"
@@ -2078,13 +1921,11 @@ events:
       - "/opt/"
       - "/usr/include/X11/"
     searched_directories:
-      - "/home/lev/emsdk/GLES2/gl2.h"
-      - "/home/lev/emsdk/upstream/emscripten/GLES2/gl2.h"
+      - "/home/linuser/.vscode/extensions/vadimcn.vscode-lldb-1.12.1/bin/GLES2/gl2.h"
       - "/usr/local/sbin/GLES2/gl2.h"
       - "/usr/local/bin/GLES2/gl2.h"
       - "/usr/bin/GLES2/gl2.h"
       - "/usr/lib/emscripten/GLES2/gl2.h"
-      - "/usr/lib/jvm/default/bin/GLES2/gl2.h"
       - "/usr/bin/site_perl/GLES2/gl2.h"
       - "/usr/bin/vendor_perl/GLES2/gl2.h"
       - "/usr/bin/core_perl/GLES2/gl2.h"
@@ -2093,13 +1934,11 @@ events:
     found: "/usr/include/"
     search_context:
       ENV{PATH}:
-        - "/home/lev/emsdk"
-        - "/home/lev/emsdk/upstream/emscripten"
+        - "/home/linuser/.vscode/extensions/vadimcn.vscode-lldb-1.12.1/bin"
         - "/usr/local/sbin"
         - "/usr/local/bin"
         - "/usr/bin"
         - "/usr/lib/emscripten"
-        - "/usr/lib/jvm/default/bin"
         - "/usr/bin/site_perl"
         - "/usr/bin/vendor_perl"
         - "/usr/bin/core_perl"
@@ -2134,13 +1973,11 @@ events:
     names:
       - "GLES3/gl3.h"
     candidate_directories:
-      - "/home/lev/emsdk/"
-      - "/home/lev/emsdk/upstream/emscripten/"
+      - "/home/linuser/.vscode/extensions/vadimcn.vscode-lldb-1.12.1/bin/"
       - "/usr/local/sbin/"
       - "/usr/local/bin/"
       - "/usr/bin/"
       - "/usr/lib/emscripten/"
-      - "/usr/lib/jvm/default/bin/"
       - "/usr/bin/site_perl/"
       - "/usr/bin/vendor_perl/"
       - "/usr/bin/core_perl/"
@@ -2157,13 +1994,11 @@ events:
       - "/opt/"
       - "/usr/include/X11/"
     searched_directories:
-      - "/home/lev/emsdk/GLES3/gl3.h"
-      - "/home/lev/emsdk/upstream/emscripten/GLES3/gl3.h"
+      - "/home/linuser/.vscode/extensions/vadimcn.vscode-lldb-1.12.1/bin/GLES3/gl3.h"
       - "/usr/local/sbin/GLES3/gl3.h"
       - "/usr/local/bin/GLES3/gl3.h"
       - "/usr/bin/GLES3/gl3.h"
       - "/usr/lib/emscripten/GLES3/gl3.h"
-      - "/usr/lib/jvm/default/bin/GLES3/gl3.h"
       - "/usr/bin/site_perl/GLES3/gl3.h"
       - "/usr/bin/vendor_perl/GLES3/gl3.h"
       - "/usr/bin/core_perl/GLES3/gl3.h"
@@ -2172,13 +2007,11 @@ events:
     found: "/usr/include/"
     search_context:
       ENV{PATH}:
-        - "/home/lev/emsdk"
-        - "/home/lev/emsdk/upstream/emscripten"
+        - "/home/linuser/.vscode/extensions/vadimcn.vscode-lldb-1.12.1/bin"
         - "/usr/local/sbin"
         - "/usr/local/bin"
         - "/usr/bin"
         - "/usr/lib/emscripten"
-        - "/usr/lib/jvm/default/bin"
         - "/usr/bin/site_perl"
         - "/usr/bin/vendor_perl"
         - "/usr/bin/core_perl"
@@ -2213,13 +2046,11 @@ events:
     names:
       - "GL/xmesa.h"
     candidate_directories:
-      - "/home/lev/emsdk/"
-      - "/home/lev/emsdk/upstream/emscripten/"
+      - "/home/linuser/.vscode/extensions/vadimcn.vscode-lldb-1.12.1/bin/"
       - "/usr/local/sbin/"
       - "/usr/local/bin/"
       - "/usr/bin/"
       - "/usr/lib/emscripten/"
-      - "/usr/lib/jvm/default/bin/"
       - "/usr/bin/site_perl/"
       - "/usr/bin/vendor_perl/"
       - "/usr/bin/core_perl/"
@@ -2239,13 +2070,11 @@ events:
       - "/usr/openwin/share/include/"
       - "/opt/graphics/OpenGL/include/"
     searched_directories:
-      - "/home/lev/emsdk/GL/xmesa.h"
-      - "/home/lev/emsdk/upstream/emscripten/GL/xmesa.h"
+      - "/home/linuser/.vscode/extensions/vadimcn.vscode-lldb-1.12.1/bin/GL/xmesa.h"
       - "/usr/local/sbin/GL/xmesa.h"
       - "/usr/local/bin/GL/xmesa.h"
       - "/usr/bin/GL/xmesa.h"
       - "/usr/lib/emscripten/GL/xmesa.h"
-      - "/usr/lib/jvm/default/bin/GL/xmesa.h"
       - "/usr/bin/site_perl/GL/xmesa.h"
       - "/usr/bin/vendor_perl/GL/xmesa.h"
       - "/usr/bin/core_perl/GL/xmesa.h"
@@ -2267,13 +2096,11 @@ events:
     found: false
     search_context:
       ENV{PATH}:
-        - "/home/lev/emsdk"
-        - "/home/lev/emsdk/upstream/emscripten"
+        - "/home/linuser/.vscode/extensions/vadimcn.vscode-lldb-1.12.1/bin"
         - "/usr/local/sbin"
         - "/usr/local/bin"
         - "/usr/bin"
         - "/usr/lib/emscripten"
-        - "/usr/lib/jvm/default/bin"
         - "/usr/bin/site_perl"
         - "/usr/bin/vendor_perl"
         - "/usr/bin/core_perl"
@@ -2308,13 +2135,11 @@ events:
     names:
       - "GL/glu.h"
     candidate_directories:
-      - "/home/lev/emsdk/"
-      - "/home/lev/emsdk/upstream/emscripten/"
+      - "/home/linuser/.vscode/extensions/vadimcn.vscode-lldb-1.12.1/bin/"
       - "/usr/local/sbin/"
       - "/usr/local/bin/"
       - "/usr/bin/"
       - "/usr/lib/emscripten/"
-      - "/usr/lib/jvm/default/bin/"
       - "/usr/bin/site_perl/"
       - "/usr/bin/vendor_perl/"
       - "/usr/bin/core_perl/"
@@ -2331,13 +2156,11 @@ events:
       - "/opt/"
       - "/usr/include/X11/"
     searched_directories:
-      - "/home/lev/emsdk/GL/glu.h"
-      - "/home/lev/emsdk/upstream/emscripten/GL/glu.h"
+      - "/home/linuser/.vscode/extensions/vadimcn.vscode-lldb-1.12.1/bin/GL/glu.h"
       - "/usr/local/sbin/GL/glu.h"
       - "/usr/local/bin/GL/glu.h"
       - "/usr/bin/GL/glu.h"
       - "/usr/lib/emscripten/GL/glu.h"
-      - "/usr/lib/jvm/default/bin/GL/glu.h"
       - "/usr/bin/site_perl/GL/glu.h"
       - "/usr/bin/vendor_perl/GL/glu.h"
       - "/usr/bin/core_perl/GL/glu.h"
@@ -2346,13 +2169,11 @@ events:
     found: "/usr/include/"
     search_context:
       ENV{PATH}:
-        - "/home/lev/emsdk"
-        - "/home/lev/emsdk/upstream/emscripten"
+        - "/home/linuser/.vscode/extensions/vadimcn.vscode-lldb-1.12.1/bin"
         - "/usr/local/sbin"
         - "/usr/local/bin"
         - "/usr/bin"
         - "/usr/lib/emscripten"
-        - "/usr/lib/jvm/default/bin"
         - "/usr/bin/site_perl"
         - "/usr/bin/vendor_perl"
         - "/usr/bin/core_perl"
@@ -2387,13 +2208,11 @@ events:
     names:
       - "OpenGL"
     candidate_directories:
-      - "/home/lev/emsdk/"
-      - "/home/lev/emsdk/upstream/emscripten/"
+      - "/home/linuser/.vscode/extensions/vadimcn.vscode-lldb-1.12.1/bin/"
       - "/usr/local/sbin/"
       - "/usr/local/bin/"
       - "/usr/bin/"
       - "/usr/lib/emscripten/"
-      - "/usr/lib/jvm/default/bin/"
       - "/usr/bin/site_perl/"
       - "/usr/bin/vendor_perl/"
       - "/usr/bin/core_perl/"
@@ -2410,13 +2229,11 @@ events:
       - "/opt/"
       - "/usr/lib/X11/"
     searched_directories:
-      - "/home/lev/emsdk/"
-      - "/home/lev/emsdk/upstream/emscripten/"
+      - "/home/linuser/.vscode/extensions/vadimcn.vscode-lldb-1.12.1/bin/"
       - "/usr/local/sbin/"
       - "/usr/local/bin/"
       - "/usr/bin/"
       - "/usr/lib/emscripten/"
-      - "/usr/lib/jvm/default/bin/"
       - "/usr/bin/site_perl/"
       - "/usr/bin/vendor_perl/"
       - "/usr/bin/core_perl/"
@@ -2425,13 +2242,11 @@ events:
     found: "/usr/lib/libOpenGL.so"
     search_context:
       ENV{PATH}:
-        - "/home/lev/emsdk"
-        - "/home/lev/emsdk/upstream/emscripten"
+        - "/home/linuser/.vscode/extensions/vadimcn.vscode-lldb-1.12.1/bin"
         - "/usr/local/sbin"
         - "/usr/local/bin"
         - "/usr/bin"
         - "/usr/lib/emscripten"
-        - "/usr/lib/jvm/default/bin"
         - "/usr/bin/site_perl"
         - "/usr/bin/vendor_perl"
         - "/usr/bin/core_perl"
@@ -2466,10 +2281,8 @@ events:
     names:
       - "GLX"
     candidate_directories:
-      - "/home/lev/emsdk/libglvnd/"
-      - "/home/lev/emsdk/"
-      - "/home/lev/emsdk/upstream/emscripten/libglvnd/"
-      - "/home/lev/emsdk/upstream/emscripten/"
+      - "/home/linuser/.vscode/extensions/vadimcn.vscode-lldb-1.12.1/bin/libglvnd/"
+      - "/home/linuser/.vscode/extensions/vadimcn.vscode-lldb-1.12.1/bin/"
       - "/usr/local/sbin/libglvnd/"
       - "/usr/local/sbin/"
       - "/usr/local/bin/libglvnd/"
@@ -2478,8 +2291,6 @@ events:
       - "/usr/bin/"
       - "/usr/lib/emscripten/libglvnd/"
       - "/usr/lib/emscripten/"
-      - "/usr/lib/jvm/default/bin/libglvnd/"
-      - "/usr/lib/jvm/default/bin/"
       - "/usr/bin/site_perl/libglvnd/"
       - "/usr/bin/site_perl/"
       - "/usr/bin/vendor_perl/libglvnd/"
@@ -2511,10 +2322,8 @@ events:
       - "/usr/lib/X11/libglvnd/"
       - "/usr/lib/X11/"
     searched_directories:
-      - "/home/lev/emsdk/libglvnd/"
-      - "/home/lev/emsdk/"
-      - "/home/lev/emsdk/upstream/emscripten/libglvnd/"
-      - "/home/lev/emsdk/upstream/emscripten/"
+      - "/home/linuser/.vscode/extensions/vadimcn.vscode-lldb-1.12.1/bin/libglvnd/"
+      - "/home/linuser/.vscode/extensions/vadimcn.vscode-lldb-1.12.1/bin/"
       - "/usr/local/sbin/libglvnd/"
       - "/usr/local/sbin/"
       - "/usr/local/bin/libglvnd/"
@@ -2523,8 +2332,6 @@ events:
       - "/usr/bin/"
       - "/usr/lib/emscripten/libglvnd/"
       - "/usr/lib/emscripten/"
-      - "/usr/lib/jvm/default/bin/libglvnd/"
-      - "/usr/lib/jvm/default/bin/"
       - "/usr/bin/site_perl/libglvnd/"
       - "/usr/bin/site_perl/"
       - "/usr/bin/vendor_perl/libglvnd/"
@@ -2539,13 +2346,11 @@ events:
     found: "/usr/lib/libGLX.so"
     search_context:
       ENV{PATH}:
-        - "/home/lev/emsdk"
-        - "/home/lev/emsdk/upstream/emscripten"
+        - "/home/linuser/.vscode/extensions/vadimcn.vscode-lldb-1.12.1/bin"
         - "/usr/local/sbin"
         - "/usr/local/bin"
         - "/usr/bin"
         - "/usr/lib/emscripten"
-        - "/usr/lib/jvm/default/bin"
         - "/usr/bin/site_perl"
         - "/usr/bin/vendor_perl"
         - "/usr/bin/core_perl"
@@ -2580,10 +2385,8 @@ events:
     names:
       - "EGL"
     candidate_directories:
-      - "/home/lev/emsdk/libglvnd/"
-      - "/home/lev/emsdk/"
-      - "/home/lev/emsdk/upstream/emscripten/libglvnd/"
-      - "/home/lev/emsdk/upstream/emscripten/"
+      - "/home/linuser/.vscode/extensions/vadimcn.vscode-lldb-1.12.1/bin/libglvnd/"
+      - "/home/linuser/.vscode/extensions/vadimcn.vscode-lldb-1.12.1/bin/"
       - "/usr/local/sbin/libglvnd/"
       - "/usr/local/sbin/"
       - "/usr/local/bin/libglvnd/"
@@ -2592,8 +2395,6 @@ events:
       - "/usr/bin/"
       - "/usr/lib/emscripten/libglvnd/"
       - "/usr/lib/emscripten/"
-      - "/usr/lib/jvm/default/bin/libglvnd/"
-      - "/usr/lib/jvm/default/bin/"
       - "/usr/bin/site_perl/libglvnd/"
       - "/usr/bin/site_perl/"
       - "/usr/bin/vendor_perl/libglvnd/"
@@ -2625,10 +2426,8 @@ events:
       - "/usr/lib/X11/libglvnd/"
       - "/usr/lib/X11/"
     searched_directories:
-      - "/home/lev/emsdk/libglvnd/"
-      - "/home/lev/emsdk/"
-      - "/home/lev/emsdk/upstream/emscripten/libglvnd/"
-      - "/home/lev/emsdk/upstream/emscripten/"
+      - "/home/linuser/.vscode/extensions/vadimcn.vscode-lldb-1.12.1/bin/libglvnd/"
+      - "/home/linuser/.vscode/extensions/vadimcn.vscode-lldb-1.12.1/bin/"
       - "/usr/local/sbin/libglvnd/"
       - "/usr/local/sbin/"
       - "/usr/local/bin/libglvnd/"
@@ -2637,8 +2436,6 @@ events:
       - "/usr/bin/"
       - "/usr/lib/emscripten/libglvnd/"
       - "/usr/lib/emscripten/"
-      - "/usr/lib/jvm/default/bin/libglvnd/"
-      - "/usr/lib/jvm/default/bin/"
       - "/usr/bin/site_perl/libglvnd/"
       - "/usr/bin/site_perl/"
       - "/usr/bin/vendor_perl/libglvnd/"
@@ -2653,13 +2450,11 @@ events:
     found: "/usr/lib/libEGL.so"
     search_context:
       ENV{PATH}:
-        - "/home/lev/emsdk"
-        - "/home/lev/emsdk/upstream/emscripten"
+        - "/home/linuser/.vscode/extensions/vadimcn.vscode-lldb-1.12.1/bin"
         - "/usr/local/sbin"
         - "/usr/local/bin"
         - "/usr/bin"
         - "/usr/lib/emscripten"
-        - "/usr/lib/jvm/default/bin"
         - "/usr/bin/site_perl"
         - "/usr/bin/vendor_perl"
         - "/usr/bin/core_perl"
@@ -2694,13 +2489,11 @@ events:
     names:
       - "GLESv2"
     candidate_directories:
-      - "/home/lev/emsdk/"
-      - "/home/lev/emsdk/upstream/emscripten/"
+      - "/home/linuser/.vscode/extensions/vadimcn.vscode-lldb-1.12.1/bin/"
       - "/usr/local/sbin/"
       - "/usr/local/bin/"
       - "/usr/bin/"
       - "/usr/lib/emscripten/"
-      - "/usr/lib/jvm/default/bin/"
       - "/usr/bin/site_perl/"
       - "/usr/bin/vendor_perl/"
       - "/usr/bin/core_perl/"
@@ -2717,13 +2510,11 @@ events:
       - "/opt/"
       - "/usr/lib/X11/"
     searched_directories:
-      - "/home/lev/emsdk/"
-      - "/home/lev/emsdk/upstream/emscripten/"
+      - "/home/linuser/.vscode/extensions/vadimcn.vscode-lldb-1.12.1/bin/"
       - "/usr/local/sbin/"
       - "/usr/local/bin/"
       - "/usr/bin/"
       - "/usr/lib/emscripten/"
-      - "/usr/lib/jvm/default/bin/"
       - "/usr/bin/site_perl/"
       - "/usr/bin/vendor_perl/"
       - "/usr/bin/core_perl/"
@@ -2732,13 +2523,11 @@ events:
     found: "/usr/lib/libGLESv2.so"
     search_context:
       ENV{PATH}:
-        - "/home/lev/emsdk"
-        - "/home/lev/emsdk/upstream/emscripten"
+        - "/home/linuser/.vscode/extensions/vadimcn.vscode-lldb-1.12.1/bin"
         - "/usr/local/sbin"
         - "/usr/local/bin"
         - "/usr/bin"
         - "/usr/lib/emscripten"
-        - "/usr/lib/jvm/default/bin"
         - "/usr/bin/site_perl"
         - "/usr/bin/vendor_perl"
         - "/usr/bin/core_perl"
@@ -2774,13 +2563,11 @@ events:
       - "GLESv3"
       - "GLESv2"
     candidate_directories:
-      - "/home/lev/emsdk/"
-      - "/home/lev/emsdk/upstream/emscripten/"
+      - "/home/linuser/.vscode/extensions/vadimcn.vscode-lldb-1.12.1/bin/"
       - "/usr/local/sbin/"
       - "/usr/local/bin/"
       - "/usr/bin/"
       - "/usr/lib/emscripten/"
-      - "/usr/lib/jvm/default/bin/"
       - "/usr/bin/site_perl/"
       - "/usr/bin/vendor_perl/"
       - "/usr/bin/core_perl/"
@@ -2797,13 +2584,11 @@ events:
       - "/opt/"
       - "/usr/lib/X11/"
     searched_directories:
-      - "/home/lev/emsdk/"
-      - "/home/lev/emsdk/upstream/emscripten/"
+      - "/home/linuser/.vscode/extensions/vadimcn.vscode-lldb-1.12.1/bin/"
       - "/usr/local/sbin/"
       - "/usr/local/bin/"
       - "/usr/bin/"
       - "/usr/lib/emscripten/"
-      - "/usr/lib/jvm/default/bin/"
       - "/usr/bin/site_perl/"
       - "/usr/bin/vendor_perl/"
       - "/usr/bin/core_perl/"
@@ -2819,13 +2604,11 @@ events:
       - "/opt/lib/"
       - "/opt/"
       - "/usr/lib/X11/"
-      - "/home/lev/emsdk/"
-      - "/home/lev/emsdk/upstream/emscripten/"
+      - "/home/linuser/.vscode/extensions/vadimcn.vscode-lldb-1.12.1/bin/"
       - "/usr/local/sbin/"
       - "/usr/local/bin/"
       - "/usr/bin/"
       - "/usr/lib/emscripten/"
-      - "/usr/lib/jvm/default/bin/"
       - "/usr/bin/site_perl/"
       - "/usr/bin/vendor_perl/"
       - "/usr/bin/core_perl/"
@@ -2834,13 +2617,11 @@ events:
     found: "/usr/lib/libGLESv2.so"
     search_context:
       ENV{PATH}:
-        - "/home/lev/emsdk"
-        - "/home/lev/emsdk/upstream/emscripten"
+        - "/home/linuser/.vscode/extensions/vadimcn.vscode-lldb-1.12.1/bin"
         - "/usr/local/sbin"
         - "/usr/local/bin"
         - "/usr/bin"
         - "/usr/lib/emscripten"
-        - "/usr/lib/jvm/default/bin"
         - "/usr/bin/site_perl"
         - "/usr/bin/vendor_perl"
         - "/usr/bin/core_perl"
@@ -2876,13 +2657,11 @@ events:
       - "GLU"
       - "MesaGLU"
     candidate_directories:
-      - "/home/lev/emsdk/"
-      - "/home/lev/emsdk/upstream/emscripten/"
+      - "/home/linuser/.vscode/extensions/vadimcn.vscode-lldb-1.12.1/bin/"
       - "/usr/local/sbin/"
       - "/usr/local/bin/"
       - "/usr/bin/"
       - "/usr/lib/emscripten/"
-      - "/usr/lib/jvm/default/bin/"
       - "/usr/bin/site_perl/"
       - "/usr/bin/vendor_perl/"
       - "/usr/bin/core_perl/"
@@ -2902,13 +2681,11 @@ events:
       - "/usr/openwin/lib/"
       - "/usr/shlib/"
     searched_directories:
-      - "/home/lev/emsdk/"
-      - "/home/lev/emsdk/upstream/emscripten/"
+      - "/home/linuser/.vscode/extensions/vadimcn.vscode-lldb-1.12.1/bin/"
       - "/usr/local/sbin/"
       - "/usr/local/bin/"
       - "/usr/bin/"
       - "/usr/lib/emscripten/"
-      - "/usr/lib/jvm/default/bin/"
       - "/usr/bin/site_perl/"
       - "/usr/bin/vendor_perl/"
       - "/usr/bin/core_perl/"
@@ -2917,13 +2694,11 @@ events:
     found: "/usr/lib/libGLU.so"
     search_context:
       ENV{PATH}:
-        - "/home/lev/emsdk"
-        - "/home/lev/emsdk/upstream/emscripten"
+        - "/home/linuser/.vscode/extensions/vadimcn.vscode-lldb-1.12.1/bin"
         - "/usr/local/sbin"
         - "/usr/local/bin"
         - "/usr/bin"
         - "/usr/lib/emscripten"
-        - "/usr/lib/jvm/default/bin"
         - "/usr/bin/site_perl"
         - "/usr/bin/vendor_perl"
         - "/usr/bin/core_perl"
@@ -2959,10 +2734,8 @@ events:
       - "GL"
       - "MesaGL"
     candidate_directories:
-      - "/home/lev/emsdk/libglvnd/"
-      - "/home/lev/emsdk/"
-      - "/home/lev/emsdk/upstream/emscripten/libglvnd/"
-      - "/home/lev/emsdk/upstream/emscripten/"
+      - "/home/linuser/.vscode/extensions/vadimcn.vscode-lldb-1.12.1/bin/libglvnd/"
+      - "/home/linuser/.vscode/extensions/vadimcn.vscode-lldb-1.12.1/bin/"
       - "/usr/local/sbin/libglvnd/"
       - "/usr/local/sbin/"
       - "/usr/local/bin/libglvnd/"
@@ -2971,8 +2744,6 @@ events:
       - "/usr/bin/"
       - "/usr/lib/emscripten/libglvnd/"
       - "/usr/lib/emscripten/"
-      - "/usr/lib/jvm/default/bin/libglvnd/"
-      - "/usr/lib/jvm/default/bin/"
       - "/usr/bin/site_perl/libglvnd/"
       - "/usr/bin/site_perl/"
       - "/usr/bin/vendor_perl/libglvnd/"
@@ -3010,10 +2781,8 @@ events:
       - "/usr/shlib/libglvnd/"
       - "/usr/shlib/"
     searched_directories:
-      - "/home/lev/emsdk/libglvnd/"
-      - "/home/lev/emsdk/"
-      - "/home/lev/emsdk/upstream/emscripten/libglvnd/"
-      - "/home/lev/emsdk/upstream/emscripten/"
+      - "/home/linuser/.vscode/extensions/vadimcn.vscode-lldb-1.12.1/bin/libglvnd/"
+      - "/home/linuser/.vscode/extensions/vadimcn.vscode-lldb-1.12.1/bin/"
       - "/usr/local/sbin/libglvnd/"
       - "/usr/local/sbin/"
       - "/usr/local/bin/libglvnd/"
@@ -3022,8 +2791,6 @@ events:
       - "/usr/bin/"
       - "/usr/lib/emscripten/libglvnd/"
       - "/usr/lib/emscripten/"
-      - "/usr/lib/jvm/default/bin/libglvnd/"
-      - "/usr/lib/jvm/default/bin/"
       - "/usr/bin/site_perl/libglvnd/"
       - "/usr/bin/site_perl/"
       - "/usr/bin/vendor_perl/libglvnd/"
@@ -3038,13 +2805,11 @@ events:
     found: "/usr/lib/libGL.so"
     search_context:
       ENV{PATH}:
-        - "/home/lev/emsdk"
-        - "/home/lev/emsdk/upstream/emscripten"
+        - "/home/linuser/.vscode/extensions/vadimcn.vscode-lldb-1.12.1/bin"
         - "/usr/local/sbin"
         - "/usr/local/bin"
         - "/usr/bin"
         - "/usr/lib/emscripten"
-        - "/usr/lib/jvm/default/bin"
         - "/usr/bin/site_perl"
         - "/usr/bin/vendor_perl"
         - "/usr/bin/core_perl"

@@ -1,25 +1,40 @@
-#include <glad/glad.h>
+#include "glad/include/glad/glad.h"
 #include <GLFW/glfw3.h>
 #include <iostream>
+#include <filesystem>
 #include "Shader/Shader.hpp"
+#include "stb_image.h"
 
+float aspect;
 Shader shader;
 
 const float Vertexes[] = {
-    0.0f,  0.5f, 0.0f,
-    0.5f, -0.5f, 0.0f,
-   -0.5f, -0.5f, 0.0f
+//  Vertex Coords       Texture Coords
+    0.5f,  0.5f, 0.0f,  1.0f, 1.0f,
+    0.5f, -0.5f, 0.0f,  1.0f, 0.0f,
+   -0.5f, -0.5f, 0.0f,  0.0f, 0.0f,
+   -0.5f,  0.5f, 0.0f,  0.0f, 1.0f
+};
+
+const float TexCoords[] = {
+    0.0f, 0.0f, // bottom left
+    0.0f, 1.0f, // top left
+    1.0f, 1.0f,  // top right
+    1.0f, 0.0f // bottom right
 };
 
 const int indices[] = {
-    0, 1, 2
+    0, 1, 3,
+    1, 2, 3
 };
 
 void frame_buffer_size_callback(GLFWwindow* window, int width, int height){
     glViewport(0, 0, width, height);
+    shader.SetVec2("ScreenSize", vec2((float)width, (float)height));
 }
 
-int main(){
+int main(int agrc, char* agrv[]){
+    curr_agrv = agrv[0];
     glfwInit();
     glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
     glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
@@ -33,6 +48,29 @@ int main(){
         std::cout << "Failed To init glad" << std::endl;
     }
 
+
+    int width, height, nrChanels;
+    unsigned char* data = stbi_load("/home/linuser/Documents/CPP-Projects/OpenGL-2D-Render/Resources/Textures/image.png", &width, &height, &nrChanels, 0);
+
+    if (data = NULL){
+        std::cout << "Failed To load texture\n";
+    }
+
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_BORDER);	
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_BORDER);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+
+    unsigned int texture;
+    glGenTextures(1, &texture);
+    glBindTexture(GL_TEXTURE_2D, texture);
+    glTexImage2D(GL_IMAGE_2D, 0, GL_RGBA, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, data);
+    glGenerateMipmap(GL_TEXTURE_2D);
+
+    stbi_image_free(data);
+
+    shader.Setup("Resources/Shaders/VertShader.glsl", "Resources/Shaders/FragShader.glsl");
+
     unsigned int VertexBufferObject, VertexArrayObject, ElementBufferObject;
     glGenVertexArrays(1, &VertexArrayObject);
     glBindVertexArray(VertexArrayObject);
@@ -40,24 +78,25 @@ int main(){
     glGenBuffers(1, &VertexBufferObject);
     glBindBuffer(GL_ARRAY_BUFFER, VertexBufferObject);
     glBufferData(GL_ARRAY_BUFFER, sizeof(Vertexes), Vertexes, GL_STATIC_DRAW);
-    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, sizeof(float) * 3, (void*)0);
+    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, sizeof(float) * 5, (void*)0);
     glEnableVertexAttribArray(0);
+    glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)(3 * sizeof(float)));
+    glEnableVertexAttribArray(1);
 
     glGenBuffers(1, &ElementBufferObject);
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, ElementBufferObject);
     glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices, GL_STATIC_DRAW);
 
-    shader.Setup("/home/lev/Documents/CPP-Projects/OpenGL-2D-Render/Resources/Shaders/VertShader.glsl", "/home/lev/Documents/CPP-Projects/OpenGL-2D-Render/Resources/Shaders/FragShader.glsl");
-
-    glfwSwapInterval(1/75);
+    frame_buffer_size_callback(window, 800, 600);
 
     while(!glfwWindowShouldClose(window)){
         glClearColor(0.1, 0.1, 0.1, 1);
         glClear(GL_COLOR_BUFFER_BIT);
 
         shader.use();
+        glBindTexture(GL_TEXTURE_2D, texture);
         glBindVertexArray(VertexArrayObject);
-        glDrawElements(GL_TRIANGLES, 3, GL_UNSIGNED_INT, 0);
+        glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
         glBindVertexArray(0);
 
         glfwSwapBuffers(window);
