@@ -3,7 +3,7 @@
 #include <iostream>
 #include <filesystem>
 #include "Shader/Shader.hpp"
-#include "stb_image.h"
+#include "stb/stb_image.h"
 
 float aspect;
 Shader shader;
@@ -14,13 +14,6 @@ const float Vertexes[] = {
     0.5f, -0.5f, 0.0f,  1.0f, 0.0f,
    -0.5f, -0.5f, 0.0f,  0.0f, 0.0f,
    -0.5f,  0.5f, 0.0f,  0.0f, 1.0f
-};
-
-const float TexCoords[] = {
-    0.0f, 0.0f, // bottom left
-    0.0f, 1.0f, // top left
-    1.0f, 1.0f,  // top right
-    1.0f, 0.0f // bottom right
 };
 
 const int indices[] = {
@@ -48,25 +41,27 @@ int main(int agrc, char* agrv[]){
         std::cout << "Failed To init glad" << std::endl;
     }
 
-
-    int width, height, nrChanels;
-    unsigned char* data = stbi_load("/home/linuser/Documents/CPP-Projects/OpenGL-2D-Render/Resources/Textures/image.png", &width, &height, &nrChanels, 0);
-
-    if (data = NULL){
-        std::cout << "Failed To load texture\n";
-    }
-
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_BORDER);	
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_BORDER);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
-
     unsigned int texture;
     glGenTextures(1, &texture);
     glBindTexture(GL_TEXTURE_2D, texture);
-    glTexImage2D(GL_IMAGE_2D, 0, GL_RGBA, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, data);
-    glGenerateMipmap(GL_TEXTURE_2D);
-
+ 
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);	
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+ 
+    int width, height, nrChannels;
+    stbi_set_flip_vertically_on_load(true);
+    unsigned char *data = stbi_load(GetFullPath("Resources/Textures/image.png").c_str(), &width, &height, &nrChannels, 0);
+    if (data)
+    {
+        glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, data);
+        glGenerateMipmap(GL_TEXTURE_2D);
+    }
+    else
+    {
+        std::cout << "Failed to load texture" << std::endl;
+    }
     stbi_image_free(data);
 
     shader.Setup("Resources/Shaders/VertShader.glsl", "Resources/Shaders/FragShader.glsl");
@@ -88,6 +83,7 @@ int main(int agrc, char* agrv[]){
     glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices, GL_STATIC_DRAW);
 
     frame_buffer_size_callback(window, 800, 600);
+    glfwSwapInterval((float)1/(float)144);
 
     while(!glfwWindowShouldClose(window)){
         glClearColor(0.1, 0.1, 0.1, 1);

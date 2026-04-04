@@ -322,7 +322,7 @@ CMakeFiles/build.dir/main.cpp.o
  /home/linuser/Documents/CPP-Projects/OpenGL-2D-Render/Shader/Shader.hpp
  /home/linuser/Documents/CPP-Projects/OpenGL-2D-Render/glad/include/KHR/khrplatform.h
  /home/linuser/Documents/CPP-Projects/OpenGL-2D-Render/glad/include/glad/glad.h
- /home/linuser/Documents/CPP-Projects/OpenGL-2D-Render/stb_image.h
+ /home/linuser/Documents/CPP-Projects/OpenGL-2D-Render/stb/stb_image.h
  /usr/include/GLFW/glfw3.h
  /usr/include/alloca.h
  /usr/include/asm-generic/bitsperlong.h
@@ -564,9 +564,9 @@ CMakeFiles/build.dir/main.cpp.o
  /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/stddef.h
  /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/stdint.h
 
-CMakeFiles/build.dir/stb_image.c.o
- /home/linuser/Documents/CPP-Projects/OpenGL-2D-Render/stb_image.c
- /home/linuser/Documents/CPP-Projects/OpenGL-2D-Render/stb_image.h
+CMakeFiles/build.dir/stb/stb_image.c.o
+ /home/linuser/Documents/CPP-Projects/OpenGL-2D-Render/stb/stb_image.c
+ /home/linuser/Documents/CPP-Projects/OpenGL-2D-Render/stb/stb_image.h
  /usr/include/alloca.h
  /usr/include/assert.h
  /usr/include/bits/atomic_wide_counter.h
@@ -681,5 +681,5 @@ build
  /home/linuser/Documents/CPP-Projects/OpenGL-2D-Render/build/CMakeFiles/build.dir/Shader/Shader.cpp.o
  /home/linuser/Documents/CPP-Projects/OpenGL-2D-Render/build/CMakeFiles/build.dir/glad/src/glad.c.o
  /home/linuser/Documents/CPP-Projects/OpenGL-2D-Render/build/CMakeFiles/build.dir/main.cpp.o
- /home/linuser/Documents/CPP-Projects/OpenGL-2D-Render/build/CMakeFiles/build.dir/stb_image.c.o
+ /home/linuser/Documents/CPP-Projects/OpenGL-2D-Render/build/CMakeFiles/build.dir/stb/stb_image.c.o
 

@@ -201,29 +201,29 @@ main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/build.dir/build.make CMakeFiles/build.dir/main.cpp.s
 .PHONY : main.cpp.s
 
-stb_image.o: stb_image.c.o
-.PHONY : stb_image.o
+stb/stb_image.o: stb/stb_image.c.o
+.PHONY : stb/stb_image.o
 
 # target to build an object file
-stb_image.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/build.dir/build.make CMakeFiles/build.dir/stb_image.c.o
-.PHONY : stb_image.c.o
+stb/stb_image.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/build.dir/build.make CMakeFiles/build.dir/stb/stb_image.c.o
+.PHONY : stb/stb_image.c.o
 
-stb_image.i: stb_image.c.i
-.PHONY : stb_image.i
+stb/stb_image.i: stb/stb_image.c.i
+.PHONY : stb/stb_image.i
 
 # target to preprocess a source file
-stb_image.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/build.dir/build.make CMakeFiles/build.dir/stb_image.c.i
-.PHONY : stb_image.c.i
+stb/stb_image.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/build.dir/build.make CMakeFiles/build.dir/stb/stb_image.c.i
+.PHONY : stb/stb_image.c.i
 
-stb_image.s: stb_image.c.s
-.PHONY : stb_image.s
+stb/stb_image.s: stb/stb_image.c.s
+.PHONY : stb/stb_image.s
 
 # target to generate assembly for a file
-stb_image.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/build.dir/build.make CMakeFiles/build.dir/stb_image.c.s
-.PHONY : stb_image.c.s
+stb/stb_image.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/build.dir/build.make CMakeFiles/build.dir/stb/stb_image.c.s
+.PHONY : stb/stb_image.c.s
 
 # Help Target
 help:
@@ -243,9 +243,9 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
-	@echo "... stb_image.o"
-	@echo "... stb_image.i"
-	@echo "... stb_image.s"
+	@echo "... stb/stb_image.o"
+	@echo "... stb/stb_image.i"
+	@echo "... stb/stb_image.s"
 .PHONY : help
 
 

@@ -114,26 +114,26 @@ CMakeFiles/build.dir/Shader/Shader.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/build.dir/Shader/Shader.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/linuser/Documents/CPP-Projects/OpenGL-2D-Render/Shader/Shader.cpp -o CMakeFiles/build.dir/Shader/Shader.cpp.s
 
-CMakeFiles/build.dir/stb_image.c.o: CMakeFiles/build.dir/flags.make
-CMakeFiles/build.dir/stb_image.c.o: /home/linuser/Documents/CPP-Projects/OpenGL-2D-Render/stb_image.c
-CMakeFiles/build.dir/stb_image.c.o: CMakeFiles/build.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/linuser/Documents/CPP-Projects/OpenGL-2D-Render/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/build.dir/stb_image.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/build.dir/stb_image.c.o -MF CMakeFiles/build.dir/stb_image.c.o.d -o CMakeFiles/build.dir/stb_image.c.o -c /home/linuser/Documents/CPP-Projects/OpenGL-2D-Render/stb_image.c
+CMakeFiles/build.dir/stb/stb_image.c.o: CMakeFiles/build.dir/flags.make
+CMakeFiles/build.dir/stb/stb_image.c.o: /home/linuser/Documents/CPP-Projects/OpenGL-2D-Render/stb/stb_image.c
+CMakeFiles/build.dir/stb/stb_image.c.o: CMakeFiles/build.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/linuser/Documents/CPP-Projects/OpenGL-2D-Render/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/build.dir/stb/stb_image.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/build.dir/stb/stb_image.c.o -MF CMakeFiles/build.dir/stb/stb_image.c.o.d -o CMakeFiles/build.dir/stb/stb_image.c.o -c /home/linuser/Documents/CPP-Projects/OpenGL-2D-Render/stb/stb_image.c
 
-CMakeFiles/build.dir/stb_image.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/build.dir/stb_image.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/linuser/Documents/CPP-Projects/OpenGL-2D-Render/stb_image.c > CMakeFiles/build.dir/stb_image.c.i
+CMakeFiles/build.dir/stb/stb_image.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/build.dir/stb/stb_image.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/linuser/Documents/CPP-Projects/OpenGL-2D-Render/stb/stb_image.c > CMakeFiles/build.dir/stb/stb_image.c.i
 
-CMakeFiles/build.dir/stb_image.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/build.dir/stb_image.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/linuser/Documents/CPP-Projects/OpenGL-2D-Render/stb_image.c -o CMakeFiles/build.dir/stb_image.c.s
+CMakeFiles/build.dir/stb/stb_image.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/build.dir/stb/stb_image.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/linuser/Documents/CPP-Projects/OpenGL-2D-Render/stb/stb_image.c -o CMakeFiles/build.dir/stb/stb_image.c.s
 
 # Object files for target build
 build_OBJECTS = \
 "CMakeFiles/build.dir/main.cpp.o" \
 "CMakeFiles/build.dir/glad/src/glad.c.o" \
 "CMakeFiles/build.dir/Shader/Shader.cpp.o" \
-"CMakeFiles/build.dir/stb_image.c.o"
+"CMakeFiles/build.dir/stb/stb_image.c.o"
 
 # External object files for target build
 build_EXTERNAL_OBJECTS =
@@ -141,7 +141,7 @@ build_EXTERNAL_OBJECTS =
 build: CMakeFiles/build.dir/main.cpp.o
 build: CMakeFiles/build.dir/glad/src/glad.c.o
 build: CMakeFiles/build.dir/Shader/Shader.cpp.o
-build: CMakeFiles/build.dir/stb_image.c.o
+build: CMakeFiles/build.dir/stb/stb_image.c.o
 build: CMakeFiles/build.dir/build.make
 build: CMakeFiles/build.dir/compiler_depend.ts
 build: /usr/lib/libglfw.so.3.4

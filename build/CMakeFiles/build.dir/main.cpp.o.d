@@ -180,5 +180,5 @@ CMakeFiles/build.dir/main.cpp.o: \
  /usr/include/c++/15.2.1/x86_64-pc-linux-gnu/bits/basic_file.h \
  /usr/include/c++/15.2.1/x86_64-pc-linux-gnu/bits/c++io.h \
  /usr/include/c++/15.2.1/bits/fstream.tcc \
- /home/linuser/Documents/CPP-Projects/OpenGL-2D-Render/stb_image.h \
+ /home/linuser/Documents/CPP-Projects/OpenGL-2D-Render/stb/stb_image.h \
  /usr/include/c++/15.2.1/stdlib.h

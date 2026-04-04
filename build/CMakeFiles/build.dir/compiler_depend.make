@@ -319,7 +319,7 @@ CMakeFiles/build.dir/main.cpp.o: /home/linuser/Documents/CPP-Projects/OpenGL-2D-
   /home/linuser/Documents/CPP-Projects/OpenGL-2D-Render/Shader/Shader.hpp \
   /home/linuser/Documents/CPP-Projects/OpenGL-2D-Render/glad/include/KHR/khrplatform.h \
   /home/linuser/Documents/CPP-Projects/OpenGL-2D-Render/glad/include/glad/glad.h \
-  /home/linuser/Documents/CPP-Projects/OpenGL-2D-Render/stb_image.h \
+  /home/linuser/Documents/CPP-Projects/OpenGL-2D-Render/stb/stb_image.h \
   /usr/include/GLFW/glfw3.h \
   /usr/include/alloca.h \
   /usr/include/asm-generic/bitsperlong.h \
@@ -561,8 +561,8 @@ CMakeFiles/build.dir/main.cpp.o: /home/linuser/Documents/CPP-Projects/OpenGL-2D-
   /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/stddef.h \
   /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/stdint.h
 
-CMakeFiles/build.dir/stb_image.c.o: /home/linuser/Documents/CPP-Projects/OpenGL-2D-Render/stb_image.c \
-  /home/linuser/Documents/CPP-Projects/OpenGL-2D-Render/stb_image.h \
+CMakeFiles/build.dir/stb/stb_image.c.o: /home/linuser/Documents/CPP-Projects/OpenGL-2D-Render/stb/stb_image.c \
+  /home/linuser/Documents/CPP-Projects/OpenGL-2D-Render/stb/stb_image.h \
   /usr/include/alloca.h \
   /usr/include/assert.h \
   /usr/include/bits/atomic_wide_counter.h \
@@ -676,7 +676,7 @@ build: /usr/lib/Scrt1.o \
   CMakeFiles/build.dir/Shader/Shader.cpp.o \
   CMakeFiles/build.dir/glad/src/glad.c.o \
   CMakeFiles/build.dir/main.cpp.o \
-  CMakeFiles/build.dir/stb_image.c.o
+  CMakeFiles/build.dir/stb/stb_image.c.o
 
 
 CMakeFiles/build.dir/main.cpp.o:
@@ -734,6 +734,8 @@ CMakeFiles/build.dir/Shader/Shader.cpp.o:
 /usr/include/bits/mathcalls-narrow.h:
 
 /usr/include/bits/mathcalls-macros.h:
+
+/usr/include/bits/local_lim.h:
 
 /usr/include/bits/libm-simd-decl-stubs.h:
 
@@ -859,8 +861,6 @@ CMakeFiles/build.dir/Shader/Shader.cpp.o:
 
 /usr/include/bits/types/struct_sched_param.h:
 
-/usr/include/c++/15.2.1/bits/functexcept.h:
-
 /usr/include/c++/15.2.1/streambuf:
 
 /usr/include/c++/15.2.1/bits/chrono.h:
@@ -880,6 +880,8 @@ CMakeFiles/build.dir/Shader/Shader.cpp.o:
 /usr/include/c++/15.2.1/ostream:
 
 /usr/include/bits/errno.h:
+
+CMakeFiles/build.dir/stb/stb_image.c.o:
 
 /usr/include/bits/locale.h:
 
@@ -1079,10 +1081,6 @@ CMakeFiles/build.dir/Shader/Shader.cpp.o:
 
 /usr/include/c++/15.2.1/bits/streambuf.tcc:
 
-/usr/include/bits/local_lim.h:
-
-/home/linuser/Documents/CPP-Projects/OpenGL-2D-Render/stb_image.h:
-
 /usr/include/linux/types.h:
 
 /usr/include/c++/15.2.1/bits/std_abs.h:
@@ -1102,8 +1100,6 @@ CMakeFiles/build.dir/Shader/Shader.cpp.o:
 /usr/lib/libstdc++.so:
 
 /usr/include/locale.h:
-
-/home/linuser/Documents/CPP-Projects/OpenGL-2D-Render/stb_image.c:
 
 /usr/include/c++/15.2.1/bits/unique_ptr.h:
 
@@ -1158,8 +1154,6 @@ CMakeFiles/build.dir/Shader/Shader.cpp.o:
 /usr/include/c++/15.2.1/tuple:
 
 /usr/include/errno.h:
-
-CMakeFiles/build.dir/stb_image.c.o:
 
 /usr/include/c++/15.2.1/ext/alloc_traits.h:
 
@@ -1221,6 +1215,8 @@ CMakeFiles/build.dir/stb_image.c.o:
 
 /usr/include/c++/15.2.1/x86_64-pc-linux-gnu/bits/c++locale.h:
 
+/home/linuser/Documents/CPP-Projects/OpenGL-2D-Render/stb/stb_image.h:
+
 /usr/include/c++/15.2.1/x86_64-pc-linux-gnu/bits/ctype_inline.h:
 
 /usr/include/c++/15.2.1/x86_64-pc-linux-gnu/bits/gthr-default.h:
@@ -1274,6 +1270,10 @@ CMakeFiles/build.dir/stb_image.c.o:
 /usr/include/string.h:
 
 /home/linuser/Documents/CPP-Projects/OpenGL-2D-Render/main.cpp:
+
+/usr/include/c++/15.2.1/bits/functexcept.h:
+
+/home/linuser/Documents/CPP-Projects/OpenGL-2D-Render/stb/stb_image.c:
 
 /usr/include/wctype.h:
 

@@ -5,7 +5,7 @@ build: \
   CMakeFiles/build.dir/main.cpp.o \
   CMakeFiles/build.dir/glad/src/glad.c.o \
   CMakeFiles/build.dir/Shader/Shader.cpp.o \
-  CMakeFiles/build.dir/stb_image.c.o \
+  CMakeFiles/build.dir/stb/stb_image.c.o \
   /usr/lib/libglfw.so.3.4 \
   /usr/lib/libOpenGL.so \
   /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/libstdc++.so \
@@ -50,7 +50,7 @@ CMakeFiles/build.dir/glad/src/glad.c.o:
 
 CMakeFiles/build.dir/Shader/Shader.cpp.o:
 
-CMakeFiles/build.dir/stb_image.c.o:
+CMakeFiles/build.dir/stb/stb_image.c.o:
 
 /usr/lib/libglfw.so.3.4:
 
