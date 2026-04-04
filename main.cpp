@@ -42,29 +42,9 @@ int main(int agrc, char* agrv[]){
     }
 
     unsigned int texture;
-    glGenTextures(1, &texture);
-    glBindTexture(GL_TEXTURE_2D, texture);
- 
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);	
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
- 
-    int width, height, nrChannels;
-    stbi_set_flip_vertically_on_load(true);
-    unsigned char *data = stbi_load(GetFullPath("Resources/Textures/image.png").c_str(), &width, &height, &nrChannels, 0);
-    if (data)
-    {
-        glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, data);
-        glGenerateMipmap(GL_TEXTURE_2D);
-    }
-    else
-    {
-        std::cout << "Failed to load texture" << std::endl;
-    }
-    stbi_image_free(data);
 
-    shader.Setup("Resources/Shaders/VertShader.glsl", "Resources/Shaders/FragShader.glsl");
+    shader.Setup();
+    shader.SetTexture("Resources/Textures/image.png");
 
     unsigned int VertexBufferObject, VertexArrayObject, ElementBufferObject;
     glGenVertexArrays(1, &VertexArrayObject);
@@ -81,7 +61,6 @@ int main(int agrc, char* agrv[]){
     glGenBuffers(1, &ElementBufferObject);
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, ElementBufferObject);
     glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices, GL_STATIC_DRAW);
-
     frame_buffer_size_callback(window, 800, 600);
     glfwSwapInterval((float)1/(float)144);
 
@@ -90,7 +69,6 @@ int main(int agrc, char* agrv[]){
         glClear(GL_COLOR_BUFFER_BIT);
 
         shader.use();
-        glBindTexture(GL_TEXTURE_2D, texture);
         glBindVertexArray(VertexArrayObject);
         glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
         glBindVertexArray(0);
@@ -98,6 +76,5 @@ int main(int agrc, char* agrv[]){
         glfwSwapBuffers(window);
         glfwPollEvents();
     }
-
     return 0;
 }

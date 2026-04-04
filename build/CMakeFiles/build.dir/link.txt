@@ -1,1 +1,0 @@
-/usr/bin/c++ -Wl,--dependency-file=CMakeFiles/build.dir/link.d CMakeFiles/build.dir/main.cpp.o CMakeFiles/build.dir/glad/src/glad.c.o CMakeFiles/build.dir/Shader/Shader.cpp.o CMakeFiles/build.dir/stb/stb_image.c.o -o build  /usr/lib/libglfw.so.3.4 /usr/lib/libOpenGL.so
