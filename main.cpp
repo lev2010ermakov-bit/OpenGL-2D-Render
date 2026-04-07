@@ -3,7 +3,7 @@
 #include <iostream>
 #include <filesystem>
 #include "Shader/Shader.hpp"
-#include "stb/stb_image.h"
+#include "ResourcesLoader/Loader.hpp"
 
 float aspect;
 Shader shader;

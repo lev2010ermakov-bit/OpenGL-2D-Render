@@ -1,16 +1,16 @@
 #include "Shader.hpp"
 
-char* curr_agrv;
-
 vec2::vec2(float nx, float ny){
     x = nx;
     y = ny;
 }
 
 Shader::Shader(){
+    texture = std::make_unique<Texture2D>();
 }
 
 Shader::Shader(const char* VertPath, const char* FragPath){
+    texture = std::make_unique<Texture2D>();
     Setup(VertPath, FragPath);
 }
 
@@ -74,7 +74,7 @@ void Shader::Setup(){
 }
 
 void Shader::use(){
-    glBindTexture(GL_TEXTURE_2D, texture);
+    texture->Bind();
     SetColor("color", color);
     SetBool("UseTexture", UseTexture);
     SetFloat("time", (float)glfwGetTime());
@@ -106,28 +106,7 @@ void Shader::SetColor(const char* name, Color col){
 }
 
 void Shader::SetTexture(const char* TexPath){
-    SetBool("UseTexture", true);
-    glGenTextures(1, &texture);
-    glBindTexture(GL_TEXTURE_2D, texture);
- 
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);	
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
- 
-    int width, height, nrChannels;
-    stbi_set_flip_vertically_on_load(true);
-    unsigned char *data = stbi_load(GetFullPath(TexPath).c_str(), &width, &height, &nrChannels, 0);
-    if (data)
-    {
-        glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, data);
-        glGenerateMipmap(GL_TEXTURE_2D);
-    }
-    else
-    {
-        std::cout << "Failed to load texture" << std::endl;
-    }
-    stbi_image_free(data);
+    texture->loadFromFile(TexPath, GL_RGBA);
     UseTexture = true;
 }
 
@@ -143,8 +122,4 @@ void ShaderLog(int Shader){
     else{
         std::cout << "Shader Succsessefully Compiled id =" << Shader << std::endl;
     }
-}
-
-std::string GetFullPath(const char* localPath){
-    return std::string(std::filesystem::absolute(curr_agrv).parent_path().parent_path()) + std::string("/") + std::string(localPath);
 }

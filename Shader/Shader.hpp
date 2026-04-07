@@ -8,9 +8,8 @@
 #include <string>
 #include <filesystem>
 #include <stdint.h>
-#include "../stb/stb_image.h"
-
-extern char* curr_agrv;
+#include <memory>
+#include "../ResourcesLoader/Loader.hpp"
 
 struct vec2{
     float x, y;
@@ -27,7 +26,7 @@ struct Color{
 class Shader{
     public:
         unsigned int ID;
-        unsigned int texture;
+        std::unique_ptr<Texture2D> texture;
         bool UseTexture;
         Color color;
         Shader();

@@ -4,7 +4,9 @@ project(OpenGL-Render)
 find_package(glfw3 REQUIRED)
 find_package(OpenGL REQUIRED)
 
-add_executable(build main.cpp glad/src/glad.c Shader/Shader.cpp stb/stb_image.c)
+file(GLOB_RECURSE SOURCE_FILE "main.cpp" "Shader/*.cpp" "ResourcesLoader/*.cpp" "glad/src/glad.c" "ResourcesLoader/stb/*.c")
+
+add_executable(build ${SOURCE_FILE})
 
 target_include_directories(build PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/glad/include/)
 target_link_libraries(build PRIVATE glfw OpenGL::OpenGL)
