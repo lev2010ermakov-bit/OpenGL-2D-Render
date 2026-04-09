@@ -93,6 +93,12 @@ void Shader::SetVec4(const char* name, float value[4]){
     glUniform4f(glGetUniformLocation(ID, name), value[0], value[1], value[2], value[3]);
 }
 
+void Shader::SetMat4(const char* name, glm::mat4 value){
+    glUniformMatrix4fv(glGetUniformLocation(ID, name), 1, GL_FALSE, glm::value_ptr(value));
+}
+
+
+
 void Shader::SetBool(const char* name, bool value){
     glUniform1i(glGetUniformLocation(ID, name), value);
 }
@@ -105,8 +111,8 @@ void Shader::SetColor(const char* name, Color col){
     SetVec4(name, (float[]){(float)col.r/(float)255, (float)col.g/(float)255, (float)col.b/(float)255, (float)col.a/(float)255});
 }
 
-void Shader::SetTexture(const char* TexPath){
-    texture->loadFromFile(TexPath, GL_RGBA);
+void Shader::SetTexture(const char* TexPath, GLint ColorSheme){
+    texture->loadFromFile(TexPath, ColorSheme);
     UseTexture = true;
 }
 

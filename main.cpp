@@ -4,9 +4,19 @@
 #include <filesystem>
 #include "Shader/Shader.hpp"
 #include "ResourcesLoader/Loader.hpp"
+#include <glm/glm.hpp>
+#include <glm/gtc/matrix_transform.hpp>
+#include <glm/gtc/type_ptr.hpp>
 
-float aspect;
+float lastTime;
+float deltaTime;
+
 Shader shader;
+Shader shader1;
+
+glm::mat4 trans = glm::mat4(1.0f);
+glm::mat4 trans1 = glm::mat4(1.0f);
+
 
 const float Vertexes[] = {
 //  Vertex Coords       Texture Coords
@@ -23,10 +33,15 @@ const int indices[] = {
 
 void frame_buffer_size_callback(GLFWwindow* window, int width, int height){
     glViewport(0, 0, width, height);
-    shader.SetVec2("ScreenSize", vec2((float)width, (float)height));
 }
 
 int main(int agrc, char* agrv[]){
+    trans = glm::scale(trans, glm::vec3(0.5f * (600.f/800.f), 0.5f, 0.0f));
+    trans = glm::translate(trans, glm::vec3(-0.9f));
+
+    trans1 = glm::scale(trans1, glm::vec3(0.5f * (600.f/800.f), 0.5f, 0.0f));
+    trans1 = glm::translate(trans1, glm::vec3(0.5));
+
     curr_agrv = agrv[0];
     glfwInit();
     glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
@@ -41,10 +56,11 @@ int main(int agrc, char* agrv[]){
         std::cout << "Failed To init glad" << std::endl;
     }
 
-    unsigned int texture;
-
     shader.Setup();
-    shader.SetTexture("Resources/Textures/image.png");
+    shader.SetTexture("Resources/Textures/PugImage.png", GL_RGBA);
+
+    shader1.Setup();
+    shader1.SetTexture("Resources/Textures/catImage.jpg", GL_RGB);
 
     unsigned int VertexBufferObject, VertexArrayObject, ElementBufferObject;
     glGenVertexArrays(1, &VertexArrayObject);
@@ -61,6 +77,7 @@ int main(int agrc, char* agrv[]){
     glGenBuffers(1, &ElementBufferObject);
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, ElementBufferObject);
     glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices, GL_STATIC_DRAW);
+
     frame_buffer_size_callback(window, 800, 600);
     glfwSwapInterval((float)1/(float)144);
 
@@ -68,10 +85,22 @@ int main(int agrc, char* agrv[]){
         glClearColor(0.1, 0.1, 0.1, 1);
         glClear(GL_COLOR_BUFFER_BIT);
 
+        trans = glm::rotate(trans, glm::radians(deltaTime * -125) , glm::vec3(0, 0, 1));
         shader.use();
+        shader.SetMat4("trans", trans);
         glBindVertexArray(VertexArrayObject);
         glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
         glBindVertexArray(0);
+
+        //trans1 = glm::scale(trans1, glm::vec3((float)((sin(glfwGetTime())))));
+        shader1.use();
+        shader1.SetMat4("trans", trans1);
+        glBindVertexArray(VertexArrayObject);
+        glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
+        glBindVertexArray(0);
+
+        deltaTime = (float)glfwGetTime() - lastTime;
+        lastTime = (float)glfwGetTime();
 
         glfwSwapBuffers(window);
         glfwPollEvents();

@@ -3,6 +3,9 @@
 #include <iostream>
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
+#include <glm/glm.hpp>
+#include <glm/gtc/matrix_transform.hpp>
+#include <glm/gtc/type_ptr.hpp>
 #include <sstream>
 #include <fstream>
 #include <string>
@@ -38,10 +41,15 @@ class Shader{
         void SetFloat(const char* name, float value);
         void SetVec2(const char* name, vec2 value);
         void SetVec4(const char* name, float value[4]);
+
+        void SetMat4(const char* name, glm::mat4 value);
+
         void SetBool(const char* name, bool value);
         void SetInt(const char* name, int value);
+
         void SetColor(const char* name, Color col);
-        void SetTexture(const char* TexPath);
+
+        void SetTexture(const char* TexPath, GLint ColorSheme);
 };
 
 void ShaderLog(int Shader);

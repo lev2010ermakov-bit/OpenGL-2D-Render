@@ -5,12 +5,10 @@ layout (location = 1) in vec2 aTex;
 
 out vec2 TexCoords;
 
-uniform vec2 ScreenSize;
 uniform float time;
+uniform mat4 trans;
 
 void main(){
-    float coef = ScreenSize.y/ScreenSize.x;
-    //float pulse = (sin(time*(8)) + 2)/2;
-    gl_Position = vec4(aPos.x * coef, aPos.y, aPos.z, 1);
+    gl_Position = trans * vec4(aPos.x, aPos.y, aPos.z, 1);
     TexCoords = aTex;
 }

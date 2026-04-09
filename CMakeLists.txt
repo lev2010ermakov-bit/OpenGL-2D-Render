@@ -2,6 +2,7 @@ cmake_minimum_required(VERSION 3.10)
 project(OpenGL-Render)
 
 find_package(glfw3 REQUIRED)
+find_package(glm CONFIG REQUIRED)
 find_package(OpenGL REQUIRED)
 
 file(GLOB_RECURSE SOURCE_FILE "main.cpp" "Shader/*.cpp" "ResourcesLoader/*.cpp" "glad/src/glad.c" "ResourcesLoader/stb/*.c")
@@ -9,4 +10,4 @@ file(GLOB_RECURSE SOURCE_FILE "main.cpp" "Shader/*.cpp" "ResourcesLoader/*.cpp" 
 add_executable(build ${SOURCE_FILE})
 
 target_include_directories(build PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/glad/include/)
-target_link_libraries(build PRIVATE glfw OpenGL::OpenGL)
+target_link_libraries(build PRIVATE glfw OpenGL::OpenGL glm::glm)
