@@ -6,9 +6,11 @@ layout (location = 1) in vec2 aTex;
 out vec2 TexCoords;
 
 uniform float time;
-uniform mat4 trans;
+uniform mat4 model;
+uniform mat4 view;
+uniform mat4 projection;
 
 void main(){
-    gl_Position = trans * vec4(aPos.x, aPos.y, aPos.z, 1);
+    gl_Position = projection * view * model * vec4(aPos.xyz, 1.0f);
     TexCoords = aTex;
 }

@@ -6,11 +6,9 @@ vec2::vec2(float nx, float ny){
 }
 
 Shader::Shader(){
-    texture = std::make_unique<Texture2D>();
 }
 
 Shader::Shader(const char* VertPath, const char* FragPath){
-    texture = std::make_unique<Texture2D>();
     Setup(VertPath, FragPath);
 }
 
@@ -111,8 +109,8 @@ void Shader::SetColor(const char* name, Color col){
     SetVec4(name, (float[]){(float)col.r/(float)255, (float)col.g/(float)255, (float)col.b/(float)255, (float)col.a/(float)255});
 }
 
-void Shader::SetTexture(const char* TexPath, GLint ColorSheme){
-    texture->loadFromFile(TexPath, ColorSheme);
+void Shader::SetTexture(std::shared_ptr<Texture2D> ntexture){
+    texture = ntexture;
     UseTexture = true;
 }
 

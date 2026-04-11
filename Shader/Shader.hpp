@@ -29,7 +29,7 @@ struct Color{
 class Shader{
     public:
         unsigned int ID;
-        std::unique_ptr<Texture2D> texture;
+        std::shared_ptr<Texture2D> texture;
         bool UseTexture;
         Color color;
         Shader();
@@ -49,7 +49,7 @@ class Shader{
 
         void SetColor(const char* name, Color col);
 
-        void SetTexture(const char* TexPath, GLint ColorSheme);
+        void SetTexture(std::shared_ptr<Texture2D> texture);
 };
 
 void ShaderLog(int Shader);

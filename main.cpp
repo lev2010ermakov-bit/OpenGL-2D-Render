@@ -17,13 +17,52 @@ Shader shader1;
 glm::mat4 trans = glm::mat4(1.0f);
 glm::mat4 trans1 = glm::mat4(1.0f);
 
+glm::mat4 Mmodel = glm::mat4(1.0f);
+glm::mat4 Mview = glm::mat4(1.0f);
+glm::mat4 Mprojection = glm::mat4(1.0f);
 
 const float Vertexes[] = {
-//  Vertex Coords       Texture Coords
-    0.5f,  0.5f, 0.0f,  1.0f, 1.0f,
-    0.5f, -0.5f, 0.0f,  1.0f, 0.0f,
-   -0.5f, -0.5f, 0.0f,  0.0f, 0.0f,
-   -0.5f,  0.5f, 0.0f,  0.0f, 1.0f
+    -0.5f, -0.5f, -0.5f,  0.0f, 0.0f,
+     0.5f, -0.5f, -0.5f,  1.0f, 0.0f,
+     0.5f,  0.5f, -0.5f,  1.0f, 1.0f,
+     0.5f,  0.5f, -0.5f,  1.0f, 1.0f,
+    -0.5f,  0.5f, -0.5f,  0.0f, 1.0f,
+    -0.5f, -0.5f, -0.5f,  0.0f, 0.0f,
+ 
+    -0.5f, -0.5f,  0.5f,  0.0f, 0.0f,
+     0.5f, -0.5f,  0.5f,  1.0f, 0.0f,
+     0.5f,  0.5f,  0.5f,  1.0f, 1.0f,
+     0.5f,  0.5f,  0.5f,  1.0f, 1.0f,
+    -0.5f,  0.5f,  0.5f,  0.0f, 1.0f,
+    -0.5f, -0.5f,  0.5f,  0.0f, 0.0f,
+ 
+    -0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
+    -0.5f,  0.5f, -0.5f,  1.0f, 1.0f,
+    -0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
+    -0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
+    -0.5f, -0.5f,  0.5f,  0.0f, 0.0f,
+    -0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
+ 
+     0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
+     0.5f,  0.5f, -0.5f,  1.0f, 1.0f,
+     0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
+     0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
+     0.5f, -0.5f,  0.5f,  0.0f, 0.0f,
+     0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
+ 
+    -0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
+     0.5f, -0.5f, -0.5f,  1.0f, 1.0f,
+     0.5f, -0.5f,  0.5f,  1.0f, 0.0f,
+     0.5f, -0.5f,  0.5f,  1.0f, 0.0f,
+    -0.5f, -0.5f,  0.5f,  0.0f, 0.0f,
+    -0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
+ 
+    -0.5f,  0.5f, -0.5f,  0.0f, 1.0f,
+     0.5f,  0.5f, -0.5f,  1.0f, 1.0f,
+     0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
+     0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
+    -0.5f,  0.5f,  0.5f,  0.0f, 0.0f,
+    -0.5f,  0.5f, -0.5f,  0.0f, 1.0f
 };
 
 const int indices[] = {
@@ -33,6 +72,7 @@ const int indices[] = {
 
 void frame_buffer_size_callback(GLFWwindow* window, int width, int height){
     glViewport(0, 0, width, height);
+    Mprojection = glm::perspective(glm::radians(45.f), (float)width/(float)height, 0.1f, 100.0f);
 }
 
 int main(int agrc, char* agrv[]){
@@ -41,6 +81,12 @@ int main(int agrc, char* agrv[]){
 
     trans1 = glm::scale(trans1, glm::vec3(0.5f * (600.f/800.f), 0.5f, 0.0f));
     trans1 = glm::translate(trans1, glm::vec3(0.5));
+
+    trans = Mmodel;
+    trans1 = Mmodel;
+
+    Mview = glm::translate(Mview, glm::vec3(0.0f, 0.0f, -2.0f));
+    Mprojection = glm::perspective(glm::radians(45.f), 800.f/600.f, 0.1f, 100.0f);
 
     curr_agrv = agrv[0];
     glfwInit();
@@ -56,11 +102,16 @@ int main(int agrc, char* agrv[]){
         std::cout << "Failed To init glad" << std::endl;
     }
 
+    glEnable(GL_DEPTH_TEST);
+
+    std::shared_ptr<Texture2D> PugTex = std::make_shared<Texture2D>("Resources/Textures/PugImage.png", GL_RGBA);
+    std::shared_ptr<Texture2D> CatTex = std::make_shared<Texture2D>("Resources/Textures/catImage.jpg", GL_RGB);
+
     shader.Setup();
-    shader.SetTexture("Resources/Textures/PugImage.png", GL_RGBA);
+    shader.SetTexture(PugTex);
 
     shader1.Setup();
-    shader1.SetTexture("Resources/Textures/catImage.jpg", GL_RGB);
+    shader1.SetTexture(CatTex);
 
     unsigned int VertexBufferObject, VertexArrayObject, ElementBufferObject;
     glGenVertexArrays(1, &VertexArrayObject);
@@ -81,18 +132,38 @@ int main(int agrc, char* agrv[]){
     frame_buffer_size_callback(window, 800, 600);
     glfwSwapInterval((float)1/(float)144);
 
+    glm::vec3 pos(0.0f);
+    glm::vec3 eulers(0.0f);
+    glm::vec3 scale(0.7f);
+
+    bool polygon;
+    float buttPand;
+
     while(!glfwWindowShouldClose(window)){
         glClearColor(0.1, 0.1, 0.1, 1);
-        glClear(GL_COLOR_BUFFER_BIT);
+        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-        trans = glm::rotate(trans, glm::radians(deltaTime * -125) , glm::vec3(0, 0, 1));
+        eulers.x += deltaTime * 100;
+        eulers.z += deltaTime * 100;
+
+        pos.y = (float)(sin(lastTime));
+        pos.x = (float)(cos(lastTime));
+
+        trans = glm::scale(Mmodel, scale);
+        trans = glm::translate(trans, pos);
+
+        trans = glm::rotate(trans, glm::radians(eulers.x), glm::vec3(1.0f, 0.0f, 0.0f));
+        trans = glm::rotate(trans, glm::radians(eulers.y), glm::vec3(0.0f, 1.0f, 0.0f));
+        trans = glm::rotate(trans, glm::radians(eulers.z), glm::vec3(0.0f, 0.0f, 1.0f));
+
         shader.use();
-        shader.SetMat4("trans", trans);
+        shader.SetMat4("model", trans);
+        shader.SetMat4("view", Mview);
+        shader.SetMat4("projection", Mprojection);
         glBindVertexArray(VertexArrayObject);
-        glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
+        glDrawArrays(GL_TRIANGLES, 0, 36);
         glBindVertexArray(0);
 
-        //trans1 = glm::scale(trans1, glm::vec3((float)((sin(glfwGetTime())))));
         shader1.use();
         shader1.SetMat4("trans", trans1);
         glBindVertexArray(VertexArrayObject);
@@ -104,6 +175,26 @@ int main(int agrc, char* agrv[]){
 
         glfwSwapBuffers(window);
         glfwPollEvents();
+        
+        if (buttPand > 0) buttPand -= deltaTime;
+
+        if (glfwGetKey(window, GLFW_KEY_TAB) && buttPand <= 0){
+            polygon = polygon ? false : true;
+            if (polygon)
+                glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
+            else
+                glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
+            buttPand = 0.1f;
+        }
+
+        if (glfwGetKey(window, GLFW_KEY_1)){
+            shader.SetTexture(CatTex);
+            buttPand = 0.1f;
+        }
+        if (glfwGetKey(window, GLFW_KEY_2)){
+            shader.SetTexture(PugTex);
+            buttPand = 0.1f;
+        }
     }
     return 0;
 }
