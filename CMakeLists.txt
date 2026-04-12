@@ -5,7 +5,7 @@ find_package(glfw3 REQUIRED)
 find_package(glm CONFIG REQUIRED)
 find_package(OpenGL REQUIRED)
 
-file(GLOB_RECURSE SOURCE_FILE "main.cpp" "Shader/*.cpp" "ResourcesLoader/*.cpp" "glad/src/glad.c" "ResourcesLoader/stb/*.c")
+file(GLOB_RECURSE SOURCE_FILE "CameraMover/*.cpp" "Camera/*.cpp" "main.cpp" "Shader/*.cpp" "ResourcesLoader/*.cpp" "glad/src/glad.c" "ResourcesLoader/stb/*.c")
 
 add_executable(build ${SOURCE_FILE})
 

@@ -4,7 +4,7 @@
             "name": "glad",
             "includePath": [
                 "${workspaceFolder}/**",
-                "${workspaceFolder}/glad/include/**"
+                "~/Documents/CPP-Projects/OpenGL-Render/glad/include/**"
             ],
             "defines": [],
             "compilerPath": "/usr/bin/clang",
