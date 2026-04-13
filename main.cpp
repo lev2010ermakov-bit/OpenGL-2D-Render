@@ -109,6 +109,8 @@ int main(int agrc, char *agrv[])
 
     shader.Setup();
     shader.SetTexture(PugTex);
+    shader.UseTexture = false;
+    shader.color = Color(116, 155, 63);
 
     unsigned int VertexBufferObject, VertexArrayObject, ElementBufferObject;
     glGenVertexArrays(1, &VertexArrayObject);
@@ -176,9 +178,6 @@ int main(int agrc, char *agrv[])
 
         glBindVertexArray(0);
 
-        deltaTime = (float)glfwGetTime() - lastTime;
-        lastTime = (float)glfwGetTime();
-
         glfwSwapBuffers(window);
         glfwPollEvents();
 
@@ -195,17 +194,21 @@ int main(int agrc, char *agrv[])
             buttPand = 0.2f;
         }
 
-        if (glfwGetKey(window, GLFW_KEY_1))
+        if (glfwGetKey(window, GLFW_KEY_1) && buttPand <= 0)
         {
             shader.SetTexture(CatTex);
             buttPand = 0.2f;
         }
-        if (glfwGetKey(window, GLFW_KEY_2))
+        if (glfwGetKey(window, GLFW_KEY_2) && buttPand <= 0)
         {
             shader.SetTexture(PugTex);
             buttPand = 0.2f;
         }
-
+        if (glfwGetKey(window, GLFW_KEY_3) && buttPand <= 0){
+            shader.UseTexture = false;
+            shader.color = Color(116, 155, 63);
+            buttPand = 0.2f;
+        }
 
         if ((glfwGetKey(window, GLFW_KEY_ESCAPE) || glfwGetKey(window, GLFW_KEY_LEFT_SUPER)) && buttPand <= 0)
         {
@@ -218,7 +221,9 @@ int main(int agrc, char *agrv[])
             }
             mover->CursHiden = mover->CursHiden ? false : true;
             buttPand = 0.2f;
-    }
+        }
+        deltaTime = (float)glfwGetTime() - lastTime;
+        lastTime = (float)glfwGetTime();
     }
     return 0;
 }
