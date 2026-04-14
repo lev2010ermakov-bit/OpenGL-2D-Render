@@ -217,6 +217,7 @@ int main(int agrc, char *agrv[])
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
         rot += deltaTime;
+
         mover->Update(deltaTime);
 
         glBindVertexArray(VertexArrayObject);
@@ -226,17 +227,24 @@ int main(int agrc, char *agrv[])
             trans = glm::translate(trans, positions[i]);
             trans = glm::rotate(trans, rot, glm::vec3(1.0f));
             trans = glm::scale(trans, scales[i]);
+            float camPos[] = {Camera::main->position.x, Camera::main->position.y, Camera::main->position.z};
 
             shader.use();
             shader.SetColor("lightcolor", Color(255, 255, 255, 255));               // Set light color
             shader.SetFloat("ambientStrenght", 0.15f);                              // Set ambient light strenght 0...1
+            shader.SetFloat("SpecularStrenght", 0.5f);
+            shader.SetFloat("Specular", 32);
             shader.SetVec3("lightPos", (float[]){lampPos.x, lampPos.y, lampPos.z}); // Set a light source pos
+            shader.SetVec3("camPos", camPos);
             shader.SetMat4("model", trans);                                         // Set Transformation matrix to shader
             shader.SetMat4("view", Camera::main->GetView());                        // Set View matrix to make a camera moving effect
             shader.SetMat4("projection", Camera::main->GetProjection());            // Set Projection matrix to make a perspective effect
 
             glDrawArrays(GL_TRIANGLES, 0, 36);                                      // Drawing all points as a trianges
         }  
+
+        lampPos.x = cos(lastTime) * 4;
+        lampPos.z = sin(lastTime) * 4;
         
         glBindVertexArray(LightVertexArrayObject);
         trans = glm::mat4(1.f);
