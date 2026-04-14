@@ -225,6 +225,8 @@ int main(int agrc, char *agrv[])
             trans = glm::scale(trans, scales[i]);
 
             shader.use();
+            shader.SetColor("lightcolor", Color(255, 255, 255, 255));   // Set light color
+            shader.SetFloat("ambientStrenght", 0.15f);                  // Set ambient light strenght 0...1
             shader.SetMat4("model", trans);                             // Set Transformation matrix to shader
             shader.SetMat4("view", Camera::main->GetView());            // Set View matrix to make a camera moving effect
             shader.SetMat4("projection", Camera::main->GetProjection());// Set Projection matrix to make a perspective effect
