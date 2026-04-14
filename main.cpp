@@ -22,47 +22,48 @@ glm::mat4 trans = glm::mat4(1.0f);
 glm::mat4 Mmodel = glm::mat4(1.0f);
 
 const float Vertexes[] = {
-    -0.5f, -0.5f, -0.5f, 0.0f, 0.0f,
-    0.5f, -0.5f, -0.5f, 1.0f, 0.0f,
-    0.5f, 0.5f, -0.5f, 1.0f, 1.0f,
-    0.5f, 0.5f, -0.5f, 1.0f, 1.0f,
-    -0.5f, 0.5f, -0.5f, 0.0f, 1.0f,
-    -0.5f, -0.5f, -0.5f, 0.0f, 0.0f,
+    -0.5f, -0.5f, -0.5f,    0.0f, 0.0f,      0.0f,  0.0f, -1.0f,
+     0.5f, -0.5f, -0.5f,    1.0f, 0.0f,      0.0f,  0.0f, -1.0f,
+     0.5f,  0.5f, -0.5f,    1.0f, 1.0f,      0.0f,  0.0f, -1.0f,
+     0.5f,  0.5f, -0.5f,    1.0f, 1.0f,      0.0f,  0.0f, -1.0f,
+    -0.5f,  0.5f, -0.5f,    0.0f, 1.0f,      0.0f,  0.0f, -1.0f,
+    -0.5f, -0.5f, -0.5f,    0.0f, 0.0f,      0.0f,  0.0f, -1.0f,
 
-    -0.5f, -0.5f, 0.5f, 0.0f, 0.0f,
-    0.5f, -0.5f, 0.5f, 1.0f, 0.0f,
-    0.5f, 0.5f, 0.5f, 1.0f, 1.0f,
-    0.5f, 0.5f, 0.5f, 1.0f, 1.0f,
-    -0.5f, 0.5f, 0.5f, 0.0f, 1.0f,
-    -0.5f, -0.5f, 0.5f, 0.0f, 0.0f,
+    -0.5f, -0.5f,  0.5f,    0.0f, 0.0f,      0.0f,  0.0f,  1.0f, 
+     0.5f, -0.5f,  0.5f,    1.0f, 0.0f,      0.0f,  0.0f,  1.0f,
+     0.5f,  0.5f,  0.5f,    1.0f, 1.0f,      0.0f,  0.0f,  1.0f,
+     0.5f,  0.5f,  0.5f,    1.0f, 1.0f,      0.0f,  0.0f,  1.0f,
+    -0.5f,  0.5f,  0.5f,    0.0f, 1.0f,      0.0f,  0.0f,  1.0f,
+    -0.5f, -0.5f,  0.5f,    0.0f, 0.0f,      0.0f,  0.0f,  1.0f,
 
-    -0.5f, 0.5f, 0.5f, 1.0f, 0.0f,
-    -0.5f, 0.5f, -0.5f, 1.0f, 1.0f,
-    -0.5f, -0.5f, -0.5f, 0.0f, 1.0f,
-    -0.5f, -0.5f, -0.5f, 0.0f, 1.0f,
-    -0.5f, -0.5f, 0.5f, 0.0f, 0.0f,
-    -0.5f, 0.5f, 0.5f, 1.0f, 0.0f,
+    -0.5f,  0.5f,  0.5f,    1.0f, 0.0f,     -1.0f,  0.0f,  0.0f,
+    -0.5f,  0.5f, -0.5f,    1.0f, 1.0f,     -1.0f,  0.0f,  0.0f,
+    -0.5f, -0.5f, -0.5f,    0.0f, 1.0f,     -1.0f,  0.0f,  0.0f,
+    -0.5f, -0.5f, -0.5f,    0.0f, 1.0f,     -1.0f,  0.0f,  0.0f,
+    -0.5f, -0.5f,  0.5f,    0.0f, 0.0f,     -1.0f,  0.0f,  0.0f,
+    -0.5f,  0.5f,  0.5f,    1.0f, 0.0f,     -1.0f,  0.0f,  0.0f,
 
-    0.5f, 0.5f, 0.5f, 1.0f, 0.0f,
-    0.5f, 0.5f, -0.5f, 1.0f, 1.0f,
-    0.5f, -0.5f, -0.5f, 0.0f, 1.0f,
-    0.5f, -0.5f, -0.5f, 0.0f, 1.0f,
-    0.5f, -0.5f, 0.5f, 0.0f, 0.0f,
-    0.5f, 0.5f, 0.5f, 1.0f, 0.0f,
+     0.5f,  0.5f,  0.5f,    1.0f, 0.0f,      1.0f,  0.0f,  0.0f,
+     0.5f,  0.5f, -0.5f,    1.0f, 1.0f,      1.0f,  0.0f,  0.0f,
+     0.5f, -0.5f, -0.5f,    0.0f, 1.0f,      1.0f,  0.0f,  0.0f,
+     0.5f, -0.5f, -0.5f,    0.0f, 1.0f,      1.0f,  0.0f,  0.0f,
+     0.5f, -0.5f,  0.5f,    0.0f, 0.0f,      1.0f,  0.0f,  0.0f,
+     0.5f,  0.5f,  0.5f,    1.0f, 0.0f,      1.0f,  0.0f,  0.0f,
 
-    -0.5f, -0.5f, -0.5f, 0.0f, 1.0f,
-    0.5f, -0.5f, -0.5f, 1.0f, 1.0f,
-    0.5f, -0.5f, 0.5f, 1.0f, 0.0f,
-    0.5f, -0.5f, 0.5f, 1.0f, 0.0f,
-    -0.5f, -0.5f, 0.5f, 0.0f, 0.0f,
-    -0.5f, -0.5f, -0.5f, 0.0f, 1.0f,
+    -0.5f, -0.5f, -0.5f,    0.0f, 1.0f,      0.0f, -1.0f,  0.0f,
+     0.5f, -0.5f, -0.5f,    1.0f, 1.0f,      0.0f, -1.0f,  0.0f,
+     0.5f, -0.5f,  0.5f,    1.0f, 0.0f,      0.0f, -1.0f,  0.0f,
+     0.5f, -0.5f,  0.5f,    1.0f, 0.0f,      0.0f, -1.0f,  0.0f,
+    -0.5f, -0.5f,  0.5f,    0.0f, 0.0f,      0.0f, -1.0f,  0.0f,
+    -0.5f, -0.5f, -0.5f,    0.0f, 1.0f,      0.0f, -1.0f,  0.0f,
 
-    -0.5f, 0.5f, -0.5f, 0.0f, 1.0f,
-    0.5f, 0.5f, -0.5f, 1.0f, 1.0f,
-    0.5f, 0.5f, 0.5f, 1.0f, 0.0f,
-    0.5f, 0.5f, 0.5f, 1.0f, 0.0f,
-    -0.5f, 0.5f, 0.5f, 0.0f, 0.0f,
-    -0.5f, 0.5f, -0.5f, 0.0f, 1.0f};
+    -0.5f,  0.5f, -0.5f,    0.0f, 1.0f,      0.0f,  1.0f,  0.0f,
+     0.5f,  0.5f, -0.5f,    1.0f, 1.0f,      0.0f,  1.0f,  0.0f,
+     0.5f,  0.5f,  0.5f,    1.0f, 0.0f,      0.0f,  1.0f,  0.0f,
+     0.5f,  0.5f,  0.5f,    1.0f, 0.0f,      0.0f,  1.0f,  0.0f,
+    -0.5f,  0.5f,  0.5f,    0.0f, 0.0f,      0.0f,  1.0f,  0.0f,
+    -0.5f,  0.5f, -0.5f,    0.0f, 1.0f,      0.0f,  1.0f,  0.0f
+};
 
 const float lampVertexes[] = {
     -0.5f, -0.5f, -0.5f, 
@@ -161,10 +162,12 @@ int main(int agrc, char *agrv[])
 
     glGenVertexArrays(1, &VertexArrayObject);
     glBindVertexArray(VertexArrayObject);
-    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, sizeof(float) * 5, (void *)0);                  // Creating a VertexArray and setting instructions to reading vertex attribs
-    glEnableVertexAttribArray(0);                                                                   // 
-    glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void *)(3 * sizeof(float)));//
-    glEnableVertexAttribArray(1);                                                                   //
+    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)0);                  // Creating a VertexArray and setting instructions to reading vertex attribs
+    glEnableVertexAttribArray(0);                                                                  // 
+    glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)(3 * sizeof(float)));//
+    glEnableVertexAttribArray(1);                                                                  //
+    glVertexAttribPointer(2, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)(5 * sizeof(float)));//
+    glEnableVertexAttribArray(2);
 
     glGenVertexArrays(1, &LightVertexArrayObject);                                                  // Do the same for light objects buffer and array
     glBindVertexArray(LightVertexArrayObject);                                                      //
@@ -225,15 +228,16 @@ int main(int agrc, char *agrv[])
             trans = glm::scale(trans, scales[i]);
 
             shader.use();
-            shader.SetColor("lightcolor", Color(255, 255, 255, 255));   // Set light color
-            shader.SetFloat("ambientStrenght", 0.15f);                  // Set ambient light strenght 0...1
-            shader.SetMat4("model", trans);                             // Set Transformation matrix to shader
-            shader.SetMat4("view", Camera::main->GetView());            // Set View matrix to make a camera moving effect
-            shader.SetMat4("projection", Camera::main->GetProjection());// Set Projection matrix to make a perspective effect
+            shader.SetColor("lightcolor", Color(255, 255, 255, 255));               // Set light color
+            shader.SetFloat("ambientStrenght", 0.15f);                              // Set ambient light strenght 0...1
+            shader.SetVec3("lightPos", (float[]){lampPos.x, lampPos.y, lampPos.z}); // Set a light source pos
+            shader.SetMat4("model", trans);                                         // Set Transformation matrix to shader
+            shader.SetMat4("view", Camera::main->GetView());                        // Set View matrix to make a camera moving effect
+            shader.SetMat4("projection", Camera::main->GetProjection());            // Set Projection matrix to make a perspective effect
 
-            glDrawArrays(GL_TRIANGLES, 0, 36);                          // Drawing all points as a trianges
-        }
-
+            glDrawArrays(GL_TRIANGLES, 0, 36);                                      // Drawing all points as a trianges
+        }  
+        
         glBindVertexArray(LightVertexArrayObject);
         trans = glm::mat4(1.f);
         trans = glm::translate(trans, lampPos);
@@ -247,7 +251,6 @@ int main(int agrc, char *agrv[])
         LampShader.SetMat4("view", Camera::main->GetView());
         LampShader.SetMat4("projection", Camera::main->GetProjection());
         glDrawArrays(GL_TRIANGLES, 0, 36);
-        glBindVertexArray(0);
 
         glfwSwapBuffers(window);
         glfwPollEvents();

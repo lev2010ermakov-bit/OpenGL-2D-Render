@@ -40,6 +40,7 @@ class Shader{
 
         void SetFloat(const char* name, float value);
         void SetVec2(const char* name, vec2 value);
+        void SetVec3(const char* name, float value[2]);
         void SetVec4(const char* name, float value[4]);
 
         void SetMat4(const char* name, glm::mat4 value);
