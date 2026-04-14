@@ -3,7 +3,7 @@
 std::shared_ptr<Camera> Camera::main;
 
 Camera::Camera(){
-
+    
 }
 
 Camera::Camera(float fov, float xtoy, float near, float far){

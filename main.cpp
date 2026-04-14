@@ -14,6 +14,7 @@ float lastTime;
 float deltaTime;
 
 Shader shader;
+Shader LampShader;
 std::shared_ptr<Camera> camera;
 std::shared_ptr<CameraMover> mover;
 glm::mat4 trans = glm::mat4(1.0f);
@@ -63,9 +64,49 @@ const float Vertexes[] = {
     -0.5f, 0.5f, 0.5f, 0.0f, 0.0f,
     -0.5f, 0.5f, -0.5f, 0.0f, 1.0f};
 
-const int indices[] = {
-    0, 1, 3,
-    1, 2, 3};
+const float lampVertexes[] = {
+    -0.5f, -0.5f, -0.5f, 
+     0.5f, -0.5f, -0.5f,  
+     0.5f,  0.5f, -0.5f,  
+     0.5f,  0.5f, -0.5f,  
+    -0.5f,  0.5f, -0.5f, 
+    -0.5f, -0.5f, -0.5f, 
+ 
+    -0.5f, -0.5f,  0.5f, 
+     0.5f, -0.5f,  0.5f,  
+     0.5f,  0.5f,  0.5f,  
+     0.5f,  0.5f,  0.5f,  
+    -0.5f,  0.5f,  0.5f, 
+    -0.5f, -0.5f,  0.5f, 
+ 
+    -0.5f,  0.5f,  0.5f, 
+    -0.5f,  0.5f, -0.5f, 
+    -0.5f, -0.5f, -0.5f, 
+    -0.5f, -0.5f, -0.5f, 
+    -0.5f, -0.5f,  0.5f, 
+    -0.5f,  0.5f,  0.5f, 
+ 
+     0.5f,  0.5f,  0.5f,  
+     0.5f,  0.5f, -0.5f,  
+     0.5f, -0.5f, -0.5f,  
+     0.5f, -0.5f, -0.5f,  
+     0.5f, -0.5f,  0.5f,  
+     0.5f,  0.5f,  0.5f,  
+ 
+    -0.5f, -0.5f, -0.5f, 
+     0.5f, -0.5f, -0.5f,  
+     0.5f, -0.5f,  0.5f,  
+     0.5f, -0.5f,  0.5f,  
+    -0.5f, -0.5f,  0.5f, 
+    -0.5f, -0.5f, -0.5f, 
+ 
+    -0.5f,  0.5f, -0.5f, 
+     0.5f,  0.5f, -0.5f,  
+     0.5f,  0.5f,  0.5f,  
+     0.5f,  0.5f,  0.5f,  
+    -0.5f,  0.5f,  0.5f, 
+    -0.5f,  0.5f, -0.5f, 
+};
 
 void frame_buffer_size_callback(GLFWwindow *window, int width, int height)
 {
@@ -75,71 +116,87 @@ void frame_buffer_size_callback(GLFWwindow *window, int width, int height)
     mover->lasty = (float)height/2; 
 }
 
-float mouse_sence = 0.1f;
-
 void curs_callback(GLFWwindow* wind, double x, double y){
     mover->onCursPosChanged(wind, x, y);
 }
+
 int main(int agrc, char *agrv[])
 {
-    camera = std::make_shared<Camera>(60.f, 800.f/600.f, 0.1f, 100.f);
-    Camera::SetMain(camera);
+    camera = std::make_shared<Camera>(60.f, 800.f/600.f, 0.1f, 100.f);  // Initializing camera class
+    Camera::SetMain(camera);                                            // Set new camera as a main  
 
     curr_agrv = agrv[0];
-    glfwInit();
-    glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
-    glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
-    glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
+    glfwInit();                                                     // Initializing a glfw
+    glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);                  // Set version of programm context to 3 
+    glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);                  //
+    glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);  // Set Profile of programm context to core
 
-    GLFWwindow *window = glfwCreateWindow(800, 600, "OpenGL 2D Render", NULL, NULL);
-    glfwMakeContextCurrent(window);
-    glfwSetFramebufferSizeCallback(window, frame_buffer_size_callback);
+    GLFWwindow *window = glfwCreateWindow(800, 600, "OpenGL 2D Render", NULL, NULL);    // Create a small window
+    glfwMakeContextCurrent(window);                                                     // Give a program focuse to window
+    glfwSetFramebufferSizeCallback(window, frame_buffer_size_callback);                 // Set a window scaling callback
 
-    if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
+    if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))                            // Load glad function uses a glfw
     {
-        std::cout << "Failed To init glad" << std::endl;
+        std::cout << "Failed To init glad" << std::endl;                                // error log
     }
 
-    mover = std::make_shared<CameraMover>(camera, window);
+    mover = std::make_shared<CameraMover>(camera, window);  // Create a class that moves the camera
 
-    glEnable(GL_DEPTH_TEST);
+    glEnable(GL_DEPTH_TEST);    // enable an OpenGL depth test 
 
-    std::shared_ptr<Texture2D> PugTex = std::make_shared<Texture2D>("Resources/Textures/PugImage.png", GL_RGBA);
-    std::shared_ptr<Texture2D> CatTex = std::make_shared<Texture2D>("Resources/Textures/catImage.jpg", GL_RGB);
+    std::shared_ptr<Texture2D> PugTex = std::make_shared<Texture2D>("Resources/Textures/PugImage.png", GL_RGBA);    // Loading a Textures From local path that always starts from "Resources"
+    std::shared_ptr<Texture2D> CatTex = std::make_shared<Texture2D>("Resources/Textures/catImage.jpg", GL_RGB);     // Do same for second texture
 
     shader.Setup();
-    shader.SetTexture(PugTex);
-    shader.UseTexture = false;
     shader.color = Color(116, 155, 63);
 
-    unsigned int VertexBufferObject, VertexArrayObject, ElementBufferObject;
+    LampShader.Setup("Resources/Shaders/LightSourceVert.glsl", "Resources/Shaders/LightSourceFrag.glsl");
+
+    unsigned int VertexBufferObject, VertexArrayObject, LightVertexArrayObject, LightVertexBufferObject;
+
+    glGenBuffers(1, &VertexBufferObject);                                                           // Creating buffer for vertexes attribs and sending it to video card
+    glBindBuffer(GL_ARRAY_BUFFER, VertexBufferObject);                                              //
+    glBufferData(GL_ARRAY_BUFFER, sizeof(Vertexes), Vertexes, GL_STATIC_DRAW);                      //
+
+
     glGenVertexArrays(1, &VertexArrayObject);
     glBindVertexArray(VertexArrayObject);
+    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, sizeof(float) * 5, (void *)0);                  // Creating a VertexArray and setting instructions to reading vertex attribs
+    glEnableVertexAttribArray(0);                                                                   // 
+    glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void *)(3 * sizeof(float)));//
+    glEnableVertexAttribArray(1);                                                                   //
 
-    glGenBuffers(1, &VertexBufferObject);
-    glBindBuffer(GL_ARRAY_BUFFER, VertexBufferObject);
-    glBufferData(GL_ARRAY_BUFFER, sizeof(Vertexes), Vertexes, GL_STATIC_DRAW);
-    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, sizeof(float) * 5, (void *)0);
-    glEnableVertexAttribArray(0);
-    glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void *)(3 * sizeof(float)));
-    glEnableVertexAttribArray(1);
+    glGenVertexArrays(1, &LightVertexArrayObject);                                                  // Do the same for light objects buffer and array
+    glBindVertexArray(LightVertexArrayObject);                                                      //
+    glGenBuffers(1, &LightVertexBufferObject);                                                      //
+    glBindBuffer(GL_ARRAY_BUFFER, LightVertexBufferObject);                                         //
+    glBufferData(GL_ARRAY_BUFFER, sizeof(lampVertexes), lampVertexes, GL_STATIC_DRAW);              //
+                                                                                                    //
+    glBindVertexArray(LightVertexArrayObject);                                                      //
+    glBindBuffer(GL_ARRAY_BUFFER, LightVertexBufferObject);                                         //
+    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, sizeof(float) * 3, (void*)0);                   //
+    glEnableVertexAttribArray(0);                                                                   //
 
-    glGenBuffers(1, &ElementBufferObject);
-    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, ElementBufferObject);
-    glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices, GL_STATIC_DRAW);
+    glBindVertexArray(0);
 
-    frame_buffer_size_callback(window, 800, 600);
-    glfwSwapInterval((float)1 / (float)144);
+    frame_buffer_size_callback(window, 800, 600);                                                   // calling a window scaling callback to setup our program to res 800x600
+    glfwSwapInterval((float)1 / (float)144);                                                        // Setting Vsync for 144 hz monitor
 
     glm::vec3 positions[] = {
-        glm::vec3(-0.7f, 0.8f, -5.f),
-        glm::vec3(-0.9f, -0.7f, -2.f),
-        glm::vec3(0.8f, 0.9f, -2.f)};
+        glm::vec3(-1.5f, 2.f, -5.f),
+        glm::vec3(3.f, -0.7f, -2.f),
+        glm::vec3(0.8f, 4.f, -2.f)
+    };
 
     glm::vec3 scales[] = {
-        glm::vec3(0.5f),
+        glm::vec3(1.1f),
         glm::vec3(2.f),
-        glm::vec3(0.7f)};
+        glm::vec3(0.7f)
+    };
+
+    glm::vec3 lampPos(0.0f);
+    glm::vec3 lampRot(0.0f);
+    glm::vec3 lampScale(0.2f);
 
     bool polygon;
     float buttPand;
@@ -160,22 +217,34 @@ int main(int agrc, char *agrv[])
         mover->Update(deltaTime);
 
         glBindVertexArray(VertexArrayObject);
-
-        for (int i = 0; i < positions->length(); i++)
+        for (int i = 0; i < positions->length(); i++)               // this cycle draws all cubes from  position and scales arrays
         {
             trans = Mmodel;
             trans = glm::translate(trans, positions[i]);
             trans = glm::rotate(trans, rot, glm::vec3(1.0f));
             trans = glm::scale(trans, scales[i]);
 
-            shader.SetMat4("model", trans);
-            shader.SetMat4("view", camera->GetView());
-            shader.SetMat4("projection", camera->GetProjection());
-
             shader.use();
-            glDrawArrays(GL_TRIANGLES, 0, 36);
+            shader.SetMat4("model", trans);                             // Set Transformation matrix to shader
+            shader.SetMat4("view", Camera::main->GetView());            // Set View matrix to make a camera moving effect
+            shader.SetMat4("projection", Camera::main->GetProjection());// Set Projection matrix to make a perspective effect
+
+            glDrawArrays(GL_TRIANGLES, 0, 36);                          // Drawing all points as a trianges
         }
 
+        glBindVertexArray(LightVertexArrayObject);
+        trans = glm::mat4(1.f);
+        trans = glm::translate(trans, lampPos);
+        trans = glm::rotate(trans, lampRot.x, glm::vec3(1.f, 0.f, 0.f));
+        trans = glm::rotate(trans, lampRot.y, glm::vec3(0.f, 1.f, 0.f));
+        trans = glm::rotate(trans, lampRot.z, glm::vec3(0.f, 0.f, 1.f));
+        trans = glm::scale(trans, lampScale);
+
+        LampShader.use();
+        LampShader.SetMat4("model", trans);
+        LampShader.SetMat4("view", Camera::main->GetView());
+        LampShader.SetMat4("projection", Camera::main->GetProjection());
+        glDrawArrays(GL_TRIANGLES, 0, 36);
         glBindVertexArray(0);
 
         glfwSwapBuffers(window);
@@ -184,46 +253,36 @@ int main(int agrc, char *agrv[])
         if (buttPand > 0)
             buttPand -= deltaTime;
 
-        if (glfwGetKey(window, GLFW_KEY_TAB) && buttPand <= 0)
-        {
-            polygon = polygon ? false : true;
-            if (polygon)
-                glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
-            else
-                glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
-            buttPand = 0.2f;
+        if (glfwGetKey(window, GLFW_KEY_TAB) && buttPand <= 0)  // Switching a polygon mode
+        {                                                       // 
+            polygon = polygon ? false : true;                   //
+            if (polygon)                                        //
+                glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);      //
+            else                                                //
+                glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);      //
+            buttPand = 0.2f;                                    //
         }
 
-        if (glfwGetKey(window, GLFW_KEY_1) && buttPand <= 0)
-        {
-            shader.SetTexture(CatTex);
-            buttPand = 0.2f;
-        }
-        if (glfwGetKey(window, GLFW_KEY_2) && buttPand <= 0)
-        {
-            shader.SetTexture(PugTex);
-            buttPand = 0.2f;
-        }
-        if (glfwGetKey(window, GLFW_KEY_3) && buttPand <= 0){
-            shader.UseTexture = false;
-            shader.color = Color(116, 155, 63);
-            buttPand = 0.2f;
-        }
+        if (glfwGetKey(window, GLFW_KEY_1) && buttPand <= 0)    // Switching to Cat texture
+        {                                                       //
+            shader.SetTexture(CatTex);                          //
+            buttPand = 0.2f;                                    //
+        }                                                       //
 
-        if ((glfwGetKey(window, GLFW_KEY_ESCAPE) || glfwGetKey(window, GLFW_KEY_LEFT_SUPER)) && buttPand <= 0)
-        {
-            if (mover->CursHiden)
-                glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_NORMAL);
-            else
-            {
-                glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
-                mover->firstMouse = true;
-            }
-            mover->CursHiden = mover->CursHiden ? false : true;
-            buttPand = 0.2f;
-        }
-        deltaTime = (float)glfwGetTime() - lastTime;
-        lastTime = (float)glfwGetTime();
+        if (glfwGetKey(window, GLFW_KEY_2) && buttPand <= 0)    // Switching to Pug texture
+        {                                                       //
+            shader.SetTexture(PugTex);                          //
+            buttPand = 0.2f;                                    //
+        }                                                       //
+
+        if (glfwGetKey(window, GLFW_KEY_3) && buttPand <= 0){   // Switching to Monochrome mode
+            shader.UseTexture = false;                          //
+            shader.color = Color(116, 155, 63);                 //
+            buttPand = 0.2f;                                    //
+        }                                                       //
+
+        deltaTime = (float)glfwGetTime() - lastTime;            // Calculation of time beetween frames
+        lastTime = (float)glfwGetTime();                        //
     }
     return 0;
 }

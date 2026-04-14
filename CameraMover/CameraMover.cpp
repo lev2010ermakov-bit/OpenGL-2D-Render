@@ -7,6 +7,7 @@ CameraMover::CameraMover(std::shared_ptr<Camera> cam, GLFWwindow* currWindow){
 
 void CameraMover::Update(float dt){
     deltaTime = dt;
+    buttPand -= dt;
     keyboard_moving();
     mouse_moving();
 }
@@ -27,6 +28,18 @@ void CameraMover::keyboard_moving(){
     if (glfwGetKey(window, GLFW_KEY_D))
     {
         camera->position += glm::normalize(glm::cross(camera->front, camera->up)) * 10.f * deltaTime;
+    }
+    if (glfwGetKey(window, GLFW_KEY_ESCAPE) && buttPand <= 0)
+    {
+        if (CursHiden)
+            glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_NORMAL);
+        else
+        {
+            glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
+            firstMouse = true;
+        }
+        CursHiden = CursHiden ? false : true;
+        buttPand = 0.2f;
     }
 }
 

@@ -72,7 +72,7 @@ void Shader::Setup(){
 }
 
 void Shader::use(){
-    texture->Bind();
+    if (texture) texture->Bind();
     SetColor("color", color);
     SetBool("UseTexture", UseTexture);
     SetFloat("time", (float)glfwGetTime());
