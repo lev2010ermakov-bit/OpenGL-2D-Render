@@ -1,7 +1,6 @@
-#include "glad/include/glad/glad.h"
+#include <glad/glad.h>
 #include <GLFW/glfw3.h>
 #include <iostream>
-#include <filesystem>
 #include "Shader/Shader.hpp"
 #include "ResourcesLoader/Loader.hpp"
 #include "CameraMover/CameraMover.hpp"
@@ -22,8 +21,8 @@ glm::mat4 trans = glm::mat4(1.0f);
 glm::mat4 Mmodel = glm::mat4(1.0f);
 
 const float Vertexes[] = {
-    -0.5f, -0.5f, -0.5f,    0.0f, 0.0f,      0.0f,  0.0f, -1.0f,
-     0.5f, -0.5f, -0.5f,    1.0f, 0.0f,      0.0f,  0.0f, -1.0f,
+     -0.5f,  -0.5f,  -0.5f,     0.0f,  0.0f,       0.0f,   0.0f,  -1.0f,
+      0.5f,  -0.5f, -0.5f,    1.0f, 0.0f,      0.0f,  0.0f, -1.0f,
      0.5f,  0.5f, -0.5f,    1.0f, 1.0f,      0.0f,  0.0f, -1.0f,
      0.5f,  0.5f, -0.5f,    1.0f, 1.0f,      0.0f,  0.0f, -1.0f,
     -0.5f,  0.5f, -0.5f,    0.0f, 1.0f,      0.0f,  0.0f, -1.0f,
@@ -232,10 +231,10 @@ int main(int agrc, char *agrv[])
             shader.use();
             shader.SetColor("lightcolor", Color(255, 255, 255, 255));               // Set light color
             shader.SetFloat("ambientStrenght", 0.15f);                              // Set ambient light strenght 0...1
-            shader.SetFloat("SpecularStrenght", 0.5f);
-            shader.SetFloat("Specular", 32);
+            shader.SetFloat("SpecularStrenght", 0.5f);                              // Set a specular coef
+            shader.SetFloat("Specular", 32);                                        // Set the specular. as specular small as count is greater
             shader.SetVec3("lightPos", (float[]){lampPos.x, lampPos.y, lampPos.z}); // Set a light source pos
-            shader.SetVec3("camPos", camPos);
+            shader.SetVec3("camPos", camPos);                                       // Set a view pos
             shader.SetMat4("model", trans);                                         // Set Transformation matrix to shader
             shader.SetMat4("view", Camera::main->GetView());                        // Set View matrix to make a camera moving effect
             shader.SetMat4("projection", Camera::main->GetProjection());            // Set Projection matrix to make a perspective effect
@@ -243,8 +242,8 @@ int main(int agrc, char *agrv[])
             glDrawArrays(GL_TRIANGLES, 0, 36);                                      // Drawing all points as a trianges
         }  
 
-        lampPos.x = cos(lastTime) * 4;
-        lampPos.z = sin(lastTime) * 4;
+        //lampPos.x = cos(lastTime) * 4;
+        //lampPos.z = sin(lastTime) * 4;
         
         glBindVertexArray(LightVertexArrayObject);
         trans = glm::mat4(1.f);

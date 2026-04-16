@@ -1,4 +1,9 @@
 #include "Shader.hpp"
+#include <iostream>
+#include <glad/glad.h>
+#include <filesystem>
+#include <sstream>
+#include <fstream>
 
 vec2::vec2(float nx, float ny){
     x = nx;

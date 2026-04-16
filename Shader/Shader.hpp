@@ -1,15 +1,10 @@
 #pragma once
 
-#include <iostream>
-#include "../glad/include/glad/glad.h"
 #include <GLFW/glfw3.h>
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
-#include <sstream>
-#include <fstream>
 #include <string>
-#include <filesystem>
 #include <stdint.h>
 #include <memory>
 #include "../ResourcesLoader/Loader.hpp"
@@ -28,10 +23,10 @@ struct Color{
 
 class Shader{
     public:
-        unsigned int ID;
-        std::shared_ptr<Texture2D> texture;
-        bool UseTexture;
-        Color color;
+        unsigned int ID = 0;
+        std::shared_ptr<Texture2D> texture = nullptr;
+        bool UseTexture = false;
+        Color color = Color();
         Shader();
         Shader(const char* VertPath, const char* FragPath);
         void Setup(const char* VertPath, const char* FragPath);
