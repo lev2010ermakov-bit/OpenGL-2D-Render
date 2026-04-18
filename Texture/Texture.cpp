@@ -1,6 +1,7 @@
-#include "Loader.hpp"
-
-char* curr_agrv;
+#include "Texture.hpp"
+#include <string>
+#include "../Loader/Loader.hpp"
+#include <iostream>
 
 Texture2D::Texture2D(){
 
@@ -24,7 +25,7 @@ void Texture2D::loadFromFile(const char* path, GLint ca){
     std::string globalPath = GetFullPath(path);
 
     stbi_set_flip_vertically_on_load(true);
-    unsigned char* data = stbi_load(globalPath.c_str(), &width, &height, &nrChanels, NULL);
+    unsigned char* data = stbi_load(globalPath.c_str(), &width, &height, &nrChanels, 0);
     if (data){
         glTexImage2D(GL_TEXTURE_2D, 0, ca, width, height, 0, ca, GL_UNSIGNED_BYTE, data);
         glGenerateMipmap(GL_TEXTURE_2D);
@@ -37,8 +38,4 @@ void Texture2D::loadFromFile(const char* path, GLint ca){
 
 void Texture2D::Bind(){
     glBindTexture(GL_TEXTURE_2D, ID);
-}
-
-std::string GetFullPath(const char* localPath){
-    return std::string(std::filesystem::absolute(curr_agrv).parent_path().parent_path().parent_path()) + std::string("/") + std::string(localPath);
 }

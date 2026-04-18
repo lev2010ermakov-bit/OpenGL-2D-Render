@@ -1,14 +1,4 @@
 #include "Shader.hpp"
-#include <iostream>
-#include <glad/glad.h>
-#include <filesystem>
-#include <sstream>
-#include <fstream>
-
-vec2::vec2(float nx, float ny){
-    x = nx;
-    y = ny;
-}
 
 Shader::Shader(){
 }
@@ -88,8 +78,8 @@ void Shader::SetFloat(const char* name, float value){
     glUniform1f(glGetUniformLocation(ID, name), value);   
 }
 
-void Shader::SetVec2(const char* name, vec2 value){
-    glUniform2f(glGetUniformLocation(ID, name), value.x, value.y);
+void Shader::SetVec2(const char* name, float value[2]){
+    glUniform2f(glGetUniformLocation(ID, name), value[0], value[1]);
 }
 
 void Shader::SetVec3(const char* name, float value[3]){

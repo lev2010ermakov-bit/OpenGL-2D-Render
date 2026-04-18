@@ -2,12 +2,14 @@
 #include <GLFW/glfw3.h>
 #include <iostream>
 #include "Shader/Shader.hpp"
-#include "ResourcesLoader/Loader.hpp"
+#include "Loader/Loader.hpp"
 #include "CameraMover/CameraMover.hpp"
 #include "Camera/Camera.hpp"
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
+#include <memory>
+#include "stb/stb_image.h"
 
 float lastTime;
 float deltaTime;
@@ -145,7 +147,8 @@ int main(int agrc, char *agrv[])
     glEnable(GL_DEPTH_TEST);    // enable an OpenGL depth test 
 
     std::shared_ptr<Texture2D> PugTex = std::make_shared<Texture2D>("Resources/Textures/PugImage.png", GL_RGBA);    // Loading a Textures From local path that always starts from "Resources"
-    std::shared_ptr<Texture2D> CatTex = std::make_shared<Texture2D>("Resources/Textures/catImage.jpg", GL_RGB);     // Do same for second texture
+    std::shared_ptr<Texture2D> CatTex = std::make_shared<Texture2D>("Resources/Textures/catImage.jpg", GL_RGB);     //
+    std::shared_ptr<Texture2D> RockTex = std::make_shared<Texture2D>("Resources/Textures/rockImage.jpg", GL_RGB);   // 
 
     shader.Setup();
     shader.color = Color(116, 155, 63);
@@ -241,9 +244,6 @@ int main(int agrc, char *agrv[])
 
             glDrawArrays(GL_TRIANGLES, 0, 36);                                      // Drawing all points as a trianges
         }  
-
-        //lampPos.x = cos(lastTime) * 4;
-        //lampPos.z = sin(lastTime) * 4;
         
         glBindVertexArray(LightVertexArrayObject);
         trans = glm::mat4(1.f);
@@ -287,7 +287,12 @@ int main(int agrc, char *agrv[])
             buttPand = 0.2f;                                    //
         }                                                       //
 
-        if (glfwGetKey(window, GLFW_KEY_3) && buttPand <= 0){   // Switching to Monochrome mode
+        if (glfwGetKey(window, GLFW_KEY_3) && buttPand <= 0){
+            shader.SetTexture(RockTex);
+            buttPand = 0.2f;
+        }
+
+        if (glfwGetKey(window, GLFW_KEY_4) && buttPand <= 0){   // Switching to Monochrome mode
             shader.UseTexture = false;                          //
             shader.color = Color(116, 155, 63);                 //
             buttPand = 0.2f;                                    //

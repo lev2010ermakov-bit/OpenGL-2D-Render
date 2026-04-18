@@ -1,13 +1,7 @@
 #pragma once
 
-#include "stb/stb_image.h"
 #include <glad/glad.h>
-#include <iostream>
-#include <string>
-#include <filesystem>
-
-extern char* curr_agrv;
-
+#include "../stb/stb_image.h"
 struct Texture2D{
     unsigned int ID;
     GLint ColAttrib;
@@ -17,5 +11,3 @@ struct Texture2D{
     void loadFromFile(const char* path, GLint colorAttrib);
     void Bind();
 };
-
-std::string GetFullPath(const char* localPath);

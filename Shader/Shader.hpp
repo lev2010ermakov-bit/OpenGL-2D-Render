@@ -1,5 +1,6 @@
 #pragma once
 
+#include <glad/glad.h>
 #include <GLFW/glfw3.h>
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
@@ -7,12 +8,12 @@
 #include <string>
 #include <stdint.h>
 #include <memory>
-#include "../ResourcesLoader/Loader.hpp"
+#include "../Texture/Texture.hpp"
+#include "../Loader/Loader.hpp"
+#include <iostream>
+#include <sstream>
+#include <fstream>
 
-struct vec2{
-    float x, y;
-    vec2(float x, float y);
-};
 
 struct Color{
     uint8_t r = 255, g = 255, b = 255, a = 255;
@@ -34,8 +35,8 @@ class Shader{
         void use();
 
         void SetFloat(const char* name, float value);
-        void SetVec2(const char* name, vec2 value);
-        void SetVec3(const char* name, float value[2]);
+        void SetVec2(const char* name, float value[2]);
+        void SetVec3(const char* name, float value[3]);
         void SetVec4(const char* name, float value[4]);
 
         void SetMat4(const char* name, glm::mat4 value);
