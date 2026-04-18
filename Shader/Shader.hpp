@@ -23,12 +23,17 @@ struct Color{
 };
 
 class Shader{
+    private:
+        std::string VertSourceString;
+        std::string FragSourceString;
     public:
         unsigned int ID = 0;
         std::shared_ptr<Texture2D> texture = nullptr;
         bool UseTexture = false;
         Color color = Color();
         Shader();
+        Shader(Shader&& other);
+        Shader(const Shader& other);
         Shader(const char* VertPath, const char* FragPath);
         void Setup(const char* VertPath, const char* FragPath);
         void Setup();
@@ -47,6 +52,9 @@ class Shader{
         void SetColor(const char* name, Color col);
 
         void SetTexture(std::shared_ptr<Texture2D> texture);
+
+        Shader& operator=(const Shader& other);
+        Shader& operator=(Shader&& other);
 };
 
 void ShaderLog(int Shader);

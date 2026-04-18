@@ -1,6 +1,44 @@
 #include "Shader.hpp"
+#include "glad/glad.h"
 
 Shader::Shader(){
+}
+
+Shader::Shader(Shader&& other){
+    ID = other.ID;
+    texture = other.texture;
+    UseTexture = other.UseTexture;
+    color = other.color;
+}
+
+Shader::Shader(const Shader& other){
+    VertSourceString = other.VertSourceString;
+    FragSourceString = other.FragSourceString;
+
+    const char* VertChars = VertSourceString.c_str();
+    const char* FragChars = FragSourceString.c_str();
+
+    unsigned int vertshade, fragshade;
+    ID = glCreateProgram();
+
+    vertshade = glCreateShader(GL_VERTEX_SHADER);
+    fragshade = glCreateShader(GL_FRAGMENT_SHADER);
+
+    glShaderSource(vertshade, 1, &VertChars, NULL);
+    glCompileShader(vertshade);
+    ShaderLog(vertshade);
+
+    glShaderSource(fragshade, 1, &FragChars, NULL);
+    glCompileShader(fragshade);
+    ShaderLog(fragshade);
+
+    glAttachShader(ID, vertshade);
+    glAttachShader(ID, fragshade);
+    glLinkProgram(ID);
+
+    glDeleteShader(vertshade);
+    glDeleteShader(vertshade);
+    color = Color(0, 0, 0, 255);
 }
 
 Shader::Shader(const char* VertPath, const char* FragPath){
@@ -25,6 +63,9 @@ void Shader::Setup(const char* VertPath, const char* FragPath){
 
         VertFile.close();
         FragFile.close();
+
+        VertSourceString = VertString;
+        FragSourceString = FragString;
 
         VertString = VertStream.str();
         FragString = FragStream.str();
@@ -57,9 +98,7 @@ void Shader::Setup(const char* VertPath, const char* FragPath){
 
     glDeleteShader(VertShader);
     glDeleteShader(FragShader);
-    color = Color(255, 200, 100, 100);
-    SetVec4("color", (float[]){1, 1, 1, 1});
-    UseTexture = false;
+    color = Color(0, 0, 0, 255);
 }
 
 void Shader::Setup(){
@@ -111,6 +150,14 @@ void Shader::SetColor(const char* name, Color col){
 void Shader::SetTexture(std::shared_ptr<Texture2D> ntexture){
     texture = ntexture;
     UseTexture = true;
+}
+
+// need to write that operators
+Shader& Shader::operator=(Shader&& other){
+}
+
+Shader& Shader::operator=(const Shader& other){
+
 }
 
 void ShaderLog(int Shader){
