@@ -32,8 +32,8 @@ class Shader{
         bool UseTexture = false;
         Color color = Color();
         Shader();
-        Shader(Shader&& other);
         Shader(const Shader& other);
+        Shader(const Shader&& other);
         Shader(const char* VertPath, const char* FragPath);
         void Setup(const char* VertPath, const char* FragPath);
         void Setup();

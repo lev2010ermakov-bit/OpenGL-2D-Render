@@ -4,7 +4,7 @@
 Shader::Shader(){
 }
 
-Shader::Shader(Shader&& other){
+Shader::Shader(const Shader&& other){
     ID = other.ID;
     texture = other.texture;
     UseTexture = other.UseTexture;
@@ -107,10 +107,10 @@ void Shader::Setup(){
 
 void Shader::use(){
     if (texture) texture->Bind();
-    SetColor("color", color);
+    glUseProgram(ID);
+    SetColor("u_Color", color);
     SetBool("UseTexture", UseTexture);
     SetFloat("time", (float)glfwGetTime());
-    glUseProgram(ID);
 }
 
 void Shader::SetFloat(const char* name, float value){

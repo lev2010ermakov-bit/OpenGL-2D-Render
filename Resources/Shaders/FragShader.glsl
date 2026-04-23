@@ -4,7 +4,7 @@ in vec2 TexCoords;
 in vec3 FragPos;
 in vec3 Normal;
 
-uniform vec4 color;
+uniform vec4 u_Color;
 uniform vec4 lightcolor;
 uniform sampler2D Texture;
 uniform float ambientStrenght;
@@ -38,6 +38,6 @@ void main(){
         FragColor = vec4(lightRes * texture(Texture, TexCoords));
     }
     else{
-        FragColor = vec4(lightRes * color);
+        FragColor = vec4(lightRes * u_Color);
     }
 }

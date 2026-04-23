@@ -8,14 +8,13 @@ out vec2 TexCoords;
 out vec3 FragPos;
 out vec3 Normal;
 
-uniform float time;
-uniform mat4 model;
-uniform mat4 view;
-uniform mat4 projection;
+uniform mat4 u_Model;
+uniform mat4 u_View;
+uniform mat4 u_Projection;
 
 void main(){
-    gl_Position = projection * view * model * vec4(aPos.xyz, 1.0f);
-    FragPos = vec3(model * vec4(aPos, 1.0f)); 
+    gl_Position = u_Projection * u_View * u_Model * vec4(aPos, 1.0f);
+    FragPos = vec3(u_Model * vec4(aPos, 1.0f)); 
     TexCoords = aTex;
-    Normal = mat3(transpose(inverse(model))) * aNorm;
+    Normal = mat3(transpose(inverse(u_Model))) * aNorm;
 }

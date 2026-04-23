@@ -60,13 +60,13 @@ void CameraMover::mouse_moving(){
     yoffset *= mouse_sence;
     if (CursHiden)
     {
-        camera->yaw -= xoffset;
-        camera->pitch -= yoffset;
+        camera->eulerAngles.y -= xoffset;
+        camera->eulerAngles.x -= yoffset;
     }
-    if (camera->pitch >= 89.999f)
-        camera->pitch = 89.999f;
-    else if (camera->pitch <= -89.999f)
-        camera->pitch = -89.999f;
+    if (camera->eulerAngles.x >= 89.999f)
+        camera->eulerAngles.x = 89.999f;
+    else if (camera->eulerAngles.x <= -89.999f)
+        camera->eulerAngles.x = -89.999f;
 }
 
 void CameraMover::onCursPosChanged(GLFWwindow* wind, double nx, double ny){
