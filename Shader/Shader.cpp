@@ -1,5 +1,8 @@
 #include "Shader.hpp"
 #include "glad/glad.h"
+#include <iostream>
+#include <fstream>
+#include <sstream>
 
 Shader::Shader(){
 }
@@ -53,8 +56,8 @@ void Shader::Setup(const char* VertPath, const char* FragPath){
     FragFile.exceptions(std::ifstream::failbit | std::ifstream::badbit);
 
     try{
-        VertFile.open(GetFullPath(VertPath));
-        FragFile.open(GetFullPath(FragPath));
+        VertFile.open(VertPath);
+        FragFile.open(FragPath);
 
         std::stringstream VertStream, FragStream;
 
@@ -71,7 +74,7 @@ void Shader::Setup(const char* VertPath, const char* FragPath){
         FragString = FragStream.str();
     }
     catch(std::ifstream::failure& ex){
-        std::cout << "Failed To Read Shader Files\n";
+        std::cout << "Failed To Read Shader Files:" << VertPath << " " << FragPath << std::endl;
         return;
     }
 
@@ -102,12 +105,12 @@ void Shader::Setup(const char* VertPath, const char* FragPath){
 }
 
 void Shader::Setup(){
-    Setup("Resources/Shaders/VertShader.glsl", "Resources/Shaders/FragShader.glsl");
+    Setup(GetFullPath("Resources/Shaders/VertShader.glsl").c_str(), GetFullPath("Resources/Shaders/FragShader.glsl").c_str());
 }
 
 void Shader::use(){
-    if (texture) texture->Bind();
     glUseProgram(ID);
+    if (texture) texture->Bind();
     SetColor("u_Color", color);
     SetBool("UseTexture", UseTexture);
     SetFloat("time", (float)glfwGetTime());
@@ -154,10 +157,11 @@ void Shader::SetTexture(std::shared_ptr<Texture2D> ntexture){
 
 // need to write that operators
 Shader& Shader::operator=(Shader&& other){
+    return *this;
 }
 
 Shader& Shader::operator=(const Shader& other){
-
+    return *this;
 }
 
 void ShaderLog(int Shader){

@@ -9,10 +9,6 @@
 #include <stdint.h>
 #include <memory>
 #include "../Texture/Texture.hpp"
-#include "../Loader/Loader.hpp"
-#include <iostream>
-#include <sstream>
-#include <fstream>
 
 
 struct Color{
@@ -28,8 +24,8 @@ class Shader{
         std::string FragSourceString;
     public:
         unsigned int ID = 0;
-        std::shared_ptr<Texture2D> texture = nullptr;
         bool UseTexture = false;
+        std::shared_ptr<Texture2D> texture = nullptr;
         Color color = Color();
         Shader();
         Shader(const Shader& other);
@@ -40,10 +36,17 @@ class Shader{
         void use();
 
         void SetFloat(const char* name, float value);
+        
         void SetVec2(const char* name, float value[2]);
+        void SetVec2(const char* name, glm::vec2 value);
+        
         void SetVec3(const char* name, float value[3]);
-        void SetVec4(const char* name, float value[4]);
+        void SetVec3(const char* name, glm::vec3 value);
 
+        void SetVec4(const char* name, float value[4]);
+        void SetVec4(const char* name, glm::vec4 value);
+
+        void SetMat3(const char* name, glm::mat3 value);
         void SetMat4(const char* name, glm::mat4 value);
 
         void SetBool(const char* name, bool value);

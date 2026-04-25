@@ -58,46 +58,45 @@ int main(int agrc, char *agrv[])
 
     glEnable(GL_DEPTH_TEST);    // enable an OpenGL depth test 
 
-    std::shared_ptr<Texture2D> PugTex = std::make_shared<Texture2D>("Resources/Textures/PugImage.png", GL_RGBA);    // Loading a Textures From local path that always starts from "Resources"
-    std::shared_ptr<Texture2D> CatTex = std::make_shared<Texture2D>("Resources/Textures/catImage.jpg", GL_RGB);     //
-    std::shared_ptr<Texture2D> RockTex = std::make_shared<Texture2D>("Resources/Textures/rockImage.jpg", GL_RGB);   // 
+    std::shared_ptr<Texture2D> PugTex = std::make_shared<Texture2D>(GetFullPath("Resources/Textures/PugImage.png").c_str(), GL_RGBA);    // Loading a Textures
+    std::shared_ptr<Texture2D> CatTex = std::make_shared<Texture2D>(GetFullPath("Resources/Textures/catImage.jpg").c_str(), GL_RGB);     //
+    std::shared_ptr<Texture2D> RockTex = std::make_shared<Texture2D>(GetFullPath("Resources/Textures/rockImage.jpg").c_str(), GL_RGB);   // 
 
     shader.Setup();
     shader.color = Color(116, 155, 63);
 
-    LampShader.Setup("Resources/Shaders/UnlitVertShader.glsl", "Resources/Shaders/UnlitFragShader.glsl");
+    LampShader.Setup(GetFullPath("Resources/Shaders/UnlitVertShader.glsl").c_str(), GetFullPath("Resources/Shaders/UnlitFragShader.glsl").c_str());
     LampShader.color = Color(255, 255, 255);
 
     unsigned int VertexBufferObject, VertexArrayObject, LightVertexArrayObject, LightVertexBufferObject;
 
-    glGenBuffers(1, &VertexBufferObject);                                                           // Creating buffer for vertexes attribs and sending it to video card
-    glBindBuffer(GL_ARRAY_BUFFER, VertexBufferObject);                                              //
-    glBufferData(GL_ARRAY_BUFFER, sizeof(vtn_cube_vertexes), vtn_cube_vertexes, GL_STATIC_DRAW);                      //
+    glGenBuffers(1, &VertexBufferObject);
+    glBindBuffer(GL_ARRAY_BUFFER, VertexBufferObject);
+    glBufferData(GL_ARRAY_BUFFER, sizeof(vtn_cube_vertexes), vtn_cube_vertexes, GL_STATIC_DRAW);
 
 
     glGenVertexArrays(1, &VertexArrayObject);
     glBindVertexArray(VertexArrayObject);
-    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)0);                  // Creating a VertexArray and setting instructions to reading vertex attribs
-    glEnableVertexAttribArray(0);                                                                  // 
-    glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)(3 * sizeof(float)));//
-    glEnableVertexAttribArray(1);                                                                  //
-    glVertexAttribPointer(2, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)(5 * sizeof(float)));//
+    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)0);
+    glEnableVertexAttribArray(0);
+    glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)(3 * sizeof(float)));
+    glEnableVertexAttribArray(1);
+    glVertexAttribPointer(2, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)(5 * sizeof(float)));
     glEnableVertexAttribArray(2);
 
-    glGenVertexArrays(1, &LightVertexArrayObject);                                                  // Do the same for light objects buffer and array
-    glBindVertexArray(LightVertexArrayObject);                                                      //
-    glGenBuffers(1, &LightVertexBufferObject);                                                      //
-    glBindBuffer(GL_ARRAY_BUFFER, LightVertexBufferObject);                                         //
-    glBufferData(GL_ARRAY_BUFFER, sizeof(v_cube_vertexes), v_cube_vertexes, GL_STATIC_DRAW);              //
-                                                                                                    //
-    glBindVertexArray(LightVertexArrayObject);                                                      //
-    glBindBuffer(GL_ARRAY_BUFFER, LightVertexBufferObject);                                         //
-    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, sizeof(float) * 3, (void*)0);                   //
-    glEnableVertexAttribArray(0);                                                                   //
+    glGenVertexArrays(1, &LightVertexArrayObject);
+    glBindVertexArray(LightVertexArrayObject);
+    glGenBuffers(1, &LightVertexBufferObject);
+    glBindBuffer(GL_ARRAY_BUFFER, LightVertexBufferObject);
+    glBufferData(GL_ARRAY_BUFFER, sizeof(v_cube_vertexes), v_cube_vertexes, GL_STATIC_DRAW);
+    glBindVertexArray(LightVertexArrayObject);                                                                           //
+    glBindBuffer(GL_ARRAY_BUFFER, LightVertexBufferObject);                                                      //
+    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, sizeof(float) * 3, (void*)0);  //
+    glEnableVertexAttribArray(0);
 
     glBindVertexArray(0);
 
-    frame_buffer_size_callback(window, 800, 600);                                                   // calling a window scaling callback to setup our program to res 800x600
+    frame_buffer_size_callback(window, 800, 600);                                               // calling a window scaling callback to setup our program to res 800x600
     glfwSwapInterval((float)1 / (float)144);                                                        // Setting Vsync for 144 hz monitor
 
     std::vector<Transformable> cubes = std::vector<Transformable>(3);
@@ -122,6 +121,16 @@ int main(int agrc, char *agrv[])
     glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
     glfwSetCursorPosCallback(window, curs_callback);
 
+    shader.use();
+    shader.SetVec3("u_Material.AmbientColor", (float[]){1.0, 0.5, 0.31});
+    shader.SetVec3("u_Material.DifuseColor", (float[]){1.0, 0.5, 0.31});
+    shader.SetVec3("u_Material.SpecularColor", (float[]){0.5, 0.5, 0.5});
+
+    shader.SetVec3("u_Light.ambient",  (float[]){0.2f, 0.2f, 0.2f});
+    shader.SetVec3("u_Light.difuse",  (float[]){0.5f, 0.5f, 0.5f});
+    shader.SetVec3("u_Light.specular", (float[]){1.0f, 1.0f, 1.f}); 
+    shader.SetFloat("u_Material.Shiness", 32.0f);
+
     while (!glfwWindowShouldClose(window))
     {
         glClearColor(0.1, 0.1, 0.1, 1);
@@ -141,11 +150,11 @@ int main(int agrc, char *agrv[])
             shader.SetFloat("ambientStrenght", 0.15f);                                                  // Set ambient light strenght 0...1
             shader.SetFloat("SpecularStrenght", 0.5f);                                                  // Set a specular coef
             shader.SetFloat("Specular", 32);                                                            // Set the specular. as specular small as count is greater
-            shader.SetVec3("lightPos", (float[]){Lamp.position.x, Lamp.position.y, Lamp.position.z});   // Set a light source pos
+            shader.SetVec3("u_Light.pos", (float[]){Lamp.position.x, Lamp.position.y, Lamp.position.z});   // Set a light source pos
             shader.SetVec3("camPos", camPos);                                                           // Set a view pos
             shader.SetMat4("u_Model", cubes[i].GetModelMat());                                          // Set Transformation matrix to shader
             shader.SetMat4("u_View", Camera::main->GetView());                                          // Set View matrix to make a camera moving effect
-            shader.SetMat4("u_Projection", Camera::main->GetProjection());                              // Set Projection matrix to make a perspective effect
+            shader.SetMat4("u_Projection", Camera::main->GetProjection());
 
             glDrawArrays(GL_TRIANGLES, 0, 36);                                                    // Drawing all points as a trianges
         }  

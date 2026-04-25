@@ -1,6 +1,4 @@
 #include "Texture.hpp"
-#include <string>
-#include "../Loader/Loader.hpp"
 #include <iostream>
 
 Texture2D::Texture2D(){
@@ -22,10 +20,8 @@ void Texture2D::loadFromFile(const char* path, GLint ca){
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
 
-    std::string globalPath = GetFullPath(path);
-
     stbi_set_flip_vertically_on_load(true);
-    unsigned char* data = stbi_load(globalPath.c_str(), &width, &height, &nrChanels, 0);
+    unsigned char* data = stbi_load(path, &width, &height, &nrChanels, 0);
     if (data){
         glTexImage2D(GL_TEXTURE_2D, 0, ca, width, height, 0, ca, GL_UNSIGNED_BYTE, data);
         glGenerateMipmap(GL_TEXTURE_2D);
