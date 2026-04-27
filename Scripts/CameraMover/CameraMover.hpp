@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../Camera/Camera.hpp"
+#include <SkyGraph.hpp>
 #include <GLFW/glfw3.h>
 #include <glm/glm.hpp>
 #include <memory>

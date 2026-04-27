@@ -2,20 +2,15 @@
 #include <GLFW/glfw3.h>
 #include <glm/ext/vector_float3.hpp>
 #include <iostream>
-#include "Shader/Shader.hpp"
-#include "Loader/Loader.hpp"
-#include "CameraMover/CameraMover.hpp"
-#include "Camera/Camera.hpp"
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
 #include <memory>
 #include <vector>
-#include "Transformable/Transformable.hpp"
-#include "stb/stb_image.h"
 #include "cubeData.h"
-#include "Material/Material-struct.hpp"
-#include "RuntimeColorChoise/ColorChoise.hpp"
+#include "Scripts/Loader/Loader.hpp"
+#include "Scripts/CameraMover/CameraMover.hpp"
+#include "Scripts/RuntimeColorChoise/ColorChoise.hpp"
 
 float lastTime;
 float deltaTime;
@@ -183,29 +178,29 @@ int main(int agrc, char *agrv[])
         {
             float camPos[] = {Camera::main->position.x, Camera::main->position.y, Camera::main->position.z};
             if (i==0){
-            shader2.use();
-            shader2.SetColor("lightcolor", LampShader.color);                                              // Set light color
-            shader2.SetFloat("ambientStrenght", 0.15f);                                                  // Set ambient light strenght 0...1
-            shader2.SetFloat("SpecularStrenght", 0.5f);                                                  // Set a specular coef
-            shader2.SetFloat("Specular", 32);                                                            // Set the specular. as specular small as count is greater
-            shader2.SetVec3("u_Light.pos", (float[]){Lamp.position.x, Lamp.position.y, Lamp.position.z});   // Set a light source pos
-            shader2.SetVec3("camPos", camPos);                                                           // Set a view pos
-            shader2.SetMat4("u_Model", cubes[i].GetModelMat());                                          // Set Transformation matrix to shader
-            shader2.SetMat4("u_View", Camera::main->GetView());                                          // Set View matrix to make a camera moving effect
-            shader2.SetMat4("u_Projection", Camera::main->GetProjection());
+                shader2.use();
+                shader2.SetColor("lightcolor", LampShader.color);                                              // Set light color
+                shader2.SetFloat("ambientStrenght", 0.15f);                                                  // Set ambient light strenght 0...1
+                shader2.SetFloat("SpecularStrenght", 0.5f);                                                  // Set a specular coef
+                shader2.SetFloat("Specular", 32);                                                            // Set the specular. as specular small as count is greater
+                shader2.SetVec3("u_Light.pos", (float[]){Lamp.position.x, Lamp.position.y, Lamp.position.z});   // Set a light source pos
+                shader2.SetVec3("camPos", camPos);                                                           // Set a view pos
+                shader2.SetMat4("u_Model", cubes[i].GetModelMat());                                          // Set Transformation matrix to shader
+                shader2.SetMat4("u_View", Camera::main->GetView());                                          // Set View matrix to make a camera moving effect
+                shader2.SetMat4("u_Projection", Camera::main->GetProjection());
             }
             else
             {
-            shader.use();
-            shader.SetColor("lightcolor", LampShader.color);                                              // Set light color
-            shader.SetFloat("ambientStrenght", 0.15f);                                                  // Set ambient light strenght 0...1
-            shader.SetFloat("SpecularStrenght", 0.5f);                                                  // Set a specular coef
-            shader.SetFloat("Specular", 32);                                                            // Set the specular. as specular small as count is greater
-            shader.SetVec3("u_Light.pos", (float[]){Lamp.position.x, Lamp.position.y, Lamp.position.z});   // Set a light source pos
-            shader.SetVec3("camPos", camPos);                                                           // Set a view pos
-            shader.SetMat4("u_Model", cubes[i].GetModelMat());                                          // Set Transformation matrix to shader
-            shader.SetMat4("u_View", Camera::main->GetView());                                          // Set View matrix to make a camera moving effect
-            shader.SetMat4("u_Projection", Camera::main->GetProjection());
+                shader.use();
+                shader.SetColor("lightcolor", LampShader.color);                                              // Set light color
+                shader.SetFloat("ambientStrenght", 0.15f);                                                  // Set ambient light strenght 0...1
+                shader.SetFloat("SpecularStrenght", 0.5f);                                                  // Set a specular coef
+                shader.SetFloat("Specular", 32);                                                            // Set the specular. as specular small as count is greater
+                shader.SetVec3("u_Light.pos", (float[]){Lamp.position.x, Lamp.position.y, Lamp.position.z});   // Set a light source pos
+                shader.SetVec3("camPos", camPos);                                                           // Set a view pos
+                shader.SetMat4("u_Model", cubes[i].GetModelMat());                                          // Set Transformation matrix to shader
+                shader.SetMat4("u_View", Camera::main->GetView());                                          // Set View matrix to make a camera moving effect
+                shader.SetMat4("u_Projection", Camera::main->GetProjection());
             }
             glDrawArrays(GL_TRIANGLES, 0, 36);                                                    // Drawing all points as a trianges
         }  

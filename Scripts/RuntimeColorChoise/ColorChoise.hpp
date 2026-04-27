@@ -1,8 +1,7 @@
 #pragma once
 
-#include "../Shader/Shader.hpp"
+#include <SkyGraph.hpp>
 #include <GLFW/glfw3.h>
-#include "../Material/Material-struct.hpp"
 
 class ColorChoise{
     public:

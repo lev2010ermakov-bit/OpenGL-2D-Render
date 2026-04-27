@@ -1,11 +1,10 @@
 #pragma once
 
-#include "../glad/include/glad/glad.h"
+#include <glad/glad.h>
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
-#include <iostream>
 #include <memory>
-#include "../Transformable/Transformable.hpp"
+#include <Transformable.hpp>
 
 class Camera : public Transformable{
     public:

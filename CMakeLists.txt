@@ -7,18 +7,17 @@ find_package(glm CONFIG REQUIRED)
 find_package(OpenGL REQUIRED)
 
 file(GLOB_RECURSE SOURCE_FILE 
-    "Texture/*.cpp" 
-    "CameraMover/*.cpp" 
-    "Camera/*.cpp" 
-    "main.cpp" 
-    "Shader/*.cpp" 
-    "Loader/*.cpp" 
-    "glad/src/glad.c" 
-    "stb/*.c" 
-    "Transformable/*.cpp"
-    "RuntimeColorChoise/ColorChoise.cpp")
+    "main.cpp"
+    "src/*.cpp"
+    "third-party/glad/src/glad.c"
+    "third-party/stb/stb_image.c"
+
+    "Scripts/*.cpp"
+)
 
 add_executable(build ${SOURCE_FILE})
 
-target_include_directories(build PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/glad/include/)
-target_link_libraries(build PRIVATE glfw OpenGL::OpenGL glm::glm)
+target_include_directories(build PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/third-party/glad/include/)
+target_include_directories(build PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/third-party/)
+target_include_directories(build PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include/)
+target_link_libraries(build PRIVATE glfw OpenGL::OpenGL glm::glm dl)

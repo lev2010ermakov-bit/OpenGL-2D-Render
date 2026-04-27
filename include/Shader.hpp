@@ -8,7 +8,7 @@
 #include <string>
 #include <stdint.h>
 #include <memory>
-#include "../Texture/Texture.hpp"
+#include <Texture.hpp>
 
 
 struct Color{
