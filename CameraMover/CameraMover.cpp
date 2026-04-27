@@ -1,5 +1,9 @@
 #include "CameraMover.hpp"
 
+CameraMover::CameraMover(){
+
+}
+
 CameraMover::CameraMover(std::shared_ptr<Camera> cam, GLFWwindow* currWindow){
     camera = cam;
     window = currWindow;
@@ -8,6 +12,7 @@ CameraMover::CameraMover(std::shared_ptr<Camera> cam, GLFWwindow* currWindow){
 void CameraMover::Update(float dt){
     deltaTime = dt;
     buttPand -= dt;
+    if (!window || !camera) return;
     keyboard_moving();
     mouse_moving();
 }

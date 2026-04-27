@@ -1,5 +1,6 @@
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
+#include <glm/ext/vector_float3.hpp>
 #include <iostream>
 #include "Shader/Shader.hpp"
 #include "Loader/Loader.hpp"
@@ -13,31 +14,45 @@
 #include "Transformable/Transformable.hpp"
 #include "stb/stb_image.h"
 #include "cubeData.h"
+#include "Material/Material-struct.hpp"
+#include "RuntimeColorChoise/ColorChoise.hpp"
 
 float lastTime;
 float deltaTime;
 
+bool colorDebug;
+int currentColDebug;
+int currentColItem;
+
 Shader shader;
+Shader shader2;
 Shader LampShader;
+
+ColorChoise colChoiser;
+
+Material shaderMat;
+
 std::shared_ptr<Camera> camera;
-std::shared_ptr<CameraMover> mover;
+CameraMover mover;
 
 void frame_buffer_size_callback(GLFWwindow *window, int width, int height)
 {
     glViewport(0, 0, width, height);
     camera->XtoY = (float)width/(float)height;
-    mover->lastx = (float)width/2;
-    mover->lasty = (float)height/2; 
+    mover.lastx = (float)width/2;
+    mover.lasty = (float)height/2; 
 }
 
 void curs_callback(GLFWwindow* wind, double x, double y){
-    mover->onCursPosChanged(wind, x, y);
+    mover.onCursPosChanged(wind, x, y);
 }
 
 int main(int agrc, char *agrv[])
 {
     camera = std::make_shared<Camera>(60.f, 800.f/600.f, 0.1f, 100.f);  // Initializing camera class
     Camera::SetMain(camera);                                            // Set new camera as a main  
+    camera->position = glm::vec3(-3.31473, -1.567f, 6.05006f);
+    camera->eulerAngles = glm::vec3(14.9043f, -61.7206f, 0.0f);
 
     curr_agrv = agrv[0];
     glfwInit();                                                     // Initializing a glfw
@@ -54,19 +69,9 @@ int main(int agrc, char *agrv[])
         std::cout << "Failed To init glad" << std::endl;                                // error log
     }
 
-    mover = std::make_shared<CameraMover>(camera, window);  // Create a class that moves the camera
+    mover = CameraMover(camera, window);  // Create a class that moves the camera
 
     glEnable(GL_DEPTH_TEST);    // enable an OpenGL depth test 
-
-    std::shared_ptr<Texture2D> PugTex = std::make_shared<Texture2D>(GetFullPath("Resources/Textures/PugImage.png").c_str(), GL_RGBA);    // Loading a Textures
-    std::shared_ptr<Texture2D> CatTex = std::make_shared<Texture2D>(GetFullPath("Resources/Textures/catImage.jpg").c_str(), GL_RGB);     //
-    std::shared_ptr<Texture2D> RockTex = std::make_shared<Texture2D>(GetFullPath("Resources/Textures/rockImage.jpg").c_str(), GL_RGB);   // 
-
-    shader.Setup();
-    shader.color = Color(116, 155, 63);
-
-    LampShader.Setup(GetFullPath("Resources/Shaders/UnlitVertShader.glsl").c_str(), GetFullPath("Resources/Shaders/UnlitFragShader.glsl").c_str());
-    LampShader.color = Color(255, 255, 255);
 
     unsigned int VertexBufferObject, VertexArrayObject, LightVertexArrayObject, LightVertexBufferObject;
 
@@ -121,15 +126,47 @@ int main(int agrc, char *agrv[])
     glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
     glfwSetCursorPosCallback(window, curs_callback);
 
-    shader.use();
-    shader.SetVec3("u_Material.AmbientColor", (float[]){1.0, 0.5, 0.31});
-    shader.SetVec3("u_Material.DifuseColor", (float[]){1.0, 0.5, 0.31});
-    shader.SetVec3("u_Material.SpecularColor", (float[]){0.5, 0.5, 0.5});
+    colChoiser.window = window;
+    colChoiser.shader = &shader;
+    colChoiser.shaderMat = &shaderMat;
 
-    shader.SetVec3("u_Light.ambient",  (float[]){0.2f, 0.2f, 0.2f});
-    shader.SetVec3("u_Light.difuse",  (float[]){0.5f, 0.5f, 0.5f});
-    shader.SetVec3("u_Light.specular", (float[]){1.0f, 1.0f, 1.f}); 
-    shader.SetFloat("u_Material.Shiness", 32.0f);
+    std::shared_ptr<Texture2D> PugTex = std::make_shared<Texture2D>(GetFullPath("Resources/Textures/PugImage.png").c_str(), GL_RGBA);    // Loading a Textures
+    std::shared_ptr<Texture2D> CatTex = std::make_shared<Texture2D>(GetFullPath("Resources/Textures/catImage.jpg").c_str(), GL_RGB);     //
+    std::shared_ptr<Texture2D> RockTex = std::make_shared<Texture2D>(GetFullPath("Resources/Textures/rockImage.jpg").c_str(), GL_RGB);   // 
+
+    shader.Setup();
+    shader.color = Color(116, 155, 63);
+
+    shader2 = shader;
+
+    LampShader.Setup(GetFullPath("Resources/Shaders/UnlitVertShader.glsl").c_str(), GetFullPath("Resources/Shaders/UnlitFragShader.glsl").c_str());
+    LampShader.color = Color(255, 255, 255);
+
+    shaderMat.AmbientColor = glm::vec3(1.0f);
+    shaderMat.DifuseColor = glm::vec3(1.0f);
+    shaderMat.SpecularColor = glm::vec3(1.0f);
+    shaderMat.Shiness = 256.f;
+
+    shader.SetVec3("u_Material.AmbientColor", shaderMat.AmbientColor);
+    shader.SetVec3("u_Material.DifuseColor", shaderMat.DifuseColor);
+    shader.SetVec3("u_Material.SpecularColor", shaderMat.SpecularColor);
+    shader.SetFloat("u_Material.Shiness", shaderMat.Shiness);
+
+    shader.SetVec3("u_Light.ambient",  glm::vec3(0.2f));
+    shader.SetVec3("u_Light.difuse",  glm::vec3(1.f));
+    shader.SetVec3("u_Light.specular", glm::vec3(0.3f));
+    shaderMat.Shiness = 256.f;
+
+    shader2.SetVec3("u_Material.AmbientColor", shaderMat.AmbientColor);
+    shader2.SetVec3("u_Material.DifuseColor", shaderMat.DifuseColor);
+    shader2.SetVec3("u_Material.SpecularColor", shaderMat.SpecularColor);
+    shader2.SetFloat("u_Material.Shiness", shaderMat.Shiness);
+
+    shader2.SetVec3("u_Light.ambient",  glm::vec3(0.2f));
+    shader2.SetVec3("u_Light.difuse",  glm::vec3(1.f));
+    shader2.SetVec3("u_Light.specular", glm::vec3(0.3f));
+
+    LampShader.SetColor("u_Color", LampShader.color);
 
     while (!glfwWindowShouldClose(window))
     {
@@ -138,13 +175,27 @@ int main(int agrc, char *agrv[])
 
         rot += deltaTime;
 
-        mover->Update(deltaTime);
+        mover.Update(deltaTime);
+        colChoiser.Update(deltaTime);
 
         glBindVertexArray(VertexArrayObject);
         for (int i = 0; i < cubes.capacity(); i++)               // this cycle draws all cubes from  position and scales arrays
         {
             float camPos[] = {Camera::main->position.x, Camera::main->position.y, Camera::main->position.z};
-
+            if (i==0){
+            shader2.use();
+            shader2.SetColor("lightcolor", LampShader.color);                                              // Set light color
+            shader2.SetFloat("ambientStrenght", 0.15f);                                                  // Set ambient light strenght 0...1
+            shader2.SetFloat("SpecularStrenght", 0.5f);                                                  // Set a specular coef
+            shader2.SetFloat("Specular", 32);                                                            // Set the specular. as specular small as count is greater
+            shader2.SetVec3("u_Light.pos", (float[]){Lamp.position.x, Lamp.position.y, Lamp.position.z});   // Set a light source pos
+            shader2.SetVec3("camPos", camPos);                                                           // Set a view pos
+            shader2.SetMat4("u_Model", cubes[i].GetModelMat());                                          // Set Transformation matrix to shader
+            shader2.SetMat4("u_View", Camera::main->GetView());                                          // Set View matrix to make a camera moving effect
+            shader2.SetMat4("u_Projection", Camera::main->GetProjection());
+            }
+            else
+            {
             shader.use();
             shader.SetColor("lightcolor", LampShader.color);                                              // Set light color
             shader.SetFloat("ambientStrenght", 0.15f);                                                  // Set ambient light strenght 0...1
@@ -155,7 +206,7 @@ int main(int agrc, char *agrv[])
             shader.SetMat4("u_Model", cubes[i].GetModelMat());                                          // Set Transformation matrix to shader
             shader.SetMat4("u_View", Camera::main->GetView());                                          // Set View matrix to make a camera moving effect
             shader.SetMat4("u_Projection", Camera::main->GetProjection());
-
+            }
             glDrawArrays(GL_TRIANGLES, 0, 36);                                                    // Drawing all points as a trianges
         }  
         
@@ -205,6 +256,12 @@ int main(int agrc, char *agrv[])
             shader.color = Color(116, 155, 63);     //
             buttPand = 0.2f;                                        //
         }                                                           //
+
+        if (glfwGetKey(window, GLFW_KEY_L) && buttPand <= 0){
+            std::cout << "pos: " << camera->position.x << " " << camera->position.y << " " << camera->position.z << std::endl;
+            std::cout << "rot: " << camera->eulerAngles.x << " " << camera->eulerAngles.y << " " << camera->eulerAngles.z << std::endl;
+            buttPand = 0.2f;
+        }
 
         deltaTime = (float)glfwGetTime() - lastTime;                // Calculation of time beetween frames
         lastTime = (float)glfwGetTime();                            //

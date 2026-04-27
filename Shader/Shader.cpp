@@ -1,8 +1,13 @@
 #include "Shader.hpp"
 #include "glad/glad.h"
+#include <glm/ext/vector_float3.hpp>
+#include <glm/gtc/type_ptr.hpp>
 #include <iostream>
 #include <fstream>
 #include <sstream>
+
+
+// ---------- CONSTRUCTORS ---------- //
 
 Shader::Shader(){
 }
@@ -48,6 +53,9 @@ Shader::Shader(const char* VertPath, const char* FragPath){
     Setup(VertPath, FragPath);
 }
 
+
+// ---------- CONTROL FUNCTIONS ---------- //
+
 void Shader::Setup(const char* VertPath, const char* FragPath){
     std::ifstream VertFile, FragFile;
     std::string VertString, FragString;
@@ -67,11 +75,11 @@ void Shader::Setup(const char* VertPath, const char* FragPath){
         VertFile.close();
         FragFile.close();
 
-        VertSourceString = VertString;
-        FragSourceString = FragString;
-
         VertString = VertStream.str();
         FragString = FragStream.str();
+
+        VertSourceString = VertString;
+        FragSourceString = FragString;
     }
     catch(std::ifstream::failure& ex){
         std::cout << "Failed To Read Shader Files:" << VertPath << " " << FragPath << std::endl;
@@ -111,59 +119,127 @@ void Shader::Setup(){
 void Shader::use(){
     glUseProgram(ID);
     if (texture) texture->Bind();
-    SetColor("u_Color", color);
     SetBool("UseTexture", UseTexture);
     SetFloat("time", (float)glfwGetTime());
 }
 
-void Shader::SetFloat(const char* name, float value){
-    glUniform1f(glGetUniformLocation(ID, name), value);   
-}
+// ----------   VECTORS   ---------- //
 
-void Shader::SetVec2(const char* name, float value[2]){
+void Shader::SetVec2(const char* name, float value[2]){                                         // VECTOR 2
+    glUseProgram(ID);
     glUniform2f(glGetUniformLocation(ID, name), value[0], value[1]);
 }
+void Shader::SetVec2(const char* name, glm::vec2 value){
+    glUseProgram(ID);
+    glUniform2f(glGetUniformLocation(ID, name), value.x, value.y);
+}
 
-void Shader::SetVec3(const char* name, float value[3]){
+
+void Shader::SetVec3(const char* name, float value[3]){                                         // VECTOR 3
+    glUseProgram(ID);  
     glUniform3f(glGetUniformLocation(ID, name), value[0], value[1], value[2]);
 }
-
-void Shader::SetVec4(const char* name, float value[4]){
-    glUniform4f(glGetUniformLocation(ID, name), value[0], value[1], value[2], value[3]);
+void Shader::SetVec3(const char* name, glm::vec3 value){
+    glUseProgram(ID);
+    glUniform3f(glGetUniformLocation(ID, name), value.x, value.y, value.z);
 }
 
-void Shader::SetMat4(const char* name, glm::mat4 value){
+
+void Shader::SetVec4(const char* name, float value[4]){                                         // VECTOR 4
+    glUseProgram(ID);
+    glUniform4f(glGetUniformLocation(ID, name), value[0], value[1], value[2], value[3]);
+}
+void Shader::SetVec4(const char* name, glm::vec4 value){
+    glUseProgram(ID);
+    glUniform4f(glGetUniformLocation(ID, name), value.x, value.y, value.z, value.a);
+}
+
+
+// ----------   MATRIX   ---------- //
+
+void Shader::SetMat3(const char* name, glm::mat3 value){                                        // MATRIX 3x3
+    glUseProgram(ID);
+    glUniformMatrix3fv(glGetUniformLocation(ID, name), 1, GL_FALSE, glm::value_ptr(value));
+}
+
+void Shader::SetMat4(const char* name, glm::mat4 value){                                        // MATRIX 4x4
+    glUseProgram(ID);
     glUniformMatrix4fv(glGetUniformLocation(ID, name), 1, GL_FALSE, glm::value_ptr(value));
 }
 
 
+// ----------   FUNDAMENTAL TYPES   ---------- //
 
-void Shader::SetBool(const char* name, bool value){
+void Shader::SetFloat(const char* name, float value){                                           // FLOAT
+    glUseProgram(ID);
+    glUniform1f(glGetUniformLocation(ID, name), value);   
+}
+void Shader::SetBool(const char* name, bool value){                                             // BOOL                  
+    glUseProgram(ID);
+    glUniform1i(glGetUniformLocation(ID, name), value);
+}
+void Shader::SetInt(const char* name, int value){                                               // INT
+    glUseProgram(ID);
     glUniform1i(glGetUniformLocation(ID, name), value);
 }
 
-void Shader::SetInt(const char* name, int value){
-    glUniform1i(glGetUniformLocation(ID, name), value);
-}
 
-void Shader::SetColor(const char* name, Color col){
+// ----------   CUSTOM TYPES ---------- //
+
+void Shader::SetColor(const char* name, Color col){                                             // COLOR
     SetVec4(name, (float[]){(float)col.r/(float)255, (float)col.g/(float)255, (float)col.b/(float)255, (float)col.a/(float)255});
 }
 
-void Shader::SetTexture(std::shared_ptr<Texture2D> ntexture){
+void Shader::SetTexture(std::shared_ptr<Texture2D> ntexture){                                   // TEXTURE
     texture = ntexture;
     UseTexture = true;
 }
 
-// need to write that operators
+
+// ----------  MEMORY SAFETY  ---------- //
+
 Shader& Shader::operator=(Shader&& other){
+    if (ID != 0) glDeleteProgram(ID);
+    ID = other.ID;
+    color = other.color;
+    texture = other.texture;
+    UseTexture = other.UseTexture;
+    VertSourceString = other.VertSourceString;
+    FragSourceString = other.FragSourceString;
     return *this;
 }
 
 Shader& Shader::operator=(const Shader& other){
+    if (ID != 0) glDeleteProgram(ID);
+    VertSourceString = other.VertSourceString;
+    FragSourceString = other.FragSourceString;
+
+    ID = glCreateProgram();
+    unsigned int vs, fs;
+    vs = glCreateShader(GL_VERTEX_SHADER);
+    fs = glCreateShader(GL_FRAGMENT_SHADER);
+
+    const char* vert_source = VertSourceString.c_str();
+    const char* frag_source = FragSourceString.c_str();
+
+    glShaderSource(vs, 1, &vert_source, NULL);
+    glCompileShader(vs);
+
+    glShaderSource(fs, 1, &frag_source, NULL);
+    glCompileShader(fs);
+
+    glAttachShader(ID, vs);
+    glAttachShader(ID, fs);
+    glLinkProgram(ID);
+
+    glDeleteShader(vs);
+    glDeleteShader(fs);
+
     return *this;
 }
 
+
+// ---------- LOG ---------- //
 void ShaderLog(int Shader){
     char log[512];
     int succsess;

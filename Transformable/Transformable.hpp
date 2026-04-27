@@ -8,11 +8,6 @@ const glm::vec3 World_up = glm::vec3(0.0f, 1.0f, 0.0f);
 class Transformable{
     public:
         Transformable();
-        Transformable(Transformable& other);
-        Transformable(Transformable&& other);
-
-        Transformable& operator=(Transformable& other);
-        Transformable& operator=(Transformable&& other);
 
         glm::vec3 scale;
         glm::vec3 position;

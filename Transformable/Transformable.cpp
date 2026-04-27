@@ -4,19 +4,16 @@
 #include <glm/ext/vector_float3.hpp>
 #include <glm/matrix.hpp>
 
+
+// ----------   CONSTRUCTORS   ---------- //
 Transformable::Transformable(){
     scale = glm::vec3(1);
     position = glm::vec3(0);
     eulerAngles = glm::vec3(0);
 }
 
-Transformable::Transformable(Transformable& other){
-    delete &position;
-    eulerAngles = other.eulerAngles;
-    position = other.position;
-    scale = other.scale;
-}
 
+// ----------   OUTPUT FUNCTIONS ---------- //
 glm::mat4 Transformable::GetModelMat(){
     glm::mat4 res = glm::mat4(1);
 
@@ -29,6 +26,8 @@ glm::mat4 Transformable::GetModelMat(){
     return res;
 }
 
+
+// ----------   SYSTEM FUNCTIONS   ---------- // 
 void Transformable::UpdateLocalVectors(){
     glm::vec3 dir;
     dir.x = cos(glm::radians(eulerAngles.y)) * cos(glm::radians(eulerAngles.x));
