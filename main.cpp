@@ -11,6 +11,7 @@
 #include "Scripts/Loader/Loader.hpp"
 #include "Scripts/CameraMover/CameraMover.hpp"
 #include "Scripts/RuntimeColorChoise/ColorChoise.hpp"
+#include <Texture.hpp>
 
 float lastTime;
 float deltaTime;
@@ -125,16 +126,21 @@ int main(int agrc, char *agrv[])
     colChoiser.shader = &shader;
     colChoiser.shaderMat = &shaderMat;
 
-    std::shared_ptr<Texture2D> PugTex = std::make_shared<Texture2D>(GetFullPath("Resources/Textures/PugImage.png").c_str(), GL_RGBA);    // Loading a Textures
-    std::shared_ptr<Texture2D> CatTex = std::make_shared<Texture2D>(GetFullPath("Resources/Textures/catImage.jpg").c_str(), GL_RGB);     //
-    std::shared_ptr<Texture2D> RockTex = std::make_shared<Texture2D>(GetFullPath("Resources/Textures/rockImage.jpg").c_str(), GL_RGB);   // 
+    std::shared_ptr<Texture2D> PugTex = std::make_shared<Texture2D>(GetFullPath("SkyGraph/assets/Textures/PugImage.png").c_str(), GL_RGBA);         // Loading a Textures
+    std::shared_ptr<Texture2D> CatSpec = std::make_shared<Texture2D>(GetFullPath("SkyGraph/assets/Textures/catSpecular.png").c_str(), GL_RGBA);     //
+    std::shared_ptr<Texture2D> EmissionMap = std::make_shared<Texture2D>(GetFullPath("SkyGraph/assets/Textures/EmissionMap.jpg").c_str(), GL_RGB);
+    std::shared_ptr<Texture2D> CatTex = std::make_shared<Texture2D>(GetFullPath("SkyGraph/assets/Textures/catImage.jpg").c_str(), GL_RGB);          //
+    std::shared_ptr<Texture2D> RockTex = std::make_shared<Texture2D>(GetFullPath("SkyGraph/assets/Textures/rockImage.jpg").c_str(), GL_RGB);        // 
 
-    shader.Setup();
+    shader.Setup(GetFullPath("SkyGraph/assets/Shaders/Lit/VertShader.glsl").c_str(),
+                 GetFullPath("SkyGraph/assets/Shaders/Lit/FragShader.glsl").c_str());
     shader.color = Color(116, 155, 63);
+    shader.SetSpecularMap(CatSpec);
 
     shader2 = shader;
 
-    LampShader.Setup(GetFullPath("Resources/Shaders/UnlitVertShader.glsl").c_str(), GetFullPath("Resources/Shaders/UnlitFragShader.glsl").c_str());
+    LampShader.Setup(GetFullPath("SkyGraph/assets/Shaders/Unlit/UnlitVertShader.glsl").c_str(), 
+                     GetFullPath("SkyGraph/assets/Shaders/Unlit/UnlitFragShader.glsl").c_str());
     LampShader.color = Color(255, 255, 255);
 
     shaderMat.AmbientColor = glm::vec3(1.0f);
@@ -142,19 +148,20 @@ int main(int agrc, char *agrv[])
     shaderMat.SpecularColor = glm::vec3(1.0f);
     shaderMat.Shiness = 256.f;
 
-    shader.SetVec3("u_Material.AmbientColor", shaderMat.AmbientColor);
-    shader.SetVec3("u_Material.DifuseColor", shaderMat.DifuseColor);
-    shader.SetVec3("u_Material.SpecularColor", shaderMat.SpecularColor);
+    shader.UseTexture = true;
+
+    shader.SetColor("u_Material.DiffuseColor", shader.color);
+    shader.SetDiffuseMap(PugTex);
+    shader.SetEmissionMap(EmissionMap);
+    shader.SetFloat("u_Material.SpecularColor", 1);
     shader.SetFloat("u_Material.Shiness", shaderMat.Shiness);
 
     shader.SetVec3("u_Light.ambient",  glm::vec3(0.2f));
     shader.SetVec3("u_Light.difuse",  glm::vec3(1.f));
     shader.SetVec3("u_Light.specular", glm::vec3(0.3f));
-    shaderMat.Shiness = 256.f;
 
-    shader2.SetVec3("u_Material.AmbientColor", shaderMat.AmbientColor);
-    shader2.SetVec3("u_Material.DifuseColor", shaderMat.DifuseColor);
-    shader2.SetVec3("u_Material.SpecularColor", shaderMat.SpecularColor);
+    shader2.SetColor("u_Material.DiffuseColor", shader2.color);
+    shader2.SetFloat("u_Material.SpecularColor", 1);
     shader2.SetFloat("u_Material.Shiness", shaderMat.Shiness);
 
     shader2.SetVec3("u_Light.ambient",  glm::vec3(0.2f));
@@ -176,32 +183,22 @@ int main(int agrc, char *agrv[])
         glBindVertexArray(VertexArrayObject);
         for (int i = 0; i < cubes.capacity(); i++)               // this cycle draws all cubes from  position and scales arrays
         {
-            float camPos[] = {Camera::main->position.x, Camera::main->position.y, Camera::main->position.z};
             if (i==0){
-                shader2.use();
-                shader2.SetColor("lightcolor", LampShader.color);                                              // Set light color
-                shader2.SetFloat("ambientStrenght", 0.15f);                                                  // Set ambient light strenght 0...1
-                shader2.SetFloat("SpecularStrenght", 0.5f);                                                  // Set a specular coef
-                shader2.SetFloat("Specular", 32);                                                            // Set the specular. as specular small as count is greater
-                shader2.SetVec3("u_Light.pos", (float[]){Lamp.position.x, Lamp.position.y, Lamp.position.z});   // Set a light source pos
-                shader2.SetVec3("camPos", camPos);                                                           // Set a view pos
+                shader2.SetVec3("u_Light.pos", Lamp.position);                                               // Set a light source pos
+                shader2.SetVec3("camPos", Camera::main->position);                                           // Set a view pos
                 shader2.SetMat4("u_Model", cubes[i].GetModelMat());                                          // Set Transformation matrix to shader
                 shader2.SetMat4("u_View", Camera::main->GetView());                                          // Set View matrix to make a camera moving effect
                 shader2.SetMat4("u_Projection", Camera::main->GetProjection());
             }
             else
             {
-                shader.use();
-                shader.SetColor("lightcolor", LampShader.color);                                              // Set light color
-                shader.SetFloat("ambientStrenght", 0.15f);                                                  // Set ambient light strenght 0...1
-                shader.SetFloat("SpecularStrenght", 0.5f);                                                  // Set a specular coef
-                shader.SetFloat("Specular", 32);                                                            // Set the specular. as specular small as count is greater
-                shader.SetVec3("u_Light.pos", (float[]){Lamp.position.x, Lamp.position.y, Lamp.position.z});   // Set a light source pos
-                shader.SetVec3("camPos", camPos);                                                           // Set a view pos
-                shader.SetMat4("u_Model", cubes[i].GetModelMat());                                          // Set Transformation matrix to shader
-                shader.SetMat4("u_View", Camera::main->GetView());                                          // Set View matrix to make a camera moving effect
+                shader.SetVec3("u_Light.pos", (float[]){Lamp.position.x, Lamp.position.y, Lamp.position.z});    // Set a light source pos
+                shader.SetVec3("camPos", Camera::main->position);                                               // Set a view pos
+                shader.SetMat4("u_Model", cubes[i].GetModelMat());                                              // Set Transformation matrix to shader
+                shader.SetMat4("u_View", Camera::main->GetView());                                              // Set View matrix to make a camera moving effect
                 shader.SetMat4("u_Projection", Camera::main->GetProjection());
             }
+            shader.use();
             glDrawArrays(GL_TRIANGLES, 0, 36);                                                    // Drawing all points as a trianges
         }  
         
@@ -230,19 +227,21 @@ int main(int agrc, char *agrv[])
         }
 
         if (glfwGetKey(window, GLFW_KEY_1) && buttPand <= 0)    // Switching to Cat texture
-        {                                                           //
-            shader.SetTexture(CatTex);                              //
-            buttPand = 0.2f;                                        //
-        }                                                           //
+        {
+            shader.UseTexture = true;
+            shader.SetDiffuseMap(CatTex);
+            buttPand = 0.2f;
+        }
 
         if (glfwGetKey(window, GLFW_KEY_2) && buttPand <= 0)    // Switching to Pug texture
-        {                                                           //
-            shader.SetTexture(PugTex);                              //
-            buttPand = 0.2f;                                        //
-        }                                                           //
+        {                                                            //
+            shader.UseTexture = true;
+            shader.SetDiffuseMap(PugTex);                       //
+            buttPand = 0.2f;                                         //
+        }                                                            //
 
         if (glfwGetKey(window, GLFW_KEY_3) && buttPand <= 0){
-            shader.SetTexture(RockTex);
+            shader.SetDiffuseMap(RockTex);
             buttPand = 0.2f;
         }
 

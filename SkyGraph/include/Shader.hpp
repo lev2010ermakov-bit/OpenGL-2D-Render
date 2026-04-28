@@ -25,14 +25,15 @@ class Shader{
     public:
         unsigned int ID = 0;
         bool UseTexture = false;
-        std::shared_ptr<Texture2D> texture = nullptr;
+        std::shared_ptr<Texture2D> DiffuseMap = nullptr;
+        std::shared_ptr<Texture2D> SpecularMap = nullptr;
+        std::shared_ptr<Texture2D> EmissionMap = nullptr;
         Color color = Color();
         Shader();
         Shader(const Shader& other);
         Shader(const Shader&& other);
         Shader(const char* VertPath, const char* FragPath);
         void Setup(const char* VertPath, const char* FragPath);
-        void Setup();
         void use();
 
         void SetFloat(const char* name, float value);
@@ -54,7 +55,9 @@ class Shader{
 
         void SetColor(const char* name, Color col);
 
-        void SetTexture(std::shared_ptr<Texture2D> texture);
+        void SetDiffuseMap(std::shared_ptr<Texture2D> map);
+        void SetSpecularMap(std::shared_ptr<Texture2D> map);
+        void SetEmissionMap(std::shared_ptr<Texture2D> map);
 
         Shader& operator=(const Shader& other);
         Shader& operator=(Shader&& other);
